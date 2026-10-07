@@ -1,0 +1,54 @@
+Ref,Qty,Part,Description,Section
+U1,1,XU316-1024-QF60B,XMOS xcore.ai USB Audio 2.0 controller,Digital
+U2,1,IS25LP016D-JNLE,16 Mbit QSPI flash (XMOS firmware),Digital
+Y1,1,24.000 MHz crystal,XMOS system clock,Digital
+Y2,1,NZ2520SDA-24.576M,Low phase-noise audio MCLK (48k family),Digital
+Y3,1,NZ2520SDA-22.5792M,Low phase-noise audio MCLK (44.1k family),Digital
+U4,1,74LVC1G157,MCLK source mux,Digital
+U3,1,STUSB4500QTR,USB-PD sink controller (15/12/5 V),Power
+J1,1,USB-C receptacle USB2,USB-C 16-pin (e.g. GCT USB4105),Power
+D3,1,TPD4E05U06,USB ESD protection,Power
+J2,1,5.5x2.1 mm DC jack,Optional 12-15 V input,Power
+"D1,D2",2,SS54,Schottky OR of USB VBUS and DC jack,Power
+U5,1,LT8582,Dual 3 A boost/SEPIC/inverting: +18.5 V / -18.5 V,Power
+U6,1,TPS7A4701RGWR,+16 V 1 A low-noise LDO,Power
+U7,1,TPS7A3301RGWR,-16 V 1 A low-noise LDO,Power
+U8,1,TPS62A02,3.3 V digital buck,Power
+U12,1,TPS62A02,5.5 V pre-regulator for analog LDOs,Power
+U9,1,TLV75509,0.9 V XMOS core LDO,Power
+"U13,U14",2,LT3042,5.0 V DAC AVDD/VREF and 3.3 V ADC AVDD,Power
+U10,1,AK4493SEQ,32-bit stereo DAC (I2C control),DAC
+U11,1,OPA1612AIDR,DAC diff-to-SE + low-pass filter,DAC
+RV1,1,ALPS RK27112A 10k A dual,Volume potentiometer (log),DAC
+"C_dac",2,4.7 uF 50 V film,DC blocking into volume pot,DAC
+U20,1,OPA1612AIDR,Headphone amp op amp (L+R),HP amp
+"U21-U24",4,BUF634AIDDAR,250 mA buffer - two paralleled per channel,HP amp
+R_bal,4,2.2 R 1 W 1 % 2512,Buffer ballast resistors,HP amp
+R_F,2,2.00 k 0.1 %,Feedback,HP amp
+R_Ghi,2,499 R 0.1 %,Gain 5 (High),HP amp
+R_Glo,2,4.02 k 0.1 %,Gain 1.5 (Low),HP amp
+C_F,2,22 pF C0G,Feedback compensation,HP amp
+S2,1,DPDT slide/toggle,Gain High/Low,HP amp
+K1,1,G6K-2F-Y 5VDC,DPDT signal relay for output muting,Protection
+U30,1,LM393,Turn-on delay / rail-good comparators,Protection
+"Q30-Q33",4,BC847/BC857,Bidirectional DC detector,Protection
+J3,1,NMJ6HCD2,6.35 mm headphone jack,HP amp
+J4,1,SJ1-3533NG,3.5 mm headphone jack,HP amp
+J5,1,NCJ6FI-S,Neutrik XLR/TRS combo input,Mic
+U40,1,LT8362,+50 V boost for phantom,Mic
+Q40,1,MJD47,Capacitance multiplier 48 V post-filter,Mic
+S1,1,DPST,Phantom power on/off,Mic
+"R50,R51",2,6.81 k 0.1 % 0.25 W,Phantom feed resistors (matched),Mic
+"C50,C51",2,47 uF 63 V electrolytic,Phantom DC blocking,Mic
+"R52,R53",2,2.21 k 1 %,Input bias resistors,Mic
+"R54,R55",2,10 R 1 %,Series protection,Mic
+"D50-D53",4,1N4004,Phantom fault clamp to rails,Mic
+"D54,D55",2,SMBJ18CA,TVS on preamp rails,Mic
+U51,1,THAT1512S08-U,Low-noise mic preamp,Mic
+RV2,1,10 k reverse-log (C) pot,Mic gain 0-60 dB,Mic
+RGF,1,5.1 R 1 %,Gain resistor floor (sets 60 dB max),Mic
+C_RG,1,4700 uF 6.3 V,Gain-leg DC blocking,Mic
+U52,1,OPA1612AIDR,ADC driver SE -> differential,Mic
+D56,2,BAT54S,ADC input clamps,Mic
+U53,1,PCM1820IRTER,113 dB stereo ADC hardware-controlled,Mic
+U54,1,TLV3202,Clip indicator window comparator,Mic

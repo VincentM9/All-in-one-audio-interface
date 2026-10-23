@@ -1,7 +1,7 @@
-* Headphone amplifier, one channel: OPA1612 + 2x paralleled BUF634A in-loop
+* Headphone amplifier, one channel: OPA1612 + 2x paralleled LME49600 in-loop
 * Behavioural models only (no vendor models available offline). Model limits:
 *   OPA1612 : A0 = 120 dB, GBW = 40 MHz, output swings to 0.5 V of rails
-*   BUF634A : unity gain, 4 ohm open-loop Rout, 30 MHz pole,
+*   LME49600: unity gain, 4 ohm open-loop Rout, 30 MHz pole,
 *             output limited to rails - 2.5 V (conservative, see budget.py)
 * The two buffers are given +/-50 mV opposite offsets to exercise current
 * sharing through the 2.2 ohm ballast resistors.
@@ -38,7 +38,7 @@ RF out inn 2k
 CF out inn 22p
 RG inn 0 500
 
-* ---- BUF634A x2 behavioural ----
+* ---- LME49600 x2 behavioural ----
 RISO1 oa_out b1_in 47
 RISO2 oa_out b2_in 47
 * 30 MHz input pole

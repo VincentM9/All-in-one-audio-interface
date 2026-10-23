@@ -14,21 +14,22 @@ CHANNELS = 2
 
 # ---- Headphone amp output stage -----------------------------------------
 V_RAIL = 16.0           # +/- rail after the TPS7A47 / TPS7A33 LDOs
-N_BUF = 2               # BUF634A in parallel per channel
+N_BUF = 2               # LME49600 in parallel per channel
 R_BALLAST = 2.2         # ohm, one per buffer, feedback taken after them
-BUF_HEADROOM = 2.5      # V, ASSUMED BUF634A (V+)-Vout at ~180 mA, hot
-BUF_ROUT = 4.0          # ohm, ASSUMED BUF634A open-loop output resistance
-BUF_IOUT_MAX = 0.250    # A, BUF634A continuous output current rating
+BUF_HEADROOM = 2.5      # V, ASSUMED LME49600 (V+)-Vout at ~180 mA, hot
+BUF_ROUT = 4.0          # ohm, ASSUMED LME49600 open-loop output resistance
+BUF_IOUT_MAX = 0.250    # A, LME49600 continuous output current rating
 BUF_VOS_MAX = 0.100     # V, ASSUMED worst-case buffer offset mismatch
-BUF_IQ = 0.0015         # A, ASSUMED BUF634A quiescent, low-BW mode
+BUF_IQ = 0.0073         # A, LME49600 quiescent, BW pin open (datasheet)
 OPAMP_IQ = 0.0036 * 2   # A, OPA1612 per package (2 ch)
-N_OPAMP_PKGS_ON_RAILS = 3   # HP amp, DAC filter, ADC driver
+N_OPAMP_PKGS_ON_RAILS = 5   # HP amp 1, DAC I/V + diff 3, ADC driver 1
 THAT1512_IQ = 0.007     # A
-THETA_JA_BUF = 40.0     # degC/W, ASSUMED BUF634A DDA (PowerPAD) on 4-layer
+THETA_JA_BUF = 40.0     # degC/W, ASSUMED LME49600 TO-263 tab on ~4 cm2 copper
 T_AMBIENT = 40.0        # degC inside enclosure
 
 # ---- Pre-regulators ------------------------------------------------------
-V_SW = 18.5             # LT8582 SEPIC / inverting outputs
+V_SW = 18.4             # LT3757 SEPIC / Cuk outputs
+I_5VA = 0.07            # A, ASSUMED +5VA analog LDO load (DAC + ADC + LT3042), fed from +V_SW
 ETA_SW = 0.85
 V_PHANTOM = 48.0
 I_PHANTOM = 0.010       # A, worst case (one mic drawing IEC 61938 P48 max)
@@ -85,13 +86,13 @@ def main():
           f"stage diss {p_diss_ch:.2f} W (worst-case level {p_diss_worst_ch:.2f} W)")
     p_buf = p_diss_worst_ch / N_BUF + 2 * V_RAIL * BUF_IQ
     tj = T_AMBIENT + p_buf * THETA_JA_BUF
-    print(f"per BUF634A worst   {p_buf:.2f} W -> Tj ~{tj:.0f} degC "
+    print(f"per LME49600 worst  {p_buf:.2f} W -> Tj ~{tj:.0f} degC "
           f"({'OK' if tj < 125 else 'FAIL'}, abs max 150)")
     p_ldo = (V_SW - V_RAIL) * i_rail
     print(f"per LDO             {p_ldo:.2f} W ({V_SW} -> {V_RAIL} V at {i_rail*1000:.0f} mA)")
 
     hdr("Input power budget")
-    p_rails = 2 * V_SW * i_rail / ETA_SW
+    p_rails = (2 * V_SW * i_rail + V_SW * I_5VA) / ETA_SW
     p_ph = V_PHANTOM * I_PHANTOM / ETA_PHANTOM
     p_dig = P_DIGITAL / ETA_DIGITAL
     total = p_rails + p_ph + p_dig

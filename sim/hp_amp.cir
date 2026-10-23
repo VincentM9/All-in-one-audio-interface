@@ -1,0 +1,104 @@
+* Headphone amplifier, one channel: OPA1612 + 2x paralleled BUF634A in-loop
+* Behavioural models only (no vendor models available offline). Model limits:
+*   OPA1612 : A0 = 120 dB, GBW = 40 MHz, output swings to 0.5 V of rails
+*   BUF634A : unity gain, 4 ohm open-loop Rout, 30 MHz pole,
+*             output limited to rails - 2.5 V (conservative, see budget.py)
+* The two buffers are given +/-50 mV opposite offsets to exercise current
+* sharing through the 2.2 ohm ballast resistors.
+*
+* Run: ngspice -b sim/hp_amp.cir     (or: sh sim/run.sh)
+
+.param RLOAD=32
+.param VIN_RMS=1.6
+.param RAIL=16
+.param HR=2.5
+
+* ---- supplies (post-LDO +/-16 V) ----
+VP vp 0 {RAIL}
+VN vn 0 {-RAIL}
+
+* ---- source: line level after volume pot (pot at max: low source Z) ----
+VS src 0 dc 0 sin(0 {VIN_RMS*sqrt(2)} 1k) ac 1
+RSRC src in_pot 50
+* input RF filter + bias
+RIN in_pot inp 100
+CIN inp 0 470p
+RBIAS inp 0 100k
+
+* ---- OPA1612 behavioural ----
+* differential transconductance into a 1 Mohm // 3.98 nF integrator
+G1 0 n1 inp inn 1
+R1 n1 0 1e6
+C1 n1 0 3.98n
+B1 oa_int 0 V = max(min(V(n1), V(vp)-0.5), V(vn)+0.5)
+RO1 oa_int oa_out 10
+
+* ---- feedback network: gain = 1 + RF/RG = 5 (high gain) ----
+RF out inn 2k
+CF out inn 22p
+RG inn 0 500
+
+* ---- BUF634A x2 behavioural ----
+RISO1 oa_out b1_in 47
+RISO2 oa_out b2_in 47
+* 30 MHz input pole
+RP1 b1_in b1_p 1k
+CP1 b1_p 0 5.3p
+RP2 b2_in b2_p 1k
+CP2 b2_p 0 5.3p
+B2 b1_int 0 V = max(min(V(b1_p)+0.05, V(vp)-{HR}), V(vn)+{HR})
+B3 b2_int 0 V = max(min(V(b2_p)-0.05, V(vp)-{HR}), V(vn)+{HR})
+RB1O b1_int b1_out 4
+RB2O b2_int b2_out 4
+* ballast resistors -> output node (feedback taken here)
+RBAL1 b1_out m1 2.2
+VIB1 m1 out 0
+RBAL2 b2_out m2 2.2
+VIB2 m2 out 0
+
+* ---- load ----
+RL out 0 {RLOAD}
+
+.control
+set noaskquit
+echo "=== 1) Rated power: 1.6 Vrms in, gain 5, 32 ohm ==="
+tran 0.5u 6m 2m
+meas tran vout_rms RMS v(out) from=2m to=6m
+meas tran ib1_pk MAX i(VIB1) from=2m to=6m
+meas tran ib2_pk MAX i(VIB2) from=2m to=6m
+meas tran ib1_min MIN i(VIB1) from=2m to=6m
+let pout = vout_rms*vout_rms/32
+print pout
+fourier 1k v(out)
+
+echo "=== 2) Level sweep into 32 ohm (find clipping) ==="
+foreach vin 1.6 1.7 1.8 1.9 2.0
+  alterparam VIN_RMS = $vin
+  reset
+  tran 0.5u 6m 2m
+  meas tran vo RMS v(out) from=2m to=6m
+  let p = vo*vo/32
+  echo "vin_rms=$vin"
+  print p
+  fourier 1k v(out)
+end
+
+echo "=== 3) Other loads at 1.6 Vrms in ==="
+alterparam VIN_RMS = 1.6
+foreach rl 16 64 300
+  alterparam RLOAD = $rl
+  reset
+  tran 0.5u 6m 2m
+  meas tran vo RMS v(out) from=2m to=6m
+  echo "rload=$rl"
+  fourier 1k v(out)
+end
+
+echo "=== 4) Small-signal response, 32 ohm ==="
+alterparam RLOAD = 32
+reset
+ac dec 20 1 100meg
+meas ac gain_1k FIND vdb(out) AT=1k
+meas ac f_3db WHEN vdb(out)=10.98 FALL=1
+.endc
+.end

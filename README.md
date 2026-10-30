@@ -59,6 +59,14 @@ Found" and "Unknown Pin" errors, that's the missing footprint library: do
 step 1 again with the full project, or import the `aio.pretty` folder as a
 footprint library and add it to the project.
 
+**If Altium reports "Missing child-sheet …" on `aio.SchDoc`:** the five
+sheet documents (`power`, `usb`, `dac`, `hpamp`, `mic`) didn't get added to
+the project. Right-click the project → Add Existing to Project, and select
+the five `.SchDoc` files the wizard wrote next to `aio.SchDoc`. If they
+aren't there, run the Import Wizard again and select all six `.kicad_sch`
+files. Then recompile. "Cross References are incomplete due to lack of sheet
+number(s)" clears with Tools → Annotation → Number Schematic Sheets.
+
 **U203 (XMOS XU316) has no footprint on purpose:** its pin numbers are
 placeholders. Replace it with XMOS's official library part, which brings the
 correct symbol and footprint.

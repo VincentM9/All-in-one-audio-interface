@@ -273,10 +273,18 @@ class Design:
         for i, s in enumerate(self.sheets):
             self._write_sheet(s, outdir, root_uuid, i + 2)
         self._write_root(outdir, root_uuid)
-        with open(os.path.join(outdir, PROJECT + '.kicad_pro'), 'w') as f:
-            f.write('{\n  "meta": {"filename": "%s.kicad_pro", "version": 1},\n'
-                    '  "sheets": [%s]\n}\n' % (PROJECT, ', '.join(
-                        '["%s", "%s"]' % (uid('sheet', s.name), s.title) for s in self.sheets)))
+        # Update the sheet list in place: pcb.py has KiCad write the full
+        # project file, and that must survive a schematic-only regeneration.
+        import json
+        pro = os.path.join(outdir, PROJECT + '.kicad_pro')
+        cfg = {'meta': {'filename': PROJECT + '.kicad_pro', 'version': 1}}
+        if os.path.exists(pro):
+            with open(pro) as f:
+                cfg = json.load(f)
+        cfg['sheets'] = [[root_uuid, 'Root']] + [[uid('sheet', s.name), s.title] for s in self.sheets]
+        with open(pro, 'w') as f:
+            json.dump(cfg, f, indent=2)
+            f.write('\n')
 
     def _auto_flags(self):
         """Add PWR_FLAG to nets with power inputs but no power output."""
@@ -464,9 +472,9 @@ class Design:
 
     def _write_root(self, outdir, root_uuid):
         items = []
-        x, y = 30, 40
+        x, y = 30.48, 40.64          # 1200, 1600 mil: on the 100 mil grid
         for i, s in enumerate(self.sheets):
-            w, h = 60, 20
+            w, h = 60.96, 20.32
             su = uid('sheet', s.name)
             items.append(['sheet', ['at', x, y], ['size', w, h], ['fields_autoplaced'],
                           ['stroke', ['width', 0.1524], ['type', Sym('solid')]],
@@ -476,9 +484,9 @@ class Design:
                           ['property', 'Sheetfile', s.name + '.kicad_sch', ['at', x, y + h + 0.5846, 0],
                            ['effects', ['font', ['size', 1.27, 1.27]], ['justify', Sym('left'), Sym('top')]]],
                           ['instances', ['project', PROJECT, ['path', f'/{root_uuid}', ['page', str(i + 2)]]]]])
-            x += 80
+            x += 81.28
             if x > 300:
-                x, y = 30, y + 40
+                x, y = 30.48, y + 40.64
         if getattr(self, 'root_notes', ''):
             items.append(['text', self.root_notes, ['at', 30, 130, 0],
                           ['effects', ['font', ['size', 1.524, 1.524]], ['justify', Sym('left'), Sym('top')]],

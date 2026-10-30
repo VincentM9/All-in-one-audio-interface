@@ -11,6 +11,7 @@ Writes, next to the schematic in hardware/schematic/kicad/:
 Run after design.py:  python3 hardware/schematic/pcb.py
 Needs KiCad 7's pcbnew Python module and the kicad-footprints library.
 """
+import json
 import os
 import shutil
 import sys
@@ -95,7 +96,21 @@ def main():
     rect.SetEnd(pcbnew.VECTOR2I(bb.GetRight() + m, bb.GetBottom() + m))
     board.Add(rect)
     path = os.path.join(OUT, 'aio.kicad_pcb')
+    # let KiCad write a complete .kicad_pro (importers such as Altium's read
+    # it), then list the schematic sheets in it the way eeschema does
+    pro = os.path.join(OUT, 'aio.kicad_pro')
+    if os.path.exists(pro):
+        os.remove(pro)
     pcbnew.SaveBoard(path, board)
+    with open(pro) as f:
+        cfg = json.load(f)
+    cfg['sheets'] = [[uid('root'), 'Root']] + [[uid('sheet', s.name), s.title] for s in design.d.sheets]
+    with open(pro, 'w') as f:
+        json.dump(cfg, f, indent=2)
+        f.write('\n')
+    prl = os.path.join(OUT, 'aio.kicad_prl')
+    if os.path.exists(prl):
+        os.remove(prl)    # per-user UI state, not part of the design
     print(f'wrote {path}: {len(board.GetFootprints())} footprints, {len(nets)} nets; '
           f'{len(os.listdir(lib_out))} footprints in aio.pretty')
     if skipped:

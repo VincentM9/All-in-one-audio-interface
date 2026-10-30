@@ -141,7 +141,7 @@ is reachable at about −2 dBFS with the pot at max. Low gain (×1.5) gives
 
 ## 5. Microphone input with 48 V phantom power
 
-**Connector J501:** Neutrik NCJ6FI-S combo. XLR pin 1 goes to signal
+**Connector J501:** Neutrik NCJ6FI-H combo. XLR pin 1 goes to signal
 ground, the shell to chassis. The TRS part is unused in this revision.
 
 **Phantom supply (IEC 61938 P48):**
@@ -229,8 +229,8 @@ far less.
   unused. DISCH and VBUS_VS_DISCH have current-limiting resistors.
 - **D101/D102** SS54 Schottky OR between USB and the DC jack. SMBJ16CA TVS
   on VIN.
-- **U101 LT3757 SEPIC → +18.4 V**, **U102 LT3757 Cuk → −18.4 V**, both with
-  coupled 22 µH inductors, 60 V FETs, 300 kHz, and 30 mΩ sense resistors
+- **U101 LT3757 SEPIC → +18.4 V**, **U102 LT3757 Cuk → −18.4 V**, each with
+  two separate 22 µH inductors (Bourns SRR1260), 60 V FETs, 300 kHz, and 30 mΩ sense resistors
   (3.7 A limit). FBX regulates to +1.6 V / −0.8 V (datasheet). Each output
   has a 1 µH + 22 µF + 100 µF post-filter. They work over the whole 5–15 V
   input range; switch stress is Vin + Vout ≤ 33.4 V.

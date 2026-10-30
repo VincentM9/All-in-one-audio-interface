@@ -12,8 +12,8 @@
   )
   (lib_symbols)
   (sheet
-    (at 30 40)
-    (size 60 20)
+    (at 30.48 40.64)
+    (size 60.96 20.32)
     (fields_autoplaced)
     (stroke
       (width 0.1524)
@@ -24,7 +24,7 @@
     )
     (uuid "7294416d-b4b0-5f2a-a94c-6496e5b26703")
     (property "Sheetname" "Power supplies"
-      (at 30 39.2884 0)
+      (at 30.48 39.9284 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -33,7 +33,7 @@
       )
     )
     (property "Sheetfile" "power.kicad_sch"
-      (at 30 60.5846 0)
+      (at 30.48 61.5446 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -50,8 +50,8 @@
     )
   )
   (sheet
-    (at 110 40)
-    (size 60 20)
+    (at 111.76 40.64)
+    (size 60.96 20.32)
     (fields_autoplaced)
     (stroke
       (width 0.1524)
@@ -62,7 +62,7 @@
     )
     (uuid "58c009a2-b8f2-5a2c-8c16-49f6472504f5")
     (property "Sheetname" "USB-C, PD sink, XMOS, clocks"
-      (at 110 39.2884 0)
+      (at 111.76 39.9284 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -71,7 +71,7 @@
       )
     )
     (property "Sheetfile" "usb.kicad_sch"
-      (at 110 60.5846 0)
+      (at 111.76 61.5446 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -88,8 +88,8 @@
     )
   )
   (sheet
-    (at 190 40)
-    (size 60 20)
+    (at 193.04 40.64)
+    (size 60.96 20.32)
     (fields_autoplaced)
     (stroke
       (width 0.1524)
@@ -100,7 +100,7 @@
     )
     (uuid "bd574d4d-a0be-5e33-91fd-d2d198603658")
     (property "Sheetname" "DAC, I/V, volume"
-      (at 190 39.2884 0)
+      (at 193.04 39.9284 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -109,7 +109,7 @@
       )
     )
     (property "Sheetfile" "dac.kicad_sch"
-      (at 190 60.5846 0)
+      (at 193.04 61.5446 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -126,8 +126,8 @@
     )
   )
   (sheet
-    (at 270 40)
-    (size 60 20)
+    (at 274.32 40.64)
+    (size 60.96 20.32)
     (fields_autoplaced)
     (stroke
       (width 0.1524)
@@ -138,7 +138,7 @@
     )
     (uuid "86ac2cd8-f42d-55a7-ba55-01c8b833d345")
     (property "Sheetname" "Headphone amplifier and protection"
-      (at 270 39.2884 0)
+      (at 274.32 39.9284 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -147,7 +147,7 @@
       )
     )
     (property "Sheetfile" "hpamp.kicad_sch"
-      (at 270 60.5846 0)
+      (at 274.32 61.5446 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -164,8 +164,8 @@
     )
   )
   (sheet
-    (at 30 80)
-    (size 60 20)
+    (at 30.48 81.28)
+    (size 60.96 20.32)
     (fields_autoplaced)
     (stroke
       (width 0.1524)
@@ -176,7 +176,7 @@
     )
     (uuid "16886129-7460-5eee-bad7-64073a3c3f32")
     (property "Sheetname" "Microphone input, phantom power, ADC"
-      (at 30 79.2884 0)
+      (at 30.48 80.5684 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -185,7 +185,7 @@
       )
     )
     (property "Sheetfile" "mic.kicad_sch"
-      (at 30 100.5846 0)
+      (at 30.48 102.1846 0)
       (effects
         (font
           (size 1.27 1.27)

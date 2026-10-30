@@ -26,7 +26,9 @@ from kigen import uid  # noqa: E402
 FPDIR = os.environ.get('KICAD_FOOTPRINT_DIR', '/usr/share/kicad/footprints')
 OUT = design.OUT
 GAP = 2.0          # mm between parts
-ROW_W = 160.0      # mm, width of each sheet's block
+BLOCK_W = 70.0     # mm, max width of one sheet's cluster
+BOARD_W = 300.0    # mm, max width of the packed clusters
+BLOCK_GAP = 8.0    # mm between clusters
 
 
 def mm(v):
@@ -58,9 +60,11 @@ def main():
     os.makedirs(lib_out)
     root = uid('root')
     skipped = []
-    x0, y_block = 0.0, 0.0
+    # 1) pack each sheet's parts into its own block (parts in schematic
+    #    order, so an IC sits next to the passives that belong to it)
+    blocks = []
     for s in design.d.sheets:
-        x, y, rowh = 0.0, y_block, 0.0
+        placed, x, y, rowh = [], 0.0, 0.0, 0.0
         for p in s.parts:
             if not p.fp:
                 skipped.append(p.ref)
@@ -78,17 +82,33 @@ def main():
             board.Add(f)
             bb = f.GetBoundingBox(False, False)
             w, h = pcbnew.ToMM(bb.GetWidth()), pcbnew.ToMM(bb.GetHeight())
-            if x + w > ROW_W and x > 0:
+            if x + w > BLOCK_W and x > 0:
                 x, y, rowh = 0.0, y + rowh + GAP, 0.0
-            # move so the bounding box's top-left lands on (x, y)
-            dx = mm(x0 + x) - bb.GetX()
-            dy = mm(y) - bb.GetY()
-            f.Move(pcbnew.VECTOR2I(dx, dy))
+            placed.append((f, x - pcbnew.ToMM(bb.GetX()), y - pcbnew.ToMM(bb.GetY())))
             x += w + GAP
             rowh = max(rowh, h)
-        y_block = y + rowh + 10.0
+        width = max([pcbnew.ToMM(f.GetBoundingBox(False, False).GetWidth()) + dx + pcbnew.ToMM(f.GetBoundingBox(False, False).GetX())
+                     for f, dx, dy in placed] + [10])
+        blocks.append((s, placed, width, y + rowh))
+    # 2) shelf-pack the blocks, power sections first, audio last, each with
+    #    its sheet title on the User.Comments layer
+    bx, by, shelf = 0.0, 0.0, 0.0
+    for s, placed, w, h in blocks:
+        if bx + w > BOARD_W and bx > 0:
+            bx, by, shelf = 0.0, by + shelf + BLOCK_GAP, 0.0
+        for f, dx, dy in placed:
+            f.Move(pcbnew.VECTOR2I(mm(bx + dx), mm(by + 4 + dy)))
+        t = pcbnew.PCB_TEXT(board)
+        t.SetText(s.title)
+        t.SetLayer(pcbnew.Cmts_User)
+        t.SetTextSize(pcbnew.VECTOR2I(mm(1.5), mm(1.5)))
+        t.SetHorizJustify(pcbnew.GR_TEXT_H_ALIGN_LEFT)
+        t.SetPosition(pcbnew.VECTOR2I(mm(bx), mm(by + 1)))
+        board.Add(t)
+        bx += w + BLOCK_GAP
+        shelf = max(shelf, h + 4)
     # board outline around everything
-    bb = board.ComputeBoundingBox(True)
+    bb = board.ComputeBoundingBox(False)   # all items, not edges only
     m = mm(5)
     rect = pcbnew.PCB_SHAPE(board, pcbnew.SHAPE_T_RECT)
     rect.SetLayer(pcbnew.Edge_Cuts)

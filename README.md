@@ -37,35 +37,40 @@ idealised models, so its THD figures don't mean anything.
 
 `hardware/schematic/kicad/` is a complete KiCad project:
 
-- `aio.kicad_pro` / `aio.kicad_sch`: a root sheet plus five sheets (power,
-  USB/XMOS/clocks, DAC, headphone amp, mic/ADC), 357 parts. A PDF is in
-  `hardware/schematic/aio-schematic.pdf`.
-- `aio.kicad_pcb`: a starting board with every footprint placed (grouped by
-  sheet, unrouted) and every pad on its net.
+- `aio.kicad_pro` / `aio.kicad_sch`: a top sheet plus 14 A3 sheets, one per
+  function (input + SEPIC, Cuk, phantom supply, LDOs, digital supplies,
+  USB-C/PD, XMOS, clocks, DAC, I/V stage, headphone amp, protection, mic
+  input, ADC), 357 parts. A PDF is in `hardware/schematic/aio-schematic.pdf`.
+- `aio.kicad_pcb`: a **parts-staging board**. Every footprint is on its net,
+  grouped into one labelled cluster per sheet, inside an outline that just
+  encloses them. It is not a placement or a board size; see "Layout" below.
 - `aio.pretty/`: copies of all 45 footprints the design uses.
 
 **Opening it in Altium Designer (24 or newer):**
 
 1. File → Import Wizard → KiCad Design Files, and select
-   `hardware/schematic/kicad/aio.kicad_pro`. Altium imports the schematic
-   sheets *and* `aio.kicad_pcb`, so you get a PcbDoc with all footprints
-   and their connections. Each sheet becomes a `.SchDoc`.
-2. In the imported PcbDoc, run Design → Make PCB Library, and add the
-   resulting `.PcbLib` to the project. Schematic updates (Design → Update
-   PCB Document) can then find every footprint.
+   `hardware/schematic/kicad/aio.kicad_pro`. Altium imports the sheets and
+   `aio.kicad_pcb` (a PcbDoc with all footprints and connections).
+2. **Remove `aio.SchDoc` (the top sheet) from the Altium project**, and set
+   Project → Project Options → Options → Net Identifier Scope to **Global**.
+   The top sheet only holds sheet symbols, and Altium's importer doesn't link
+   them to the imported sheets ("Missing child-sheet" errors). Every
+   connection between sheets is a global label or power net, so a flat
+   project with global scope is electrically identical: each net name in
+   this design is unique, so nothing merges that shouldn't.
+3. Tools → Annotation → Number Schematic Sheets (clears "Cross References
+   are incomplete due to lack of sheet number(s)").
+4. In the imported PcbDoc, run Design → Make PCB Library and add the PcbLib
+   to the project, so Update PCB Document can find every footprint.
 
-If you imported only the schematic and got an ECO full of "Footprint Not
-Found" and "Unknown Pin" errors, that's the missing footprint library: do
-step 1 again with the full project, or import the `aio.pretty` folder as a
-footprint library and add it to the project.
-
-**If Altium reports "Missing child-sheet …" on `aio.SchDoc`:** the five
-sheet documents (`power`, `usb`, `dac`, `hpamp`, `mic`) didn't get added to
-the project. Right-click the project → Add Existing to Project, and select
-the five `.SchDoc` files the wizard wrote next to `aio.SchDoc`. If they
-aren't there, run the Import Wizard again and select all six `.kicad_sch`
-files. Then recompile. "Cross References are incomplete due to lack of sheet
-number(s)" clears with Tools → Annotation → Number Schematic Sheets.
+**Layout:** don't autoroute the staging board. It mixes the switching
+converters with the audio stages and routes power through signal-width
+tracks. Place by hand: switchers in one corner away from the analog section,
+each IC's decoupling right at its pins, LME49600 tabs and LDO pads on large
+copper areas, a solid ground plane on layer 2 of a 4-layer stack (Sig / GND
+/ PWR / Sig), headphone and XLR jacks at the board edge. Then set the real
+board outline, and route power, ground and the audio paths by hand before
+using the autorouter, if at all, for the digital nets.
 
 **U203 (XMOS XU316) has no footprint on purpose:** its pin numbers are
 placeholders. Replace it with XMOS's official library part, which brings the

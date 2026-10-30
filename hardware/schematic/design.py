@@ -34,20 +34,16 @@ SOD123 = 'Diode_SMD:D_SOD-123'
 LED0805 = 'LED_SMD:LED_0805_2012Metric'
 FILM = 'Capacitor_THT:C_Rect_L18.0mm_W8.0mm_P15.00mm_FKS3_FKP3'
 
-d = Design('All-in-one audio interface: USB DAC/amp + phantom-powered mic input',
+d = Design('All-in-one audio interface',
            rev='A', date='2026-10-23', company='VincentM9')
 
 # =============================================================== POWER ====
-P = d.sheet('power', 'Power supplies', 1, notes=(
-    'POWER NOTES\n'
-    '- VIN = USB-C VBUS (after STUSB4500 load switch) OR 12-15 V DC jack, Schottky OR.\n'
-    '- U101 LT3757 SEPIC -> +18V4, U102 LT3757 Cuk/inverting -> -18V4, U103 LT3757 boost -> +50V (phantom).\n'
-    '  LT3757: FBX = +1.6 V / -0.8 V, RT 41.2k = 300 kHz, SENSE limit 110 mV (datasheet).\n'
-    '- U104 TPS7A4701 ANY-OUT +16.0 V (6.4+6.4+1.6+0.2 grounded), U106 TPS7A4701 +5.0 V (3.2+0.4).\n'
-    '- U105 TPS7A3301 -16.1 V: Vout = -1.176 V x (1 + 127k/10k).  Pad and EN per datasheet (pad = GND, EN = IN).\n'
-    '- U107 LT3042 +3V3A clean (oscillators, converters). U108/U109 TPS62130 bucks -> +3V3D / +0V9 (XMOS core).\n'
-    '- Q104 capacitance multiplier: +50V -> ~+48.6 V phantom supply (4.7k / 100u base filter).\n'
-    '- VERIFY: TPS62130 FSW pin sense (GND = high freq?), MOSFET/inductor choices, LT3757 compensation.'))
+P = d.sheet('pwr_input', 'Power input and +18V4 SEPIC converter', 1, notes=(
+    'POWER INPUT / +18V4\n'
+    '- VIN = USB-C VBUS (after the STUSB4500 load switch) OR 12-15 V DC jack, Schottky OR, TVS.\n'
+    '- U101 LT3757 SEPIC -> +18V4. FBX = +1.6 V x (1 + 105k/10k). RT 41.2k = 300 kHz.\n'
+    '  Current limit 110 mV / 30 mR = 3.7 A. Feedback is taken before the 1 uH post-filter.\n'
+    '- VERIFY: LT3757 compensation, FET and inductor choices (simulate in LTspice).'))
 
 P.add('Connector:Barrel_Jack', '12-15V DC', {'1': 'DCIN', '2': 'GND'}, fp='Connector_BarrelJack:BarrelJack_Horizontal', mpn='PJ-102AH')
 P.add('Device:D_Schottky', 'SS54', {'1': 'VIN', '2': 'VBUS_SW'}, fp=SMB, rot=0, mpn='SS54')
@@ -96,6 +92,10 @@ P.C('22u 50V', '+18V4', 'GND', fp=C1210)
 P.CP('100u 35V', '+18V4', 'GND', fp=CP8)
 
 # ---- U102 Cuk / inverting -18V4 ----
+P = d.sheet('pwr_neg', '-18V4 Cuk converter', 1, notes=(
+    '-18V4\n'
+    '- U102 LT3757 Cuk (inverting) -> -18V4. FBX = -0.8 V x (1 + 110k/4.99k).\n'
+    '- Diode anode at the switch-side node X2, cathode to GND; output inductor from X2 to -18V4_SW.'))
 lt3757(P, '102', '249k', '41.2k', '30m', {})
 P.add('Device:Q_NMOS_GDS', 'IPD25N06S4L-30', {'1': 'U102_GATE', '2': 'SW2', '3': 'U102_SENSE'}, fp=DPAK,
       mpn='IPD25N06S4L-30')
@@ -113,6 +113,10 @@ P.C('22u 50V', 'GND', '-18V4', fp=C1210)
 P.CP('100u 35V', 'GND', '-18V4', fp=CP8)
 
 # ---- U103 boost +50V for phantom ----
+P = d.sheet('pwr_phantom', '+50V boost and +48V phantom supply', 1, notes=(
+    'PHANTOM SUPPLY\n'
+    '- U103 LT3757 boost -> +50V (FBX = 1.6 V x (1 + 301k/10k)), 100 V FET and diode.\n'
+    '- Q104 capacitance multiplier -> +48V (about 49.3 V open-circuit, 48.6 V at 15 mA).'))
 lt3757(P, '103', '249k', '41.2k', '100m', {})
 P.add('Device:Q_NMOS_GDS', 'IPD33CN10N', {'1': 'U103_GATE', '2': 'SW3', '3': 'U103_SENSE'}, fp=DPAK,
       mpn='IPD33CN10N G', desc='100 V N-MOSFET')
@@ -131,6 +135,12 @@ P.CP('100u 63V', 'CMUL_B', 'GND', fp=CP10)
 P.CP('47u 63V', '+48V', 'GND', fp=CP10)
 
 # ---- LDOs ----
+P = d.sheet('pwr_ldo', 'Linear regulators: +-16V, +5VA, +3V3A', 1, notes=(
+    'LINEAR REGULATORS\n'
+    '- U104 TPS7A4701 ANY-OUT +16.0 V (6.4+6.4+1.6+0.2 grounded). U106 TPS7A4701 +5.0 V (3.2+0.4).\n'
+    '- U105 TPS7A3301 -16.1 V = -1.176 V x (1 + 127k/10k). Pad = GND, EN = IN (datasheet).\n'
+    '- U107 LT3042 +3V3A (100 uA x 33.2k) for oscillators and converters.\n'
+    '- Put every thermal pad on copper pour; the +-16 V LDOs dissipate ~0.7 W at full power.'))
 anyout = {'15': '+18V4', '16': '+18V4', '13': '+18V4', '1': '+16V', '20': '+16V', '3': '+16V',
           '7': 'GND', '21': 'GND', '14': 'U104_NR', '4': 'GND', '5': 'GND', '8': 'GND', '11': 'GND'}
 P.add('Regulator_Linear:TPS7A4701xRGW', 'TPS7A4701 +16V', anyout, mpn='TPS7A4701RGWR')
@@ -167,6 +177,12 @@ P.R('10k', 'U107_PGFB', 'GND')
 P.C('4.7u', '+5VA', 'GND', fp=C0805)
 P.C('10u', '+3V3A', 'GND', fp=C0805)
 
+P = d.sheet('pwr_digital', 'Digital supplies: +3V3D, +0V9, +1V8', 1, notes=(
+    'DIGITAL SUPPLIES\n'
+    '- U108 / U109 TPS62130 bucks from VIN -> +3V3D and +0V9 (XMOS core). Vout = 0.8 V x (1 + R1/100k).\n'
+    '- U110 TLV75518 -> +1V8 (XMOS USB PHY).\n'
+    '- VERIFY: TPS62130 FSW pin sense (GND = high frequency?).'))
+
 for tag, net, r1, sw in (('108', '+3V3D', '316k', 'SW_3V3'), ('109', '+0V9', '12.4k', 'SW_0V9')):
     P.add('Regulator_Switching:TPS62130', 'TPS62130',
           {'10': 'VIN', '11': 'VIN', '12': 'VIN', '13': 'VIN', '1': sw, '2': sw, '3': sw, '14': net,
@@ -186,15 +202,11 @@ P.C('1u', '+3V3D', 'GND')
 P.C('1u', '+1V8', 'GND')
 
 # ======================================================== USB / XMOS =======
-U = d.sheet('usb', 'USB-C, PD sink, XMOS, clocks', 2, notes=(
-    'USB / XMOS NOTES\n'
-    '- U203 XU316-1024-QF60B symbol has FUNCTION names only. Pin numbers are placeholders (?nn):\n'
-    '  replace with XMOS official Altium library part before PCB. Assign I2S/GPIO to ports in the .xn file.\n'
-    '  Known from datasheet: USB_DM=28, USB_DP=29, USB_VDD33=30, USB_VDD18=31. Core VDD = 0.9 V (0.855-0.945).\n'
-    '- QSPI boot flash on the X0D01/X0D04-07/X0D10 pins (check boot-mode straps in the datasheet).\n'
-    '- U202 STUSB4500: NVM PDO3=15V/1.5A, PDO2=12V/1.5A, PDO1=5V. VBUS_EN_SNK drives load switch Q201.\n'
-    '- MCLK: X202 24.576 MHz / X203 22.5792 MHz selected by U205 (S=0 -> 48k family).\n'
-    '- J202 debug header pinout is a placeholder: match it to your XTAG adapter.'))
+U = d.sheet('usb_pd', 'USB-C connector and PD sink', 2, notes=(
+    'USB-C / PD\n'
+    '- U202 STUSB4500: NVM PDO3 = 15V/1.5A, PDO2 = 12V/1.5A, PDO1 = 5V. VBUS_EN_SNK drives load switch Q201.\n'
+    '- VSYS grounded (unused). DISCH and VBUS_VS_DISCH have current-limiting resistors.\n'
+    '- U201 ESD protection on D+/D-/CC1/CC2. Shield to chassis through 1M || 4.7n.'))
 
 U.add('Connector:USB_C_Receptacle_USB2.0_16P', 'USB-C',
       {'A4': 'VBUS', 'A9': 'VBUS', 'B4': 'VBUS', 'B9': 'VBUS', 'A5': 'CC1', 'B5': 'CC2',
@@ -222,6 +234,14 @@ U.add('Device:Q_PMOS_GSD', 'AO3407A', {'1': 'PD_EN_N', '2': 'VBUS', '3': 'VBUS_S
 U.R('100k', 'VBUS', 'PD_EN_N')
 U.R('2.2k', 'I2C_SCL', '+3V3D')
 U.R('2.2k', 'I2C_SDA', '+3V3D')
+
+U = d.sheet('xmos', 'XMOS XU316, boot flash, debug', 2, notes=(
+    'XMOS\n'
+    '- U203 XU316-1024-QF60B: FUNCTION names only. Pin numbers are placeholders (?nn) and there is no footprint.\n'
+    '  Replace it with the official XMOS library part before layout; assign I2S/GPIO to ports in the .xn file.\n'
+    '  From the datasheet: USB_DM = 28, USB_DP = 29, USB_VDD33 = 30, USB_VDD18 = 31; core 0.855-0.945 V.\n'
+    '- QSPI boot flash on X0D01 / X0D04-07 / X0D10 (check the boot-mode straps in the datasheet).\n'
+    '- J202 debug header pinout is a placeholder: match it to your XTAG adapter.'))
 
 xmos_pins_left = [
     ('?01', 'USB_DP', 'bidirectional'), ('?02', 'USB_DM', 'bidirectional'),
@@ -278,6 +298,10 @@ U.add('Memory_Flash:W25Q32JVSS', 'W25Q32JVSS',
 U.R('10k', 'QSPI_CS_N', '+3V3D')
 U.C('100n', '+3V3D', 'GND')
 # audio master clocks
+U = d.sheet('clocks', 'Audio master clocks, I2S, LEDs', 2, notes=(
+    'CLOCKS / I2S\n'
+    '- X202 24.576 MHz (48 kHz family) and X203 22.5792 MHz (44.1 kHz family), selected by U205 (MCLK_SEL = 0 -> 48k).\n'
+    '- Mux output fans out through 22R to XMOS, DAC and ADC. XMOS drives BCLK / LRCK / DOUT through 33R.'))
 U.add('Oscillator:ASE-xxxMHz', '24.576MHz', {'1': '+3V3A', '2': 'GND', '3': 'MCLK_48', '4': '+3V3A'},
       mpn='NZ2520SDA-24.576M (low phase noise)')
 U.add('Oscillator:ASE-xxxMHz', '22.5792MHz', {'1': '+3V3A', '2': 'GND', '3': 'MCLK_44', '4': '+3V3A'},
@@ -300,7 +324,7 @@ U.R('330R', 'LED_ERR', 'LED_ERR_A')
 U.add('Device:LED', 'red', {'1': 'GND', '2': 'LED_ERR_A'}, fp=LED0805)
 
 # =============================================================== DAC ======
-D = d.sheet('dac', 'DAC, I/V, volume', 3, notes=(
+D = d.sheet('dac', 'DAC (PCM1794A)', 3, notes=(
     'DAC NOTES\n'
     '- U301 PCM1794A (hardware control). Output 7.8 mA p-p per pin around ~-6.2 mA.\n'
     '- I/V 750R: 5.85 V p-p per leg around +4.65 V. Diff stage gain 0.5 -> ~2.07 Vrms single-ended.\n'
@@ -328,6 +352,11 @@ D.R('10k', 'DAC_FMT1', 'GND', desc='format strap - verify')
 D.R('10k', 'DAC_FMT1', '+3V3A', dnp=True, desc='format strap - verify')
 
 OPA = 'Amplifier_Operational:OPA1612AxD'
+D = d.sheet('dac_iv', 'DAC I/V stage, output filter, volume', 3, notes=(
+    'I/V AND OUTPUT\n'
+    '- I/V 750R || 2.2n per leg: 5.85 V p-p around +4.65 V. Diff stage gain 0.5 -> ~2.07 Vrms single-ended.\n'
+    '- Diff stage inputs are crossed (P from IOUT-, N from IOUT+) so the output is not inverted.\n'
+    '- 4.7 uF film caps block DC into the volume pot. Use 0.1 % resistors in the diff stage.'))
 for ch in ('L', 'R'):
     D.add(OPA, 'OPA1612', {'2': 'I%s_P' % ch, '3': 'GND', '1': 'V%s_P' % ch,
                            '6': 'I%s_N' % ch, '5': 'GND', '7': 'V%s_N' % ch,
@@ -355,7 +384,7 @@ D.add('Device:R_Potentiometer_Dual', '10k log dual',
       fp='Potentiometer_THT:Potentiometer_Alps_RK097_Dual_Horizontal', mpn='ALPS RK097 dual 10k log (A)')
 
 # =========================================================== HP AMP =======
-H = d.sheet('hpamp', 'Headphone amplifier and protection', 4, notes=(
+H = d.sheet('hpamp', 'Headphone amplifier', 4, notes=(
     'HEADPHONE AMP NOTES\n'
     '- Per channel: OPA1612 + 2x LME49600 inside the loop, 2.2R ballast each, feedback from OUT_x.\n'
     '- Gain: 1 + 2.00k / (4.02k || 576R) = 4.97 (SW401 closed, High) or 1.50 (open, Low).\n'
@@ -392,6 +421,12 @@ for ch in ('L', 'R'):
 H.CP('220u 25V', '+16V', 'GND', fp=CP10)
 H.CP('220u 25V', 'GND', '-16V', fp=CP10)
 
+H = d.sheet('hp_protect', 'Output relay, protection, headphone jacks', 4, notes=(
+    'PROTECTION\n'
+    '- Relay K401 (NO contacts) connects the jacks only when RDRV is high: ~2-3 s after power-up (220k / 10u),\n'
+    '  released at once if +18V4 sags (U406A), -16V collapses (U406B), either output has DC beyond about\n'
+    '  +-0.6 V (Q402 / Q403), or the XMOS pulls HP_EN low (BAT54 D402).'))
+
 H.add('Relay:G6K-2', 'G6K-2F-Y 3VDC',
       {'1': '+3V3D', '8': 'RLY_DRV', '3': 'OUT_L', '4': 'HPJ_L', '6': 'OUT_R', '5': 'HPJ_R'},
       fp='Relay_SMD:Relay_DPDT_Omron_G6K-2F-Y', mpn='G6K-2F-Y DC3')
@@ -426,7 +461,7 @@ H.add('Connector_Audio:AudioJack3', '3.5mm', {'T': 'HPJ_L', 'R': 'HPJ_R', 'S': '
       fp='Connector_Audio:Jack_3.5mm_CUI_SJ1-3533NG_Horizontal', mpn='SJ1-3533NG')
 
 # ============================================================== MIC =======
-M = d.sheet('mic', 'Microphone input, phantom power, ADC', 5, notes=(
+M = d.sheet('mic', 'Microphone input, phantom feed, preamp', 5, notes=(
     'MIC INPUT NOTES\n'
     '- P48 phantom per IEC 61938: 6.81k 0.1 % matched feed pair, open-circuit ~48.6 V. SW501 switches it.\n'
     '- Hot-plug protection: 10R series + 1N4004 clamps to the +-16V rails + SMBJ18CA TVS on the rails.\n'
@@ -477,6 +512,14 @@ M.R('5.1R', 'RG_A', 'RG_C')
 M.add('Device:R_Potentiometer', '10k rev-log (C)', {'1': 'RG_C', '2': 'RG_D', '3': 'RG_D'},
       fp='Potentiometer_THT:Potentiometer_Alps_RK097_Single_Horizontal', mpn='10k C-taper')
 M.CP('4700u 6.3V', 'RG_D', 'RG_B', fp=CP10, desc='gain-leg DC block')
+M = d.sheet('adc', 'ADC driver and ADC (CS5361)', 5, notes=(
+    'ADC\n'
+    '- U502 makes a differential signal: 1 Vrms at PRE_OUT = 2 Vrms differential = 0 dBFS on the CS5361\n'
+    '  (full scale = 1.13 x VA = 5.65 V p-p differential at VA = 5 V).\n'
+    '- U503 CS5361: slave mode, I2S, HPF on. M0/M1 speed mode set by XMOS per sample rate.\n'
+    '  Unused right channel tied to VQ. OVFL drives the clip LED.\n'
+    '- VERIFY: CS5361 FILT+/VQ capacitor values and input RC against the datasheet.'))
+
 M.add(OPA, 'OPA1612', {'3': 'PRE_OUT', '2': 'DRV_P', '1': 'DRV_P', '5': 'GND', '6': 'INV_N', '7': 'DRV_N',
                        '8': '+16V_MIC', '4': '-16V_MIC'}, fp=SO8, mpn='OPA1612AIDR')
 M.C('100n', '+16V_MIC', 'GND')

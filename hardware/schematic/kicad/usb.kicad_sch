@@ -2562,7 +2562,7 @@
           )
         )
       )
-      (property "Footprint" "Package_DFN_QFN:QFN-60-1EP_7x7mm_P0.4mm"
+      (property "Footprint" ""
         (at 0 0 0)
         (effects
           (font
@@ -5403,7 +5403,7 @@
         )
       )
     )
-    (property "Footprint" ""
+    (property "Footprint" "Package_SON:USON-10_2.5x1.0mm_P0.5mm"
       (at 144.78 38.1 0)
       (effects
         (font
@@ -5570,7 +5570,7 @@
         )
       )
     )
-    (property "Footprint" ""
+    (property "Footprint" "Package_DFN_QFN:QFN-24-1EP_4x4mm_P0.5mm_EP2.7x2.7mm"
       (at 193.04 63.5 0)
       (effects
         (font
@@ -6946,7 +6946,7 @@
         )
       )
     )
-    (property "Footprint" "Package_DFN_QFN:QFN-60-1EP_7x7mm_P0.4mm"
+    (property "Footprint" ""
       (at 50.8 152.4 0)
       (effects
         (font
@@ -9029,7 +9029,7 @@
         )
       )
     )
-    (property "Footprint" ""
+    (property "Footprint" "Oscillator:Oscillator_SMD_Abracon_ASE-4Pin_3.2x2.5mm"
       (at 510.54 121.92 0)
       (effects
         (font
@@ -9387,7 +9387,7 @@
         )
       )
     )
-    (property "Footprint" ""
+    (property "Footprint" "Package_SO:SOIC-8_5.23x5.23mm_P1.27mm"
       (at 43.18 231.14 0)
       (effects
         (font
@@ -9755,7 +9755,7 @@
         )
       )
     )
-    (property "Footprint" ""
+    (property "Footprint" "Oscillator:Oscillator_SMD_Abracon_ASE-4Pin_3.2x2.5mm"
       (at 137.16 226.06 0)
       (effects
         (font
@@ -9895,7 +9895,7 @@
         )
       )
     )
-    (property "Footprint" ""
+    (property "Footprint" "Oscillator:Oscillator_SMD_Abracon_ASE-4Pin_3.2x2.5mm"
       (at 175.26 226.06 0)
       (effects
         (font

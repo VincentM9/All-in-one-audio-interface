@@ -97,6 +97,34 @@ def main():
         if 'power_in' in types and 'power_out' not in types and net not in flagged:
             errors.append(f'power input without source/PWR_FLAG on {net}')
 
+    # 5. PCB (if generated): every pad carries the intended net
+    pcb = os.path.join(design.OUT, 'aio.kicad_pcb')
+    if os.path.exists(pcb):
+        try:
+            import pcbnew
+        except ImportError:
+            warnings.append('pcbnew module missing; PCB not checked')
+        else:
+            board = pcbnew.LoadBoard(pcb)
+            pads = {}
+            for f in board.GetFootprints():
+                for pad in f.Pads():
+                    pads.setdefault((f.GetReference(), pad.GetNumber()), set()).add(pad.GetNetname())
+            parts = {p.ref: p for s in d.sheets for p in s.parts}
+            for ref, p in parts.items():
+                if not p.fp:
+                    continue
+                for num, net in p.nets.items():
+                    if pads.get((ref, num)) != {net}:
+                        errors.append(f'PCB {ref} pad {num}: expected {net}, got {pads.get((ref, num))}')
+            for (ref, num), ns in pads.items():
+                if ref in parts and num not in parts[ref].nets and ns - {''}:
+                    errors.append(f'PCB {ref} pad {num}: unexpected net {ns}')
+            missing = {r for r, p in parts.items() if p.fp} - {f.GetReference() for f in board.GetFootprints()}
+            if missing:
+                errors.append(f'PCB missing footprints: {sorted(missing)}')
+            print(f'PCB: {len(board.GetFootprints())} footprints, {len(pads)} pads checked')
+
     n_pins = sum(len(v) for v in want.values())
     print(f'{len(refs)} parts, {len(want)} nets, {n_pins} connected pins checked')
     for w in warnings:

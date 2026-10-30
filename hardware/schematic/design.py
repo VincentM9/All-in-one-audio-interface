@@ -82,8 +82,8 @@ def lt3757(sheet, tag, n_uvlo_top, rt, rsense, extra):
 lt3757(P, '101', '249k', '41.2k', '30m', {})
 P.add('Device:Q_NMOS_GDS', 'IPD25N06S4L-30', {'1': 'U101_GATE', '2': 'SW1', '3': 'U101_SENSE'}, fp=DPAK,
       mpn='IPD25N06S4L-30', desc='60 V logic-level N-MOSFET')
-P.add('Device:L_Coupled', '2x22u 1:1', {'1': 'VIN', '2': 'SW1', '3': 'GND', '4': 'X1'},
-      fp='Inductor_SMD:L_Coupled_Coilcraft_MSD1278', mpn='MSD1278-223MLB', desc='coupled SEPIC inductor')
+P.L('22u 4A', 'VIN', 'SW1', mpn='SRR1260-220M', desc='SEPIC input inductor')
+P.L('22u 4A', 'GND', 'X1', mpn='SRR1260-220M', desc='SEPIC output inductor')
 P.C('4.7u 50V', 'SW1', 'X1', fp=C1210, desc='SEPIC coupling cap')
 P.add('Device:D_Schottky', 'SS36', {'1': '+18V4_SW', '2': 'X1'}, fp=SMB, mpn='SS36')
 P.R('105k', '+18V4_SW', 'U101_FBX')
@@ -99,8 +99,8 @@ P.CP('100u 35V', '+18V4', 'GND', fp=CP8)
 lt3757(P, '102', '249k', '41.2k', '30m', {})
 P.add('Device:Q_NMOS_GDS', 'IPD25N06S4L-30', {'1': 'U102_GATE', '2': 'SW2', '3': 'U102_SENSE'}, fp=DPAK,
       mpn='IPD25N06S4L-30')
-P.add('Device:L_Coupled', '2x22u 1:1', {'1': 'VIN', '2': 'SW2', '3': '-18V4_SW', '4': 'X2'},
-      fp='Inductor_SMD:L_Coupled_Coilcraft_MSD1278', mpn='MSD1278-223MLB', desc='coupled Cuk inductor')
+P.L('22u 4A', 'VIN', 'SW2', mpn='SRR1260-220M', desc='Cuk input inductor')
+P.L('22u 4A', '-18V4_SW', 'X2', mpn='SRR1260-220M', desc='Cuk output inductor')
 P.C('4.7u 50V', 'SW2', 'X2', fp=C1210, desc='Cuk coupling cap')
 P.add('Device:D_Schottky', 'SS36', {'1': 'GND', '2': 'X2'}, fp=SMB, mpn='SS36')
 P.R('110k', '-18V4_SW', 'U102_FBX')
@@ -172,7 +172,7 @@ for tag, net, r1, sw in (('108', '+3V3D', '316k', 'SW_3V3'), ('109', '+0V9', '12
           {'10': 'VIN', '11': 'VIN', '12': 'VIN', '13': 'VIN', '1': sw, '2': sw, '3': sw, '14': net,
            '5': 'U%s_FB' % tag, '6': 'GND', '15': 'GND', '16': 'GND', '17': 'GND', '7': 'GND', '8': 'GND',
            '9': 'U%s_SS' % tag}, mpn='TPS62130RGTR')
-    P.L('2.2u', sw, net, fp='Inductor_SMD:L_Bourns_SRP4020TA')
+    P.L('2.2u', sw, net, fp='Inductor_SMD:L_Bourns_SRP5030T', mpn='SRP5030T-2R2M')
     P.R(r1, net, 'U%s_FB' % tag)
     P.R('100k', 'U%s_FB' % tag, 'GND')
     P.C('3.3n', 'U%s_SS' % tag, 'GND')
@@ -244,7 +244,7 @@ xmos_top = [('?33', 'VDD', 'power_in'), ('?34', 'VDD', 'power_in'), ('?35', 'VDD
             ('?39', 'VDDIO', 'power_in'), ('?40', 'USB_VDD33', 'power_in'), ('?41', 'USB_VDD18', 'power_in')]
 xmos_bot = [('?42', 'GND', 'power_in')]
 XSYM = make_ic_symbol('aio:XU316-1024-QF60B', xmos_pins_left, xmos_pins_right, xmos_top, xmos_bot,
-                      value='XU316-1024-QF60B', fp='Package_DFN_QFN:QFN-60-1EP_7x7mm_P0.4mm',
+                      value='XU316-1024-QF60B', fp='',
                       desc='XMOS xcore.ai USB Audio controller - PIN NUMBERS ARE PLACEHOLDERS')
 xm = {'?01': 'USB_DP', '?02': 'USB_DM', '?03': 'CLK_24M', '?04': 'RST_N', '?05': 'TCK', '?06': 'TMS',
       '?07': 'TDI', '?08': 'TDO', '?09': 'QSPI_CS_N', '?10': 'QSPI_CLK', '?11': 'QSPI_D0', '?12': 'QSPI_D1',
@@ -255,7 +255,7 @@ xm = {'?01': 'USB_DP', '?02': 'USB_DM', '?03': 'CLK_24M', '?04': 'RST_N', '?05':
       '?33': '+0V9', '?34': '+0V9', '?35': '+0V9', '?36': '+0V9_PLL', '?37': '+3V3D', '?38': '+3V3D',
       '?39': '+3V3D', '?40': '+3V3D', '?41': '+1V8', '?42': 'GND'}
 U.add('aio:XU316-1024-QF60B', 'XU316-1024-QF60B', xm, custom=XSYM, mpn='XU316-1024-QF60B-C24',
-      fp='Package_DFN_QFN:QFN-60-1EP_7x7mm_P0.4mm')
+      fp='')
 for _ in range(3):
     U.C('100n', '+0V9', 'GND')
 U.C('22u', '+0V9', 'GND', fp=C0805)
@@ -352,7 +352,7 @@ for ch in ('L', 'R'):
           mpn='WIMA MKS4 4.7uF 63V')
 D.add('Device:R_Potentiometer_Dual', '10k log dual',
       {'1': 'POT_L', '2': 'HP_IN_L', '3': 'GND', '4': 'POT_R', '5': 'HP_IN_R', '6': 'GND'},
-      fp='Potentiometer_THT:Potentiometer_Alps_RK27_Dual_Horizontal', mpn='ALPS RK27112A 10KAX2')
+      fp='Potentiometer_THT:Potentiometer_Alps_RK097_Dual_Horizontal', mpn='ALPS RK097 dual 10k log (A)')
 
 # =========================================================== HP AMP =======
 H = d.sheet('hpamp', 'Headphone amplifier and protection', 4, notes=(
@@ -369,8 +369,8 @@ H.add(OPA, 'OPA1612', {'3': 'AMP_INL', '2': 'FB_L', '1': 'OA_L', '5': 'AMP_INR',
                        '8': '+16V', '4': '-16V'}, fp=SO8, mpn='OPA1612AIDR')
 H.C('100n', '+16V', 'GND')
 H.C('100n', '-16V', 'GND')
-H.add('Switch:SW_DPST_x2', 'GAIN H/L', {'1': 'GAIN_L', '2': 'GND', '3': 'GAIN_R', '4': 'GND'},
-      fp='Button_Switch_THT:SW_Slide_SPDT_Straight_CK_OS102011MS2Q', mpn='DPST slide/toggle')
+H.add('Switch:SW_DPDT_x2', 'GAIN H/L', {'2': 'GAIN_L', '1': 'GND', '5': 'GAIN_R', '4': 'GND'},
+      fp='Button_Switch_SMD:SW_DPDT_CK_JS202011JCQN', mpn='JS202011JCQN')
 for ch in ('L', 'R'):
     H.R('100R', 'HP_IN_%s' % ch, 'AMP_IN%s' % ch)
     H.C('470p C0G', 'AMP_IN%s' % ch, 'GND')
@@ -437,15 +437,15 @@ M = d.sheet('mic', 'Microphone input, phantom power, ADC', 5, notes=(
     '  Unused right channel tied to VQ. OVFL drives the clip LED.\n'
     '- VERIFY: CS5361 FILT+/VQ capacitor values and input RC against the datasheet.'))
 
-M.add('Connector_Audio:XLR3_AudioJack3_Combo_Ground', 'NCJ6FI-S',
+M.add('Connector_Audio:XLR3_AudioJack3_Combo_Ground', 'NCJ6FI-H',
       {'1': 'GND', '2': 'XLR_HOT', '3': 'XLR_COLD', 'G': 'CHASSIS'},
-      fp='Connector_Audio:Jack_XLR-6.35mm_Neutrik_NCJ6FI-S_Horizontal', mpn='NCJ6FI-S')
+      fp='Connector_Audio:Jack_XLR-6.35mm_Neutrik_NCJ6FI-H_Horizontal', mpn='NCJ6FI-H')
 M.FB('600R@100MHz', 'XLR_HOT', 'MIC_P')
 M.FB('600R@100MHz', 'XLR_COLD', 'MIC_N')
 M.C('100p C0G', 'MIC_P', 'GND')
 M.C('100p C0G', 'MIC_N', 'GND')
 M.C('470p C0G', 'MIC_P', 'MIC_N')
-M.add('Switch:SW_SPST', '+48V', {'1': '+48V', '2': 'P48_SW'}, fp='Button_Switch_THT:SW_PUSH_6mm',
+M.add('Switch:SW_SPST', '+48V', {'1': '+48V', '2': 'P48_SW'}, fp='Button_Switch_THT:SW_Slide_SPDT_Straight_CK_OS102011MS2Q',
       mpn='SPST latching (panel)')
 M.R('47R', 'P48_SW', 'P48')
 M.CP('47u 63V', 'P48', 'GND', fp=CP10)

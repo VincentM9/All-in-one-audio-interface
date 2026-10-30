@@ -396,22 +396,22 @@
         )
       )
     )
-    (symbol "Switch:SW_DPST_x2"
+    (symbol "Switch:SW_DPDT_x2"
       (pin_names
         (offset 0) hide
       )
       (in_bom yes)
       (on_board yes)
       (property "Reference" "SW"
-        (at 0 3.175 0)
+        (at 0 5.08 0)
         (effects
           (font
             (size 1.27 1.27)
           )
         )
       )
-      (property "Value" "SW_DPST_x2"
-        (at 0 -2.54 0)
+      (property "Value" "SW_DPDT_x2"
+        (at 0 -5.08 0)
         (effects
           (font
             (size 1.27 1.27)
@@ -434,7 +434,7 @@
           ) hide
         )
       )
-      (property "ki_keywords" "switch lever"
+      (property "ki_keywords" "switch dual-pole double-throw DPDT spdt ON-ON"
         (at 0 0 0)
         (effects
           (font
@@ -442,7 +442,7 @@
           ) hide
         )
       )
-      (property "ki_description" "Single Pole Single Throw (SPST) switch, separate symbol"
+      (property "ki_description" "Switch, dual pole double throw, separate symbols"
         (at 0 0 0)
         (effects
           (font
@@ -450,7 +450,15 @@
           ) hide
         )
       )
-      (symbol "SW_DPST_x2_0_0"
+      (property "ki_fp_filters" "SW*DPDT*"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          ) hide
+        )
+      )
+      (symbol "SW_DPDT_x2_0_0"
         (circle
           (center -2.032 0)
           (radius 0.508)
@@ -462,21 +470,8 @@
             (type none)
           )
         )
-        (polyline
-          (pts
-            (xy -1.524 0.254)
-            (xy 1.524 1.778)
-          )
-          (stroke
-            (width 0)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
         (circle
-          (center 2.032 0)
+          (center 2.032 -2.54)
           (radius 0.508)
           (stroke
             (width 0)
@@ -487,9 +482,46 @@
           )
         )
       )
-      (symbol "SW_DPST_x2_1_1"
+      (symbol "SW_DPDT_x2_0_1"
+        (rectangle
+          (start -3.175 3.81)
+          (end 3.175 -3.81)
+          (stroke
+            (width 0.254)
+            (type default)
+          )
+          (fill
+            (type background)
+          )
+        )
+        (polyline
+          (pts
+            (xy -1.524 0.254)
+            (xy 1.5748 2.286)
+          )
+          (stroke
+            (width 0)
+            (type default)
+          )
+          (fill
+            (type none)
+          )
+        )
+        (circle
+          (center 2.032 2.54)
+          (radius 0.508)
+          (stroke
+            (width 0)
+            (type default)
+          )
+          (fill
+            (type none)
+          )
+        )
+      )
+      (symbol "SW_DPDT_x2_1_1"
         (pin passive line
-          (at -5.08 0 0)
+          (at 5.08 2.54 180)
           (length 2.54)
           (name "A"
             (effects
@@ -507,7 +539,7 @@
           )
         )
         (pin passive line
-          (at 5.08 0 180)
+          (at -5.08 0 0)
           (length 2.54)
           (name "B"
             (effects
@@ -524,12 +556,10 @@
             )
           )
         )
-      )
-      (symbol "SW_DPST_x2_2_1"
         (pin passive line
-          (at -5.08 0 0)
+          (at 5.08 -2.54 180)
           (length 2.54)
-          (name "A"
+          (name "C"
             (effects
               (font
                 (size 1.27 1.27)
@@ -544,8 +574,28 @@
             )
           )
         )
+      )
+      (symbol "SW_DPDT_x2_2_1"
         (pin passive line
-          (at 5.08 0 180)
+          (at 5.08 2.54 180)
+          (length 2.54)
+          (name "A"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "4"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at -5.08 0 0)
           (length 2.54)
           (name "B"
             (effects
@@ -554,7 +604,25 @@
               )
             )
           )
-          (number "4"
+          (number "5"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at 5.08 -2.54 180)
+          (length 2.54)
+          (name "C"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "6"
             (effects
               (font
                 (size 1.27 1.27)
@@ -3344,15 +3412,15 @@
     )
   )
   (symbol
-    (lib_id "Switch:SW_DPST_x2")
-    (at 175.26 33.02 0)
+    (lib_id "Switch:SW_DPDT_x2")
+    (at 175.26 35.56 0)
     (unit 1)
     (in_bom yes)
     (on_board yes)
     (dnp no)
     (uuid "5b323dcf-2249-5ff0-b9c0-7803315882f4")
     (property "Reference" "SW401"
-      (at 175.26 29.24 0)
+      (at 175.26 29.75 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -3360,15 +3428,15 @@
       )
     )
     (property "Value" "GAIN H/L"
-      (at 175.26 35.53 0)
+      (at 175.26 41.37 0)
       (effects
         (font
           (size 1.27 1.27)
         )
       )
     )
-    (property "Footprint" "Button_Switch_THT:SW_Slide_SPDT_Straight_CK_OS102011MS2Q"
-      (at 175.26 33.02 0)
+    (property "Footprint" "Button_Switch_SMD:SW_DPDT_CK_JS202011JCQN"
+      (at 175.26 35.56 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -3376,15 +3444,15 @@
       )
     )
     (property "Datasheet" ""
-      (at 175.26 33.02 0)
+      (at 175.26 35.56 0)
       (effects
         (font
           (size 1.27 1.27)
         ) hide
       )
     )
-    (property "MPN" "DPST slide/toggle"
-      (at 175.26 33.02 0)
+    (property "MPN" "JS202011JCQN"
+      (at 175.26 35.56 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -3397,6 +3465,9 @@
     (pin "2"
       (uuid "c634bd58-8f3c-5ff4-bad3-b7f780ae98d1")
     )
+    (pin "3"
+      (uuid "388c9227-59ed-5cd6-9efb-770882a2e55c")
+    )
     (instances
       (project "aio"
         (path "/6b900c54-f875-59c0-b2c3-d2bfb1f8e068/86ac2cd8-f42d-55a7-ba55-01c8b833d345"
@@ -3405,17 +3476,6 @@
         )
       )
     )
-  )
-  (label "GAIN_L"
-    (at 170.18 33.02 180)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify right)
-    )
-    (uuid "21c6ff61-10fd-5938-ad94-a494e2cd6844")
   )
   (global_label "GND"
     (shape bidirectional)
@@ -3427,7 +3487,7 @@
       )
       (justify left)
     )
-    (uuid "d5dd5d48-3cff-5c8c-a3fb-2e0618ff71fc")
+    (uuid "21c6ff61-10fd-5938-ad94-a494e2cd6844")
     (property "Intersheetrefs" "${INTERSHEET_REFS}"
       (at 180.34 33.02 0)
       (effects
@@ -3437,16 +3497,31 @@
       )
     )
   )
+  (label "GAIN_L"
+    (at 170.18 35.56 180)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify right)
+    )
+    (uuid "d5dd5d48-3cff-5c8c-a3fb-2e0618ff71fc")
+  )
+  (no_connect
+    (at 180.34 38.1)
+    (uuid "4449e0ea-5a9f-519b-a105-c50cbd97a677")
+  )
   (symbol
-    (lib_id "Switch:SW_DPST_x2")
-    (at 205.74 33.02 0)
+    (lib_id "Switch:SW_DPDT_x2")
+    (at 205.74 35.56 0)
     (unit 2)
     (in_bom yes)
     (on_board yes)
     (dnp no)
     (uuid "3abe7a2f-22de-5de6-87a6-9230133515ef")
     (property "Reference" "SW401"
-      (at 205.74 29.24 0)
+      (at 205.74 29.75 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -3454,15 +3529,15 @@
       )
     )
     (property "Value" "GAIN H/L"
-      (at 205.74 35.53 0)
+      (at 205.74 41.37 0)
       (effects
         (font
           (size 1.27 1.27)
         )
       )
     )
-    (property "Footprint" "Button_Switch_THT:SW_Slide_SPDT_Straight_CK_OS102011MS2Q"
-      (at 205.74 33.02 0)
+    (property "Footprint" "Button_Switch_SMD:SW_DPDT_CK_JS202011JCQN"
+      (at 205.74 35.56 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -3470,26 +3545,29 @@
       )
     )
     (property "Datasheet" ""
-      (at 205.74 33.02 0)
+      (at 205.74 35.56 0)
       (effects
         (font
           (size 1.27 1.27)
         ) hide
       )
     )
-    (property "MPN" "DPST slide/toggle"
-      (at 205.74 33.02 0)
+    (property "MPN" "JS202011JCQN"
+      (at 205.74 35.56 0)
       (effects
         (font
           (size 1.27 1.27)
         ) hide
       )
-    )
-    (pin "3"
-      (uuid "388c9227-59ed-5cd6-9efb-770882a2e55c")
     )
     (pin "4"
       (uuid "0e633a96-a875-5903-9773-216c5a61b2de")
+    )
+    (pin "5"
+      (uuid "9c818bfe-e59e-524c-9662-f0df499c25c3")
+    )
+    (pin "6"
+      (uuid "45c34002-55ea-5577-933a-01a7a5358ba5")
     )
     (instances
       (project "aio"
@@ -3499,17 +3577,6 @@
         )
       )
     )
-  )
-  (label "GAIN_R"
-    (at 200.66 33.02 180)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify right)
-    )
-    (uuid "12ceb92f-01ee-533c-9a45-c56cdd924920")
   )
   (global_label "GND"
     (shape bidirectional)
@@ -3530,6 +3597,21 @@
         ) hide
       )
     )
+  )
+  (label "GAIN_R"
+    (at 200.66 35.56 180)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify right)
+    )
+    (uuid "2daa7ec7-7d39-50ac-9f93-2de0ad7c0933")
+  )
+  (no_connect
+    (at 210.82 38.1)
+    (uuid "abbcda60-f319-55c1-9d42-e46caed6e9dd")
   )
   (symbol
     (lib_id "Device:R")
@@ -4207,7 +4289,7 @@
         )
       )
     )
-    (property "Footprint" ""
+    (property "Footprint" "Package_TO_SOT_SMD:TO-263-5_TabPin3"
       (at 462.28 45.72 0)
       (effects
         (font
@@ -4689,7 +4771,7 @@
         )
       )
     )
-    (property "Footprint" ""
+    (property "Footprint" "Package_TO_SOT_SMD:TO-263-5_TabPin3"
       (at 63.5 88.9 0)
       (effects
         (font
@@ -5909,7 +5991,7 @@
         )
       )
     )
-    (property "Footprint" ""
+    (property "Footprint" "Package_TO_SOT_SMD:TO-263-5_TabPin3"
       (at 457.2 88.9 0)
       (effects
         (font
@@ -6391,7 +6473,7 @@
         )
       )
     )
-    (property "Footprint" ""
+    (property "Footprint" "Package_TO_SOT_SMD:TO-263-5_TabPin3"
       (at 63.5 132.08 0)
       (effects
         (font
@@ -7399,7 +7481,7 @@
         )
       )
     )
-    (property "Footprint" ""
+    (property "Footprint" "Package_TO_SOT_SMD:SOT-23"
       (at 358.14 132.08 0)
       (effects
         (font
@@ -9242,7 +9324,7 @@
         )
       )
     )
-    (property "Footprint" ""
+    (property "Footprint" "Package_TO_SOT_SMD:SOT-23"
       (at 411.48 172.72 0)
       (effects
         (font
@@ -9427,7 +9509,7 @@
         )
       )
     )
-    (property "Footprint" ""
+    (property "Footprint" "Package_TO_SOT_SMD:SOT-23"
       (at 457.2 172.72 0)
       (effects
         (font

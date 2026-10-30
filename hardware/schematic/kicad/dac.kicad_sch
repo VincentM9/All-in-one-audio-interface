@@ -1577,7 +1577,7 @@
         )
       )
     )
-    (property "Footprint" ""
+    (property "Footprint" "Package_SO:SSOP-28_5.3x10.2mm_P0.65mm"
       (at 53.34 60.96 0)
       (effects
         (font
@@ -7020,7 +7020,7 @@
         )
       )
     )
-    (property "Footprint" "Potentiometer_THT:Potentiometer_Alps_RK27_Dual_Horizontal"
+    (property "Footprint" "Potentiometer_THT:Potentiometer_Alps_RK097_Dual_Horizontal"
       (at 530.86 157.48 0)
       (effects
         (font
@@ -7036,7 +7036,7 @@
         ) hide
       )
     )
-    (property "MPN" "ALPS RK27112A 10KAX2"
+    (property "MPN" "ALPS RK097 dual 10k log (A)"
       (at 530.86 157.48 0)
       (effects
         (font

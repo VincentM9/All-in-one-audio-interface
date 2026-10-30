@@ -3144,7 +3144,7 @@
         )
       )
     )
-    (property "Value" "NCJ6FI-S"
+    (property "Value" "NCJ6FI-H"
       (at 38.1 56.18 0)
       (effects
         (font
@@ -3152,7 +3152,7 @@
         )
       )
     )
-    (property "Footprint" "Connector_Audio:Jack_XLR-6.35mm_Neutrik_NCJ6FI-S_Horizontal"
+    (property "Footprint" "Connector_Audio:Jack_XLR-6.35mm_Neutrik_NCJ6FI-H_Horizontal"
       (at 38.1 35.56 0)
       (effects
         (font
@@ -3168,7 +3168,7 @@
         ) hide
       )
     )
-    (property "MPN" "NCJ6FI-S"
+    (property "MPN" "NCJ6FI-H"
       (at 38.1 35.56 0)
       (effects
         (font
@@ -3275,7 +3275,7 @@
         )
       )
     )
-    (property "Value" "NCJ6FI-S"
+    (property "Value" "NCJ6FI-H"
       (at 65.41 42.64 0)
       (effects
         (font
@@ -3283,7 +3283,7 @@
         )
       )
     )
-    (property "Footprint" "Connector_Audio:Jack_XLR-6.35mm_Neutrik_NCJ6FI-S_Horizontal"
+    (property "Footprint" "Connector_Audio:Jack_XLR-6.35mm_Neutrik_NCJ6FI-H_Horizontal"
       (at 66.04 35.56 0)
       (effects
         (font
@@ -3299,7 +3299,7 @@
         ) hide
       )
     )
-    (property "MPN" "NCJ6FI-S"
+    (property "MPN" "NCJ6FI-H"
       (at 66.04 35.56 0)
       (effects
         (font
@@ -3764,7 +3764,7 @@
         )
       )
     )
-    (property "Footprint" "Button_Switch_THT:SW_PUSH_6mm"
+    (property "Footprint" "Button_Switch_THT:SW_Slide_SPDT_Straight_CK_OS102011MS2Q"
       (at 226.06 33.02 0)
       (effects
         (font
@@ -4834,7 +4834,7 @@
         )
       )
     )
-    (property "Footprint" ""
+    (property "Footprint" "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal"
       (at 198.12 68.58 0)
       (effects
         (font
@@ -4928,7 +4928,7 @@
         )
       )
     )
-    (property "Footprint" ""
+    (property "Footprint" "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal"
       (at 226.06 68.58 0)
       (effects
         (font
@@ -5022,7 +5022,7 @@
         )
       )
     )
-    (property "Footprint" ""
+    (property "Footprint" "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal"
       (at 256.54 68.58 0)
       (effects
         (font
@@ -5116,7 +5116,7 @@
         )
       )
     )
-    (property "Footprint" ""
+    (property "Footprint" "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal"
       (at 284.48 68.58 0)
       (effects
         (font
@@ -7621,7 +7621,7 @@
         )
       )
     )
-    (property "Footprint" ""
+    (property "Footprint" "Package_TO_SOT_SMD:SOT-23"
       (at 340.36 134.62 0)
       (effects
         (font
@@ -7738,7 +7738,7 @@
         )
       )
     )
-    (property "Footprint" ""
+    (property "Footprint" "Package_TO_SOT_SMD:SOT-23"
       (at 375.92 134.62 0)
       (effects
         (font

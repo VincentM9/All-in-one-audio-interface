@@ -192,6 +192,8 @@ class Part:
         self.desc = desc
         self.info = info(lib_id, custom)
         self.custom = custom
+        if not self.fp:     # fall back to the library symbol's default footprint
+            self.fp = next((x[2] for x in find(self.info.sym, 'property') if x[1] == 'Footprint'), '')
         allnums = {p['num'] for ps in self.info.units.values() for p in ps}
         bad = set(self.nets) - allnums
         if bad:

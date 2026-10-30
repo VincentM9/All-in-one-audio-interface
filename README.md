@@ -33,30 +33,50 @@ Checked two ways:
 The simulation checks swing, gain, stability and current sharing. It uses
 idealised models, so its THD figures don't mean anything.
 
-## Schematic (KiCad 7, imports into Altium)
+## Schematic and PCB (KiCad 7, imports into Altium)
 
-`hardware/schematic/kicad/aio.kicad_pro` is the full schematic: a root sheet
-plus five sheets (power, USB/XMOS/clocks, DAC, headphone amp, mic/ADC),
-355 parts. A PDF is in `hardware/schematic/aio-schematic.pdf`.
+`hardware/schematic/kicad/` is a complete KiCad project:
 
-**Opening it in Altium Designer (24 or newer):** File → Import Wizard →
-KiCad Design Files, then select `hardware/schematic/kicad/aio.kicad_pro`.
-Each sheet becomes a `.SchDoc`. The symbols are embedded in the files, so
-nothing else is needed. Footprint names are KiCad's, so map them to your
-Altium footprint libraries afterwards.
+- `aio.kicad_pro` / `aio.kicad_sch`: a root sheet plus five sheets (power,
+  USB/XMOS/clocks, DAC, headphone amp, mic/ADC), 357 parts. A PDF is in
+  `hardware/schematic/aio-schematic.pdf`.
+- `aio.kicad_pcb`: a starting board with every footprint placed (grouped by
+  sheet, unrouted) and every pad on its net.
+- `aio.pretty/`: copies of all 45 footprints the design uses.
 
-The schematic is generated from `hardware/schematic/design.py`. Edit that
-file and run:
+**Opening it in Altium Designer (24 or newer):**
+
+1. File → Import Wizard → KiCad Design Files, and select
+   `hardware/schematic/kicad/aio.kicad_pro`. Altium imports the schematic
+   sheets *and* `aio.kicad_pcb`, so you get a PcbDoc with all footprints
+   and their connections. Each sheet becomes a `.SchDoc`.
+2. In the imported PcbDoc, run Design → Make PCB Library, and add the
+   resulting `.PcbLib` to the project. Schematic updates (Design → Update
+   PCB Document) can then find every footprint.
+
+If you imported only the schematic and got an ECO full of "Footprint Not
+Found" and "Unknown Pin" errors, that's the missing footprint library: do
+step 1 again with the full project, or import the `aio.pretty` folder as a
+footprint library and add it to the project.
+
+**U203 (XMOS XU316) has no footprint on purpose:** its pin numbers are
+placeholders. Replace it with XMOS's official library part, which brings the
+correct symbol and footprint.
+
+The schematic and board are generated from `hardware/schematic/design.py`.
+Edit that file and run:
 
 ```
-python3 hardware/schematic/design.py   # writes the KiCad files + hardware/bom.csv
-python3 hardware/schematic/check.py    # KiCad's netlist vs. the intended one
+python3 hardware/schematic/design.py   # schematic + hardware/bom.csv
+python3 hardware/schematic/pcb.py      # aio.kicad_pcb + aio.pretty/
+python3 hardware/schematic/check.py    # verify schematic and PCB nets
 ```
 
 `check.py` exports the netlist with `kicad-cli` and compares every net
-against `design.py`. It also flags single-pin nets, shorted outputs and
-unpowered power pins. KiCad 7's command line has no electrical rules check,
-so this stands in for one.
+against `design.py`, then checks that every PCB pad has the intended net.
+It also flags single-pin nets, shorted outputs and unpowered power pins.
+KiCad 7's command line has no electrical rules check, so this stands in for
+one.
 
 Parts are connected by net labels at each pin rather than drawn wires: global
 labels between sheets, local labels within a sheet.
@@ -71,8 +91,8 @@ of `docs/design.md`.
 ```
 docs/design.md               full circuit description, values, power & protection
 hardware/bom.csv             bill of materials, generated from the schematic
-hardware/schematic/          schematic source (design.py), generator, checker, PDF
-hardware/schematic/kicad/    KiCad 7 project (import this into Altium)
+hardware/schematic/          schematic/PCB source (design.py), generators, checker, PDF
+hardware/schematic/kicad/    KiCad 7 project: schematic, starting PCB, footprints (import into Altium)
 tools/budget.py              headroom / thermal / power budget calculator
 sim/hp_amp.cir               ngspice model of one headphone-amp channel
 sim/run.sh                   runs the simulation, prints the key results

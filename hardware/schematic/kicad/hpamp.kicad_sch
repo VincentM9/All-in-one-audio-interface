@@ -2,13 +2,13 @@
   (version 20230121)
   (generator eeschema)
   (uuid "86ac2cd8-f42d-55a7-ba55-01c8b833d345")
-  (paper "A2")
+  (paper "A3")
   (title_block
-    (title "Headphone amplifier and protection")
+    (title "Headphone amplifier")
     (date "2026-10-23")
     (rev "A")
     (company "VincentM9")
-    (comment 1 "All-in-one audio interface: USB DAC/amp + phantom-powered mic input")
+    (comment 1 "All-in-one audio interface")
   )
   (lib_symbols
     (symbol "Amplifier_Operational:OPA1612AxD"
@@ -1073,1852 +1073,6 @@
         )
       )
     )
-    (symbol "Relay:G6K-2"
-      (in_bom yes)
-      (on_board yes)
-      (property "Reference" "K"
-        (at 16.51 3.81 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          )
-          (justify left)
-        )
-      )
-      (property "Value" "G6K-2"
-        (at 16.51 1.27 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          )
-          (justify left)
-        )
-      )
-      (property "Footprint" ""
-        (at 0 0 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          )
-          (justify left) hide
-        )
-      )
-      (property "Datasheet" "http://omronfs.omron.com/en_US/ecb/products/pdf/en-g6k.pdf"
-        (at 0 0 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          ) hide
-        )
-      )
-      (property "ki_keywords" "Miniature Relay Dual Pole DPDT Omron"
-        (at 0 0 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          ) hide
-        )
-      )
-      (property "ki_description" "Miniature 2-pole relay, Single-side Stable"
-        (at 0 0 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          ) hide
-        )
-      )
-      (property "ki_fp_filters" "Relay*DPDT*Omron*G6K?2*"
-        (at 0 0 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          ) hide
-        )
-      )
-      (symbol "G6K-2_0_0"
-        (text "+"
-          (at -9.271 2.921 0)
-          (effects
-            (font
-              (size 1.27 1.27)
-            )
-          )
-        )
-      )
-      (symbol "G6K-2_0_1"
-        (rectangle
-          (start -15.24 5.08)
-          (end 15.24 -5.08)
-          (stroke
-            (width 0.254)
-            (type default)
-          )
-          (fill
-            (type background)
-          )
-        )
-        (rectangle
-          (start -13.335 1.905)
-          (end -6.985 -1.905)
-          (stroke
-            (width 0.254)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
-        (polyline
-          (pts
-            (xy -12.7 -1.905)
-            (xy -7.62 1.905)
-          )
-          (stroke
-            (width 0.254)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
-        (polyline
-          (pts
-            (xy -10.16 -5.08)
-            (xy -10.16 -1.905)
-          )
-          (stroke
-            (width 0)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
-        (polyline
-          (pts
-            (xy -10.16 5.08)
-            (xy -10.16 1.905)
-          )
-          (stroke
-            (width 0)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
-        (polyline
-          (pts
-            (xy -6.985 0)
-            (xy -6.35 0)
-          )
-          (stroke
-            (width 0.254)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
-        (polyline
-          (pts
-            (xy -5.715 0)
-            (xy -5.08 0)
-          )
-          (stroke
-            (width 0.254)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
-        (polyline
-          (pts
-            (xy -4.445 0)
-            (xy -3.81 0)
-          )
-          (stroke
-            (width 0.254)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
-        (polyline
-          (pts
-            (xy -3.175 0)
-            (xy -2.54 0)
-          )
-          (stroke
-            (width 0.254)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
-        (polyline
-          (pts
-            (xy -1.905 0)
-            (xy -1.27 0)
-          )
-          (stroke
-            (width 0.254)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
-        (polyline
-          (pts
-            (xy -0.635 0)
-            (xy 0 0)
-          )
-          (stroke
-            (width 0.254)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
-        (polyline
-          (pts
-            (xy 0 -2.54)
-            (xy -1.905 3.81)
-          )
-          (stroke
-            (width 0.508)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
-        (polyline
-          (pts
-            (xy 0 -2.54)
-            (xy 0 -5.08)
-          )
-          (stroke
-            (width 0)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
-        (polyline
-          (pts
-            (xy 0.635 0)
-            (xy 1.27 0)
-          )
-          (stroke
-            (width 0.254)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
-        (polyline
-          (pts
-            (xy 1.905 0)
-            (xy 2.54 0)
-          )
-          (stroke
-            (width 0.254)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
-        (polyline
-          (pts
-            (xy 3.175 0)
-            (xy 3.81 0)
-          )
-          (stroke
-            (width 0.254)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
-        (polyline
-          (pts
-            (xy 4.445 0)
-            (xy 5.08 0)
-          )
-          (stroke
-            (width 0.254)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
-        (polyline
-          (pts
-            (xy 5.715 0)
-            (xy 6.35 0)
-          )
-          (stroke
-            (width 0.254)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
-        (polyline
-          (pts
-            (xy 6.985 0)
-            (xy 7.62 0)
-          )
-          (stroke
-            (width 0.254)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
-        (polyline
-          (pts
-            (xy 8.255 0)
-            (xy 8.89 0)
-          )
-          (stroke
-            (width 0.254)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
-        (polyline
-          (pts
-            (xy 10.16 -2.54)
-            (xy 8.255 3.81)
-          )
-          (stroke
-            (width 0.508)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
-        (polyline
-          (pts
-            (xy 10.16 -2.54)
-            (xy 10.16 -5.08)
-          )
-          (stroke
-            (width 0)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
-        (polyline
-          (pts
-            (xy -2.54 5.08)
-            (xy -2.54 2.54)
-            (xy -1.905 3.175)
-            (xy -2.54 3.81)
-          )
-          (stroke
-            (width 0)
-            (type default)
-          )
-          (fill
-            (type outline)
-          )
-        )
-        (polyline
-          (pts
-            (xy 2.54 5.08)
-            (xy 2.54 2.54)
-            (xy 1.905 3.175)
-            (xy 2.54 3.81)
-          )
-          (stroke
-            (width 0)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
-        (polyline
-          (pts
-            (xy 7.62 5.08)
-            (xy 7.62 2.54)
-            (xy 8.255 3.175)
-            (xy 7.62 3.81)
-          )
-          (stroke
-            (width 0)
-            (type default)
-          )
-          (fill
-            (type outline)
-          )
-        )
-        (polyline
-          (pts
-            (xy 12.7 5.08)
-            (xy 12.7 2.54)
-            (xy 12.065 3.175)
-            (xy 12.7 3.81)
-          )
-          (stroke
-            (width 0)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
-      )
-      (symbol "G6K-2_1_1"
-        (pin passive line
-          (at -10.16 7.62 270)
-          (length 2.54)
-          (name "~"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-          (number "1"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-        )
-        (pin passive line
-          (at -2.54 7.62 270)
-          (length 2.54)
-          (name "~"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-          (number "2"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-        )
-        (pin passive line
-          (at 0 -7.62 90)
-          (length 2.54)
-          (name "~"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-          (number "3"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-        )
-        (pin passive line
-          (at 2.54 7.62 270)
-          (length 2.54)
-          (name "~"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-          (number "4"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-        )
-        (pin passive line
-          (at 12.7 7.62 270)
-          (length 2.54)
-          (name "~"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-          (number "5"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-        )
-        (pin passive line
-          (at 10.16 -7.62 90)
-          (length 2.54)
-          (name "~"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-          (number "6"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-        )
-        (pin passive line
-          (at 7.62 7.62 270)
-          (length 2.54)
-          (name "~"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-          (number "7"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-        )
-        (pin passive line
-          (at -10.16 -7.62 90)
-          (length 2.54)
-          (name "~"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-          (number "8"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-        )
-      )
-    )
-    (symbol "Diode:1N4148W"
-      (pin_numbers hide)
-      (pin_names hide)
-      (in_bom yes)
-      (on_board yes)
-      (property "Reference" "D"
-        (at 0 2.54 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          )
-        )
-      )
-      (property "Value" "1N4148W"
-        (at 0 -2.54 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          )
-        )
-      )
-      (property "Footprint" "Diode_SMD:D_SOD-123"
-        (at 0 -4.445 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          ) hide
-        )
-      )
-      (property "Datasheet" "https://www.vishay.com/docs/85748/1n4148w.pdf"
-        (at 0 0 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          ) hide
-        )
-      )
-      (property "Sim.Device" "D"
-        (at 0 0 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          ) hide
-        )
-      )
-      (property "Sim.Pins" "1=K 2=A"
-        (at 0 0 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          ) hide
-        )
-      )
-      (property "ki_keywords" "diode"
-        (at 0 0 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          ) hide
-        )
-      )
-      (property "ki_description" "75V 0.15A Fast Switching Diode, SOD-123"
-        (at 0 0 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          ) hide
-        )
-      )
-      (property "ki_fp_filters" "D*SOD?123*"
-        (at 0 0 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          ) hide
-        )
-      )
-      (symbol "1N4148W_0_1"
-        (polyline
-          (pts
-            (xy -1.27 1.27)
-            (xy -1.27 -1.27)
-          )
-          (stroke
-            (width 0.254)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
-        (polyline
-          (pts
-            (xy 1.27 0)
-            (xy -1.27 0)
-          )
-          (stroke
-            (width 0)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
-        (polyline
-          (pts
-            (xy 1.27 1.27)
-            (xy 1.27 -1.27)
-            (xy -1.27 0)
-            (xy 1.27 1.27)
-          )
-          (stroke
-            (width 0.254)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
-      )
-      (symbol "1N4148W_1_1"
-        (pin passive line
-          (at -3.81 0 0)
-          (length 2.54)
-          (name "K"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-          (number "1"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-        )
-        (pin passive line
-          (at 3.81 0 180)
-          (length 2.54)
-          (name "A"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-          (number "2"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-        )
-      )
-    )
-    (symbol "Transistor_FET:2N7002"
-      (pin_names hide)
-      (in_bom yes)
-      (on_board yes)
-      (property "Reference" "Q"
-        (at 5.08 1.905 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          )
-          (justify left)
-        )
-      )
-      (property "Value" "2N7002"
-        (at 5.08 0 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          )
-          (justify left)
-        )
-      )
-      (property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-        (at 5.08 -1.905 0)
-        (effects
-          (font
-            (size 1.27 1.27) italic
-          )
-          (justify left) hide
-        )
-      )
-      (property "Datasheet" "https://www.onsemi.com/pub/Collateral/NDS7002A-D.PDF"
-        (at 5.08 -3.81 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          )
-          (justify left) hide
-        )
-      )
-      (property "ki_keywords" "N-Channel Switching MOSFET"
-        (at 0 0 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          ) hide
-        )
-      )
-      (property "ki_description" "0.115A Id, 60V Vds, N-Channel MOSFET, SOT-23"
-        (at 0 0 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          ) hide
-        )
-      )
-      (property "ki_fp_filters" "SOT?23*"
-        (at 0 0 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          ) hide
-        )
-      )
-      (symbol "2N7002_0_1"
-        (polyline
-          (pts
-            (xy 0.254 0)
-            (xy -2.54 0)
-          )
-          (stroke
-            (width 0)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
-        (polyline
-          (pts
-            (xy 0.254 1.905)
-            (xy 0.254 -1.905)
-          )
-          (stroke
-            (width 0.254)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
-        (polyline
-          (pts
-            (xy 0.762 -1.27)
-            (xy 0.762 -2.286)
-          )
-          (stroke
-            (width 0.254)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
-        (polyline
-          (pts
-            (xy 0.762 0.508)
-            (xy 0.762 -0.508)
-          )
-          (stroke
-            (width 0.254)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
-        (polyline
-          (pts
-            (xy 0.762 2.286)
-            (xy 0.762 1.27)
-          )
-          (stroke
-            (width 0.254)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
-        (polyline
-          (pts
-            (xy 2.54 2.54)
-            (xy 2.54 1.778)
-          )
-          (stroke
-            (width 0)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
-        (polyline
-          (pts
-            (xy 2.54 -2.54)
-            (xy 2.54 0)
-            (xy 0.762 0)
-          )
-          (stroke
-            (width 0)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
-        (polyline
-          (pts
-            (xy 0.762 -1.778)
-            (xy 3.302 -1.778)
-            (xy 3.302 1.778)
-            (xy 0.762 1.778)
-          )
-          (stroke
-            (width 0)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
-        (polyline
-          (pts
-            (xy 1.016 0)
-            (xy 2.032 0.381)
-            (xy 2.032 -0.381)
-            (xy 1.016 0)
-          )
-          (stroke
-            (width 0)
-            (type default)
-          )
-          (fill
-            (type outline)
-          )
-        )
-        (polyline
-          (pts
-            (xy 2.794 0.508)
-            (xy 2.921 0.381)
-            (xy 3.683 0.381)
-            (xy 3.81 0.254)
-          )
-          (stroke
-            (width 0)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
-        (polyline
-          (pts
-            (xy 3.302 0.381)
-            (xy 2.921 -0.254)
-            (xy 3.683 -0.254)
-            (xy 3.302 0.381)
-          )
-          (stroke
-            (width 0)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
-        (circle
-          (center 1.651 0)
-          (radius 2.794)
-          (stroke
-            (width 0.254)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
-        (circle
-          (center 2.54 -1.778)
-          (radius 0.254)
-          (stroke
-            (width 0)
-            (type default)
-          )
-          (fill
-            (type outline)
-          )
-        )
-        (circle
-          (center 2.54 1.778)
-          (radius 0.254)
-          (stroke
-            (width 0)
-            (type default)
-          )
-          (fill
-            (type outline)
-          )
-        )
-      )
-      (symbol "2N7002_1_1"
-        (pin input line
-          (at -5.08 0 0)
-          (length 2.54)
-          (name "G"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-          (number "1"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-        )
-        (pin passive line
-          (at 2.54 -5.08 90)
-          (length 2.54)
-          (name "S"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-          (number "2"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-        )
-        (pin passive line
-          (at 2.54 5.08 270)
-          (length 2.54)
-          (name "D"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-          (number "3"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-        )
-      )
-    )
-    (symbol "Device:D_Schottky"
-      (pin_numbers hide)
-      (pin_names
-        (offset 1.016) hide
-      )
-      (in_bom yes)
-      (on_board yes)
-      (property "Reference" "D"
-        (at 0 2.54 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          )
-        )
-      )
-      (property "Value" "D_Schottky"
-        (at 0 -2.54 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          )
-        )
-      )
-      (property "Footprint" ""
-        (at 0 0 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          ) hide
-        )
-      )
-      (property "Datasheet" "~"
-        (at 0 0 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          ) hide
-        )
-      )
-      (property "ki_keywords" "diode Schottky"
-        (at 0 0 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          ) hide
-        )
-      )
-      (property "ki_description" "Schottky diode"
-        (at 0 0 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          ) hide
-        )
-      )
-      (property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
-        (at 0 0 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          ) hide
-        )
-      )
-      (symbol "D_Schottky_0_1"
-        (polyline
-          (pts
-            (xy 1.27 0)
-            (xy -1.27 0)
-          )
-          (stroke
-            (width 0)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
-        (polyline
-          (pts
-            (xy 1.27 1.27)
-            (xy 1.27 -1.27)
-            (xy -1.27 0)
-            (xy 1.27 1.27)
-          )
-          (stroke
-            (width 0.254)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
-        (polyline
-          (pts
-            (xy -1.905 0.635)
-            (xy -1.905 1.27)
-            (xy -1.27 1.27)
-            (xy -1.27 -1.27)
-            (xy -0.635 -1.27)
-            (xy -0.635 -0.635)
-          )
-          (stroke
-            (width 0.254)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
-      )
-      (symbol "D_Schottky_1_1"
-        (pin passive line
-          (at -3.81 0 0)
-          (length 2.54)
-          (name "K"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-          (number "1"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-        )
-        (pin passive line
-          (at 3.81 0 180)
-          (length 2.54)
-          (name "A"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-          (number "2"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-        )
-      )
-    )
-    (symbol "Comparator:LM393"
-      (pin_names
-        (offset 0.127)
-      )
-      (in_bom yes)
-      (on_board yes)
-      (property "Reference" "U"
-        (at 3.81 3.81 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          )
-        )
-      )
-      (property "Value" "LM393"
-        (at 6.35 -3.81 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          )
-        )
-      )
-      (property "Footprint" ""
-        (at 0 0 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          ) hide
-        )
-      )
-      (property "Datasheet" "http://www.ti.com/lit/ds/symlink/lm393.pdf"
-        (at 0 0 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          ) hide
-        )
-      )
-      (property "ki_locked" ""
-        (at 0 0 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          )
-        )
-      )
-      (property "ki_keywords" "cmp open collector"
-        (at 0 0 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          ) hide
-        )
-      )
-      (property "ki_description" "Low-Power, Low-Offset Voltage, Dual Comparators, DIP-8/SOIC-8/TO-99-8"
-        (at 0 0 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          ) hide
-        )
-      )
-      (property "ki_fp_filters" "SOIC*3.9x4.9mm*P1.27mm* DIP*W7.62mm* SOP*5.28x5.23mm*P1.27mm* VSSOP*3.0x3.0mm*P0.65mm* TSSOP*4.4x3mm*P0.65mm*"
-        (at 0 0 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          ) hide
-        )
-      )
-      (symbol "LM393_1_1"
-        (polyline
-          (pts
-            (xy -5.08 5.08)
-            (xy 5.08 0)
-            (xy -5.08 -5.08)
-            (xy -5.08 5.08)
-          )
-          (stroke
-            (width 0.254)
-            (type default)
-          )
-          (fill
-            (type background)
-          )
-        )
-        (polyline
-          (pts
-            (xy 3.302 -0.508)
-            (xy 2.794 -0.508)
-            (xy 3.302 0)
-            (xy 2.794 0.508)
-            (xy 2.286 0)
-            (xy 2.794 -0.508)
-            (xy 2.286 -0.508)
-          )
-          (stroke
-            (width 0.127)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
-        (pin open_collector line
-          (at 7.62 0 180)
-          (length 2.54)
-          (name "~"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-          (number "1"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-        )
-        (pin input line
-          (at -7.62 -2.54 0)
-          (length 2.54)
-          (name "-"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-          (number "2"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-        )
-        (pin input line
-          (at -7.62 2.54 0)
-          (length 2.54)
-          (name "+"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-          (number "3"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-        )
-      )
-      (symbol "LM393_2_1"
-        (polyline
-          (pts
-            (xy -5.08 5.08)
-            (xy 5.08 0)
-            (xy -5.08 -5.08)
-            (xy -5.08 5.08)
-          )
-          (stroke
-            (width 0.254)
-            (type default)
-          )
-          (fill
-            (type background)
-          )
-        )
-        (polyline
-          (pts
-            (xy 3.302 -0.508)
-            (xy 2.794 -0.508)
-            (xy 3.302 0)
-            (xy 2.794 0.508)
-            (xy 2.286 0)
-            (xy 2.794 -0.508)
-            (xy 2.286 -0.508)
-          )
-          (stroke
-            (width 0.127)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
-        (pin input line
-          (at -7.62 2.54 0)
-          (length 2.54)
-          (name "+"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-          (number "5"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-        )
-        (pin input line
-          (at -7.62 -2.54 0)
-          (length 2.54)
-          (name "-"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-          (number "6"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-        )
-        (pin open_collector line
-          (at 7.62 0 180)
-          (length 2.54)
-          (name "~"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-          (number "7"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-        )
-      )
-      (symbol "LM393_3_1"
-        (pin power_in line
-          (at -2.54 -7.62 90)
-          (length 3.81)
-          (name "V-"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-          (number "4"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-        )
-        (pin power_in line
-          (at -2.54 7.62 270)
-          (length 3.81)
-          (name "V+"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-          (number "8"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-        )
-      )
-    )
-    (symbol "Transistor_BJT:BC847"
-      (pin_names
-        (offset 0) hide
-      )
-      (in_bom yes)
-      (on_board yes)
-      (property "Reference" "Q"
-        (at 5.08 1.905 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          )
-          (justify left)
-        )
-      )
-      (property "Value" "BC847"
-        (at 5.08 0 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          )
-          (justify left)
-        )
-      )
-      (property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-        (at 5.08 -1.905 0)
-        (effects
-          (font
-            (size 1.27 1.27) italic
-          )
-          (justify left) hide
-        )
-      )
-      (property "Datasheet" "http://www.infineon.com/dgdl/Infineon-BC847SERIES_BC848SERIES_BC849SERIES_BC850SERIES-DS-v01_01-en.pdf?fileId=db3a304314dca389011541d4630a1657"
-        (at 0 0 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          )
-          (justify left) hide
-        )
-      )
-      (property "ki_keywords" "NPN Small Signal Transistor"
-        (at 0 0 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          ) hide
-        )
-      )
-      (property "ki_description" "0.1A Ic, 45V Vce, NPN Transistor, SOT-23"
-        (at 0 0 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          ) hide
-        )
-      )
-      (property "ki_fp_filters" "SOT?23*"
-        (at 0 0 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          ) hide
-        )
-      )
-      (symbol "BC847_0_1"
-        (polyline
-          (pts
-            (xy 0.635 0.635)
-            (xy 2.54 2.54)
-          )
-          (stroke
-            (width 0)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
-        (polyline
-          (pts
-            (xy 0.635 -0.635)
-            (xy 2.54 -2.54)
-            (xy 2.54 -2.54)
-          )
-          (stroke
-            (width 0)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
-        (polyline
-          (pts
-            (xy 0.635 1.905)
-            (xy 0.635 -1.905)
-            (xy 0.635 -1.905)
-          )
-          (stroke
-            (width 0.508)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
-        (polyline
-          (pts
-            (xy 1.27 -1.778)
-            (xy 1.778 -1.27)
-            (xy 2.286 -2.286)
-            (xy 1.27 -1.778)
-            (xy 1.27 -1.778)
-          )
-          (stroke
-            (width 0)
-            (type default)
-          )
-          (fill
-            (type outline)
-          )
-        )
-        (circle
-          (center 1.27 0)
-          (radius 2.8194)
-          (stroke
-            (width 0.254)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
-      )
-      (symbol "BC847_1_1"
-        (pin input line
-          (at -5.08 0 0)
-          (length 5.715)
-          (name "B"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-          (number "1"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-        )
-        (pin passive line
-          (at 2.54 -5.08 90)
-          (length 2.54)
-          (name "E"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-          (number "2"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-        )
-        (pin passive line
-          (at 2.54 5.08 270)
-          (length 2.54)
-          (name "C"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-          (number "3"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-        )
-      )
-    )
-    (symbol "Connector_Audio:AudioJack3"
-      (in_bom yes)
-      (on_board yes)
-      (property "Reference" "J"
-        (at 0 8.89 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          )
-        )
-      )
-      (property "Value" "AudioJack3"
-        (at 0 6.35 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          )
-        )
-      )
-      (property "Footprint" ""
-        (at 0 0 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          ) hide
-        )
-      )
-      (property "Datasheet" "~"
-        (at 0 0 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          ) hide
-        )
-      )
-      (property "ki_keywords" "audio jack receptacle stereo headphones phones TRS connector"
-        (at 0 0 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          ) hide
-        )
-      )
-      (property "ki_description" "Audio Jack, 3 Poles (Stereo / TRS)"
-        (at 0 0 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          ) hide
-        )
-      )
-      (property "ki_fp_filters" "Jack*"
-        (at 0 0 0)
-        (effects
-          (font
-            (size 1.27 1.27)
-          ) hide
-        )
-      )
-      (symbol "AudioJack3_0_1"
-        (rectangle
-          (start -5.08 -5.08)
-          (end -6.35 -2.54)
-          (stroke
-            (width 0.254)
-            (type default)
-          )
-          (fill
-            (type outline)
-          )
-        )
-        (polyline
-          (pts
-            (xy 0 -2.54)
-            (xy 0.635 -3.175)
-            (xy 1.27 -2.54)
-            (xy 2.54 -2.54)
-          )
-          (stroke
-            (width 0.254)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
-        (polyline
-          (pts
-            (xy -1.905 -2.54)
-            (xy -1.27 -3.175)
-            (xy -0.635 -2.54)
-            (xy -0.635 0)
-            (xy 2.54 0)
-          )
-          (stroke
-            (width 0.254)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
-        (polyline
-          (pts
-            (xy 2.54 2.54)
-            (xy -2.54 2.54)
-            (xy -2.54 -2.54)
-            (xy -3.175 -3.175)
-            (xy -3.81 -2.54)
-          )
-          (stroke
-            (width 0.254)
-            (type default)
-          )
-          (fill
-            (type none)
-          )
-        )
-        (rectangle
-          (start 2.54 3.81)
-          (end -5.08 -5.08)
-          (stroke
-            (width 0.254)
-            (type default)
-          )
-          (fill
-            (type background)
-          )
-        )
-      )
-      (symbol "AudioJack3_1_1"
-        (pin passive line
-          (at 5.08 0 180)
-          (length 2.54)
-          (name "~"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-          (number "R"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-        )
-        (pin passive line
-          (at 5.08 2.54 180)
-          (length 2.54)
-          (name "~"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-          (number "S"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-        )
-        (pin passive line
-          (at 5.08 -2.54 180)
-          (length 2.54)
-          (name "~"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-          (number "T"
-            (effects
-              (font
-                (size 1.27 1.27)
-              )
-            )
-          )
-        )
-      )
-    )
   )
   (symbol
     (lib_id "Amplifier_Operational:OPA1612AxD")
@@ -3873,14 +2027,14 @@
   )
   (symbol
     (lib_id "Device:R")
-    (at 327.66 33.02 90)
+    (at 330.2 33.02 90)
     (unit 1)
     (in_bom yes)
     (on_board yes)
     (dnp no)
     (uuid "9fe61198-5d13-57bb-b648-786705bfe64a")
     (property "Reference" "R403"
-      (at 327.66 30 90)
+      (at 330.2 30 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -3888,7 +2042,7 @@
       )
     )
     (property "Value" "2.00k 0.1%"
-      (at 327.66 36.04 90)
+      (at 330.2 36.04 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -3896,7 +2050,7 @@
       )
     )
     (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-      (at 327.66 33.02 0)
+      (at 330.2 33.02 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -3904,7 +2058,7 @@
       )
     )
     (property "Datasheet" ""
-      (at 327.66 33.02 0)
+      (at 330.2 33.02 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -3926,8 +2080,9 @@
       )
     )
   )
-  (label "OUT_L"
-    (at 323.85 33.02 180)
+  (global_label "OUT_L"
+    (shape bidirectional)
+    (at 326.39 33.02 180)
     (fields_autoplaced)
     (effects
       (font
@@ -3936,9 +2091,17 @@
       (justify right)
     )
     (uuid "d753492b-b0ac-5dd0-9b77-9e37c0794608")
+    (property "Intersheetrefs" "${INTERSHEET_REFS}"
+      (at 326.39 33.02 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ) hide
+      )
+    )
   )
   (label "FB_L"
-    (at 331.47 33.02 0)
+    (at 334.01 33.02 0)
     (fields_autoplaced)
     (effects
       (font
@@ -3950,14 +2113,14 @@
   )
   (symbol
     (lib_id "Device:C")
-    (at 353.06 33.02 90)
+    (at 358.14 33.02 90)
     (unit 1)
     (in_bom yes)
     (on_board yes)
     (dnp no)
     (uuid "dc08fafa-6215-5246-ad09-e55bd6f4ec2d")
     (property "Reference" "C404"
-      (at 353.06 28.99 90)
+      (at 358.14 28.99 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -3965,7 +2128,7 @@
       )
     )
     (property "Value" "22p C0G"
-      (at 353.06 37.05 90)
+      (at 358.14 37.05 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -3973,7 +2136,7 @@
       )
     )
     (property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-      (at 353.06 33.02 0)
+      (at 358.14 33.02 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -3981,7 +2144,7 @@
       )
     )
     (property "Datasheet" ""
-      (at 353.06 33.02 0)
+      (at 358.14 33.02 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -4003,8 +2166,9 @@
       )
     )
   )
-  (label "OUT_L"
-    (at 349.25 33.02 180)
+  (global_label "OUT_L"
+    (shape bidirectional)
+    (at 354.33 33.02 180)
     (fields_autoplaced)
     (effects
       (font
@@ -4013,9 +2177,17 @@
       (justify right)
     )
     (uuid "0cae7ca8-43de-5f7f-b61f-b228d2249145")
+    (property "Intersheetrefs" "${INTERSHEET_REFS}"
+      (at 354.33 33.02 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ) hide
+      )
+    )
   )
   (label "FB_L"
-    (at 356.87 33.02 0)
+    (at 361.95 33.02 0)
     (fields_autoplaced)
     (effects
       (font
@@ -4027,14 +2199,14 @@
   )
   (symbol
     (lib_id "Device:R")
-    (at 375.92 33.02 90)
+    (at 381 33.02 90)
     (unit 1)
     (in_bom yes)
     (on_board yes)
     (dnp no)
     (uuid "77792434-f8fe-51eb-bb9a-ddeb3a70e5ea")
     (property "Reference" "R404"
-      (at 375.92 30 90)
+      (at 381 30 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -4042,7 +2214,7 @@
       )
     )
     (property "Value" "4.02k 0.1%"
-      (at 375.92 36.04 90)
+      (at 381 36.04 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -4050,7 +2222,7 @@
       )
     )
     (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-      (at 375.92 33.02 0)
+      (at 381 33.02 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -4058,7 +2230,7 @@
       )
     )
     (property "Datasheet" ""
-      (at 375.92 33.02 0)
+      (at 381 33.02 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -4081,7 +2253,7 @@
     )
   )
   (label "FB_L"
-    (at 372.11 33.02 180)
+    (at 377.19 33.02 180)
     (fields_autoplaced)
     (effects
       (font
@@ -4093,7 +2265,7 @@
   )
   (global_label "GND"
     (shape bidirectional)
-    (at 379.73 33.02 0)
+    (at 384.81 33.02 0)
     (fields_autoplaced)
     (effects
       (font
@@ -4103,7 +2275,7 @@
     )
     (uuid "234fac93-c6c1-52a6-b66d-9395cd160b3d")
     (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 379.73 33.02 0)
+      (at 384.81 33.02 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -4113,14 +2285,14 @@
   )
   (symbol
     (lib_id "Device:R")
-    (at 403.86 33.02 90)
+    (at 33.02 76.2 90)
     (unit 1)
     (in_bom yes)
     (on_board yes)
     (dnp no)
     (uuid "444567d3-dcaa-58f5-9452-da277666a783")
     (property "Reference" "R405"
-      (at 403.86 30 90)
+      (at 33.02 73.18 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -4128,7 +2300,7 @@
       )
     )
     (property "Value" "576R 0.1%"
-      (at 403.86 36.04 90)
+      (at 33.02 79.22 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -4136,7 +2308,7 @@
       )
     )
     (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-      (at 403.86 33.02 0)
+      (at 33.02 76.2 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -4144,7 +2316,7 @@
       )
     )
     (property "Datasheet" ""
-      (at 403.86 33.02 0)
+      (at 33.02 76.2 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -4167,7 +2339,7 @@
     )
   )
   (label "FB_L"
-    (at 400.05 33.02 180)
+    (at 29.21 76.2 180)
     (fields_autoplaced)
     (effects
       (font
@@ -4178,7 +2350,7 @@
     (uuid "25991052-44ca-5430-a3b0-b1298a76d20e")
   )
   (label "GAIN_L"
-    (at 407.67 33.02 0)
+    (at 36.83 76.2 0)
     (fields_autoplaced)
     (effects
       (font
@@ -4190,14 +2362,14 @@
   )
   (symbol
     (lib_id "Device:R")
-    (at 429.26 33.02 90)
+    (at 58.42 76.2 90)
     (unit 1)
     (in_bom yes)
     (on_board yes)
     (dnp no)
     (uuid "b71f0dae-90fc-5e07-aabe-368adc3bbf88")
     (property "Reference" "R406"
-      (at 429.26 30 90)
+      (at 58.42 73.18 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -4205,7 +2377,7 @@
       )
     )
     (property "Value" "47R"
-      (at 429.26 36.04 90)
+      (at 58.42 79.22 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -4213,7 +2385,7 @@
       )
     )
     (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-      (at 429.26 33.02 0)
+      (at 58.42 76.2 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -4221,7 +2393,7 @@
       )
     )
     (property "Datasheet" ""
-      (at 429.26 33.02 0)
+      (at 58.42 76.2 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -4244,7 +2416,7 @@
     )
   )
   (label "OA_L"
-    (at 425.45 33.02 180)
+    (at 54.61 76.2 180)
     (fields_autoplaced)
     (effects
       (font
@@ -4255,7 +2427,7 @@
     (uuid "9977832d-b4c5-55d0-ac3d-bc413e700201")
   )
   (label "BIN_L1"
-    (at 433.07 33.02 0)
+    (at 62.23 76.2 0)
     (fields_autoplaced)
     (effects
       (font
@@ -4267,14 +2439,14 @@
   )
   (symbol
     (lib_id "Amplifier_Audio:LME49600")
-    (at 462.28 45.72 0)
+    (at 91.44 88.9 0)
     (unit 1)
     (in_bom yes)
     (on_board yes)
     (dnp no)
     (uuid "1416fb5c-d43a-53fa-9943-419b3eec2d96")
     (property "Reference" "U402"
-      (at 462.28 28.1 0)
+      (at 91.44 71.28 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -4282,7 +2454,7 @@
       )
     )
     (property "Value" "LME49600"
-      (at 462.28 63.34 0)
+      (at 91.44 106.52 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -4290,7 +2462,7 @@
       )
     )
     (property "Footprint" "Package_TO_SOT_SMD:TO-263-5_TabPin3"
-      (at 462.28 45.72 0)
+      (at 91.44 88.9 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -4298,7 +2470,7 @@
       )
     )
     (property "Datasheet" ""
-      (at 462.28 45.72 0)
+      (at 91.44 88.9 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -4306,7 +2478,7 @@
       )
     )
     (property "MPN" "LME49600TS/NOPB"
-      (at 462.28 45.72 0)
+      (at 91.44 88.9 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -4338,11 +2510,11 @@
     )
   )
   (no_connect
-    (at 462.28 53.34)
+    (at 91.44 96.52)
     (uuid "96703293-491f-539b-b57b-0995b085cc6b")
   )
   (label "BIN_L1"
-    (at 454.66 45.72 180)
+    (at 83.82 88.9 180)
     (fields_autoplaced)
     (effects
       (font
@@ -4354,7 +2526,7 @@
   )
   (global_label "-16V"
     (shape bidirectional)
-    (at 459.74 53.34 270)
+    (at 88.9 96.52 270)
     (fields_autoplaced)
     (effects
       (font
@@ -4364,7 +2536,7 @@
     )
     (uuid "b97da3c6-ee3f-5bfe-af0a-4b40f943165d")
     (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 459.74 53.34 0)
+      (at 88.9 96.52 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -4373,7 +2545,7 @@
     )
   )
   (label "BO_L1"
-    (at 469.9 45.72 0)
+    (at 99.06 88.9 0)
     (fields_autoplaced)
     (effects
       (font
@@ -4385,7 +2557,7 @@
   )
   (global_label "+16V"
     (shape bidirectional)
-    (at 459.74 38.1 90)
+    (at 88.9 81.28 90)
     (fields_autoplaced)
     (effects
       (font
@@ -4395,7 +2567,7 @@
     )
     (uuid "4363e48f-27d3-59c1-bdd6-0e573f15358e")
     (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 459.74 38.1 0)
+      (at 88.9 81.28 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -4405,14 +2577,14 @@
   )
   (symbol
     (lib_id "Device:R")
-    (at 492.76 33.02 90)
+    (at 121.92 76.2 90)
     (unit 1)
     (in_bom yes)
     (on_board yes)
     (dnp no)
     (uuid "9254d3c0-bca8-5b73-92cc-ac328242f3eb")
     (property "Reference" "R407"
-      (at 492.76 30 90)
+      (at 121.92 73.18 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -4420,7 +2592,7 @@
       )
     )
     (property "Value" "2.2R 1W"
-      (at 492.76 36.04 90)
+      (at 121.92 79.22 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -4428,7 +2600,7 @@
       )
     )
     (property "Footprint" "Resistor_SMD:R_2512_6332Metric"
-      (at 492.76 33.02 0)
+      (at 121.92 76.2 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -4436,7 +2608,7 @@
       )
     )
     (property "Datasheet" ""
-      (at 492.76 33.02 0)
+      (at 121.92 76.2 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -4459,7 +2631,7 @@
     )
   )
   (label "BO_L1"
-    (at 488.95 33.02 180)
+    (at 118.11 76.2 180)
     (fields_autoplaced)
     (effects
       (font
@@ -4469,8 +2641,9 @@
     )
     (uuid "0cf83e76-ce82-594c-9ad8-0f218badd5c0")
   )
-  (label "OUT_L"
-    (at 496.57 33.02 0)
+  (global_label "OUT_L"
+    (shape bidirectional)
+    (at 125.73 76.2 0)
     (fields_autoplaced)
     (effects
       (font
@@ -4479,17 +2652,25 @@
       (justify left)
     )
     (uuid "685ee17d-a57c-52bf-8788-997f27916847")
+    (property "Intersheetrefs" "${INTERSHEET_REFS}"
+      (at 125.73 76.2 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ) hide
+      )
+    )
   )
   (symbol
     (lib_id "Device:C")
-    (at 520.7 33.02 90)
+    (at 152.4 76.2 90)
     (unit 1)
     (in_bom yes)
     (on_board yes)
     (dnp no)
     (uuid "aaaa4dcd-89fe-5c60-8efc-54a905d8e3d6")
     (property "Reference" "C405"
-      (at 520.7 28.99 90)
+      (at 152.4 72.17 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -4497,7 +2678,7 @@
       )
     )
     (property "Value" "10u 25V"
-      (at 520.7 37.05 90)
+      (at 152.4 80.23 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -4505,7 +2686,7 @@
       )
     )
     (property "Footprint" "Capacitor_SMD:C_1210_3225Metric"
-      (at 520.7 33.02 0)
+      (at 152.4 76.2 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -4513,7 +2694,7 @@
       )
     )
     (property "Datasheet" ""
-      (at 520.7 33.02 0)
+      (at 152.4 76.2 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -4537,7 +2718,7 @@
   )
   (global_label "+16V"
     (shape bidirectional)
-    (at 516.89 33.02 180)
+    (at 148.59 76.2 180)
     (fields_autoplaced)
     (effects
       (font
@@ -4547,7 +2728,7 @@
     )
     (uuid "04ad2e4b-b5fe-548e-9265-817cb855b9b3")
     (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 516.89 33.02 0)
+      (at 148.59 76.2 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -4557,7 +2738,7 @@
   )
   (global_label "GND"
     (shape bidirectional)
-    (at 524.51 33.02 0)
+    (at 156.21 76.2 0)
     (fields_autoplaced)
     (effects
       (font
@@ -4567,7 +2748,7 @@
     )
     (uuid "df4ecb6d-9971-515c-8f15-1c0c12df3210")
     (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 524.51 33.02 0)
+      (at 156.21 76.2 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -4577,14 +2758,14 @@
   )
   (symbol
     (lib_id "Device:C")
-    (at 548.64 33.02 90)
+    (at 180.34 76.2 90)
     (unit 1)
     (in_bom yes)
     (on_board yes)
     (dnp no)
     (uuid "e46f0d1e-4667-57cf-a134-dbe8f7adf1d7")
     (property "Reference" "C406"
-      (at 548.64 28.99 90)
+      (at 180.34 72.17 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -4592,7 +2773,7 @@
       )
     )
     (property "Value" "10u 25V"
-      (at 548.64 37.05 90)
+      (at 180.34 80.23 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -4600,7 +2781,7 @@
       )
     )
     (property "Footprint" "Capacitor_SMD:C_1210_3225Metric"
-      (at 548.64 33.02 0)
+      (at 180.34 76.2 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -4608,7 +2789,7 @@
       )
     )
     (property "Datasheet" ""
-      (at 548.64 33.02 0)
+      (at 180.34 76.2 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -4632,7 +2813,7 @@
   )
   (global_label "GND"
     (shape bidirectional)
-    (at 544.83 33.02 180)
+    (at 176.53 76.2 180)
     (fields_autoplaced)
     (effects
       (font
@@ -4642,7 +2823,7 @@
     )
     (uuid "5ebceacc-e84f-5d42-a0db-e03dd27ca786")
     (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 544.83 33.02 0)
+      (at 176.53 76.2 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -4652,7 +2833,7 @@
   )
   (global_label "-16V"
     (shape bidirectional)
-    (at 552.45 33.02 0)
+    (at 184.15 76.2 0)
     (fields_autoplaced)
     (effects
       (font
@@ -4662,7 +2843,7 @@
     )
     (uuid "154eb824-0b75-5a34-a427-dbcbff183472")
     (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 552.45 33.02 0)
+      (at 184.15 76.2 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -4672,14 +2853,14 @@
   )
   (symbol
     (lib_id "Device:R")
-    (at 33.02 76.2 90)
+    (at 208.28 76.2 90)
     (unit 1)
     (in_bom yes)
     (on_board yes)
     (dnp no)
     (uuid "e599eb44-77a5-5d2a-99df-3156725a0ab7")
     (property "Reference" "R408"
-      (at 33.02 73.18 90)
+      (at 208.28 73.18 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -4687,7 +2868,7 @@
       )
     )
     (property "Value" "47R"
-      (at 33.02 79.22 90)
+      (at 208.28 79.22 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -4695,7 +2876,7 @@
       )
     )
     (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-      (at 33.02 76.2 0)
+      (at 208.28 76.2 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -4703,7 +2884,7 @@
       )
     )
     (property "Datasheet" ""
-      (at 33.02 76.2 0)
+      (at 208.28 76.2 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -4726,7 +2907,7 @@
     )
   )
   (label "OA_L"
-    (at 29.21 76.2 180)
+    (at 204.47 76.2 180)
     (fields_autoplaced)
     (effects
       (font
@@ -4737,7 +2918,7 @@
     (uuid "6128121c-4215-523a-b97b-a212c785c511")
   )
   (label "BIN_L2"
-    (at 36.83 76.2 0)
+    (at 212.09 76.2 0)
     (fields_autoplaced)
     (effects
       (font
@@ -4749,14 +2930,14 @@
   )
   (symbol
     (lib_id "Amplifier_Audio:LME49600")
-    (at 63.5 88.9 0)
+    (at 238.76 88.9 0)
     (unit 1)
     (in_bom yes)
     (on_board yes)
     (dnp no)
     (uuid "d86cabed-085b-5576-a946-d020c1772aed")
     (property "Reference" "U403"
-      (at 63.5 71.28 0)
+      (at 238.76 71.28 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -4764,7 +2945,7 @@
       )
     )
     (property "Value" "LME49600"
-      (at 63.5 106.52 0)
+      (at 238.76 106.52 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -4772,7 +2953,7 @@
       )
     )
     (property "Footprint" "Package_TO_SOT_SMD:TO-263-5_TabPin3"
-      (at 63.5 88.9 0)
+      (at 238.76 88.9 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -4780,7 +2961,7 @@
       )
     )
     (property "Datasheet" ""
-      (at 63.5 88.9 0)
+      (at 238.76 88.9 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -4788,7 +2969,7 @@
       )
     )
     (property "MPN" "LME49600TS/NOPB"
-      (at 63.5 88.9 0)
+      (at 238.76 88.9 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -4820,11 +3001,11 @@
     )
   )
   (no_connect
-    (at 63.5 96.52)
+    (at 238.76 96.52)
     (uuid "57715b8a-081a-5c5d-8a3a-8d685960bc3a")
   )
   (label "BIN_L2"
-    (at 55.88 88.9 180)
+    (at 231.14 88.9 180)
     (fields_autoplaced)
     (effects
       (font
@@ -4836,7 +3017,7 @@
   )
   (global_label "-16V"
     (shape bidirectional)
-    (at 60.96 96.52 270)
+    (at 236.22 96.52 270)
     (fields_autoplaced)
     (effects
       (font
@@ -4846,7 +3027,7 @@
     )
     (uuid "16abd5e9-b22c-5207-a077-87044b316f5f")
     (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 60.96 96.52 0)
+      (at 236.22 96.52 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -4855,7 +3036,7 @@
     )
   )
   (label "BO_L2"
-    (at 71.12 88.9 0)
+    (at 246.38 88.9 0)
     (fields_autoplaced)
     (effects
       (font
@@ -4867,7 +3048,7 @@
   )
   (global_label "+16V"
     (shape bidirectional)
-    (at 60.96 81.28 90)
+    (at 236.22 81.28 90)
     (fields_autoplaced)
     (effects
       (font
@@ -4877,7 +3058,7 @@
     )
     (uuid "74fa7d41-86e8-5c9f-8865-dc4218e858d4")
     (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 60.96 81.28 0)
+      (at 236.22 81.28 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -4887,14 +3068,14 @@
   )
   (symbol
     (lib_id "Device:R")
-    (at 93.98 76.2 90)
+    (at 269.24 76.2 90)
     (unit 1)
     (in_bom yes)
     (on_board yes)
     (dnp no)
     (uuid "67f0c60c-50e6-5e91-b210-6eebab786d4f")
     (property "Reference" "R409"
-      (at 93.98 73.18 90)
+      (at 269.24 73.18 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -4902,7 +3083,7 @@
       )
     )
     (property "Value" "2.2R 1W"
-      (at 93.98 79.22 90)
+      (at 269.24 79.22 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -4910,7 +3091,7 @@
       )
     )
     (property "Footprint" "Resistor_SMD:R_2512_6332Metric"
-      (at 93.98 76.2 0)
+      (at 269.24 76.2 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -4918,7 +3099,7 @@
       )
     )
     (property "Datasheet" ""
-      (at 93.98 76.2 0)
+      (at 269.24 76.2 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -4941,7 +3122,7 @@
     )
   )
   (label "BO_L2"
-    (at 90.17 76.2 180)
+    (at 265.43 76.2 180)
     (fields_autoplaced)
     (effects
       (font
@@ -4951,8 +3132,9 @@
     )
     (uuid "2bc3d9db-e497-5180-884a-e007ceaa2ea5")
   )
-  (label "OUT_L"
-    (at 97.79 76.2 0)
+  (global_label "OUT_L"
+    (shape bidirectional)
+    (at 273.05 76.2 0)
     (fields_autoplaced)
     (effects
       (font
@@ -4961,17 +3143,25 @@
       (justify left)
     )
     (uuid "1df18263-fb75-56f5-86ea-81b3b9f38e81")
+    (property "Intersheetrefs" "${INTERSHEET_REFS}"
+      (at 273.05 76.2 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ) hide
+      )
+    )
   )
   (symbol
     (lib_id "Device:C")
-    (at 124.46 76.2 90)
+    (at 299.72 76.2 90)
     (unit 1)
     (in_bom yes)
     (on_board yes)
     (dnp no)
     (uuid "aa3c7a09-5bd7-5e45-ad46-67405cd43307")
     (property "Reference" "C407"
-      (at 124.46 72.17 90)
+      (at 299.72 72.17 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -4979,7 +3169,7 @@
       )
     )
     (property "Value" "10u 25V"
-      (at 124.46 80.23 90)
+      (at 299.72 80.23 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -4987,7 +3177,7 @@
       )
     )
     (property "Footprint" "Capacitor_SMD:C_1210_3225Metric"
-      (at 124.46 76.2 0)
+      (at 299.72 76.2 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -4995,7 +3185,7 @@
       )
     )
     (property "Datasheet" ""
-      (at 124.46 76.2 0)
+      (at 299.72 76.2 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -5019,7 +3209,7 @@
   )
   (global_label "+16V"
     (shape bidirectional)
-    (at 120.65 76.2 180)
+    (at 295.91 76.2 180)
     (fields_autoplaced)
     (effects
       (font
@@ -5029,7 +3219,7 @@
     )
     (uuid "bae1241b-904c-5ba1-90e0-80fb147f4bce")
     (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 120.65 76.2 0)
+      (at 295.91 76.2 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -5039,7 +3229,7 @@
   )
   (global_label "GND"
     (shape bidirectional)
-    (at 128.27 76.2 0)
+    (at 303.53 76.2 0)
     (fields_autoplaced)
     (effects
       (font
@@ -5049,7 +3239,7 @@
     )
     (uuid "83e7f705-63d7-5176-8552-e14547bb927d")
     (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 128.27 76.2 0)
+      (at 303.53 76.2 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -5059,14 +3249,14 @@
   )
   (symbol
     (lib_id "Device:C")
-    (at 149.86 76.2 90)
+    (at 327.66 76.2 90)
     (unit 1)
     (in_bom yes)
     (on_board yes)
     (dnp no)
     (uuid "7641aca0-6e9f-5cae-a6dd-c58c8e91cd86")
     (property "Reference" "C408"
-      (at 149.86 72.17 90)
+      (at 327.66 72.17 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -5074,7 +3264,7 @@
       )
     )
     (property "Value" "10u 25V"
-      (at 149.86 80.23 90)
+      (at 327.66 80.23 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -5082,7 +3272,7 @@
       )
     )
     (property "Footprint" "Capacitor_SMD:C_1210_3225Metric"
-      (at 149.86 76.2 0)
+      (at 327.66 76.2 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -5090,7 +3280,7 @@
       )
     )
     (property "Datasheet" ""
-      (at 149.86 76.2 0)
+      (at 327.66 76.2 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -5114,7 +3304,7 @@
   )
   (global_label "GND"
     (shape bidirectional)
-    (at 146.05 76.2 180)
+    (at 323.85 76.2 180)
     (fields_autoplaced)
     (effects
       (font
@@ -5124,7 +3314,7 @@
     )
     (uuid "fe5a2d04-cd1c-5b6c-a2b1-bdedf522ac72")
     (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 146.05 76.2 0)
+      (at 323.85 76.2 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -5134,7 +3324,7 @@
   )
   (global_label "-16V"
     (shape bidirectional)
-    (at 153.67 76.2 0)
+    (at 331.47 76.2 0)
     (fields_autoplaced)
     (effects
       (font
@@ -5144,7 +3334,7 @@
     )
     (uuid "0f5434f0-d54b-5d97-81ef-2d566b77601b")
     (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 153.67 76.2 0)
+      (at 331.47 76.2 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -5154,14 +3344,14 @@
   )
   (symbol
     (lib_id "Device:R")
-    (at 177.8 76.2 90)
+    (at 358.14 76.2 90)
     (unit 1)
     (in_bom yes)
     (on_board yes)
     (dnp no)
     (uuid "0ed22890-033b-5c47-a52c-d1b5ad27a1ae")
     (property "Reference" "R410"
-      (at 177.8 73.18 90)
+      (at 358.14 73.18 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -5169,7 +3359,7 @@
       )
     )
     (property "Value" "10R"
-      (at 177.8 79.22 90)
+      (at 358.14 79.22 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -5177,7 +3367,7 @@
       )
     )
     (property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-      (at 177.8 76.2 0)
+      (at 358.14 76.2 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -5185,7 +3375,7 @@
       )
     )
     (property "Datasheet" ""
-      (at 177.8 76.2 0)
+      (at 358.14 76.2 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -5207,8 +3397,9 @@
       )
     )
   )
-  (label "OUT_L"
-    (at 173.99 76.2 180)
+  (global_label "OUT_L"
+    (shape bidirectional)
+    (at 354.33 76.2 180)
     (fields_autoplaced)
     (effects
       (font
@@ -5217,9 +3408,17 @@
       (justify right)
     )
     (uuid "369837a7-22b3-5463-8c1a-03e18d98b9ef")
+    (property "Intersheetrefs" "${INTERSHEET_REFS}"
+      (at 354.33 76.2 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ) hide
+      )
+    )
   )
   (label "ZB_L"
-    (at 181.61 76.2 0)
+    (at 361.95 76.2 0)
     (fields_autoplaced)
     (effects
       (font
@@ -5231,14 +3430,14 @@
   )
   (symbol
     (lib_id "Device:C")
-    (at 203.2 76.2 90)
+    (at 383.54 76.2 90)
     (unit 1)
     (in_bom yes)
     (on_board yes)
     (dnp no)
     (uuid "937dc116-b3e9-5cf3-8718-0982cf0eac78")
     (property "Reference" "C409"
-      (at 203.2 72.17 90)
+      (at 383.54 72.17 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -5246,7 +3445,7 @@
       )
     )
     (property "Value" "100n"
-      (at 203.2 80.23 90)
+      (at 383.54 80.23 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -5254,7 +3453,7 @@
       )
     )
     (property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-      (at 203.2 76.2 0)
+      (at 383.54 76.2 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -5262,7 +3461,7 @@
       )
     )
     (property "Datasheet" ""
-      (at 203.2 76.2 0)
+      (at 383.54 76.2 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -5285,7 +3484,7 @@
     )
   )
   (label "ZB_L"
-    (at 199.39 76.2 180)
+    (at 379.73 76.2 180)
     (fields_autoplaced)
     (effects
       (font
@@ -5297,7 +3496,7 @@
   )
   (global_label "GND"
     (shape bidirectional)
-    (at 207.01 76.2 0)
+    (at 387.35 76.2 0)
     (fields_autoplaced)
     (effects
       (font
@@ -5307,7 +3506,7 @@
     )
     (uuid "5e798155-66db-53fe-8dac-78b004ee6c6b")
     (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 207.01 76.2 0)
+      (at 387.35 76.2 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -5317,14 +3516,14 @@
   )
   (symbol
     (lib_id "Device:R")
-    (at 236.22 76.2 90)
+    (at 38.1 119.38 90)
     (unit 1)
     (in_bom yes)
     (on_board yes)
     (dnp no)
     (uuid "ab393e11-90b3-5558-8d07-0f9249b55fba")
     (property "Reference" "R411"
-      (at 236.22 73.18 90)
+      (at 38.1 116.36 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -5332,7 +3531,7 @@
       )
     )
     (property "Value" "100R"
-      (at 236.22 79.22 90)
+      (at 38.1 122.4 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -5340,7 +3539,7 @@
       )
     )
     (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-      (at 236.22 76.2 0)
+      (at 38.1 119.38 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -5348,7 +3547,7 @@
       )
     )
     (property "Datasheet" ""
-      (at 236.22 76.2 0)
+      (at 38.1 119.38 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -5372,7 +3571,7 @@
   )
   (global_label "HP_IN_R"
     (shape bidirectional)
-    (at 232.41 76.2 180)
+    (at 34.29 119.38 180)
     (fields_autoplaced)
     (effects
       (font
@@ -5382,7 +3581,7 @@
     )
     (uuid "5b4f215b-6031-593b-ae3a-ba134fefca41")
     (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 232.41 76.2 0)
+      (at 34.29 119.38 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -5391,7 +3590,7 @@
     )
   )
   (label "AMP_INR"
-    (at 240.03 76.2 0)
+    (at 41.91 119.38 0)
     (fields_autoplaced)
     (effects
       (font
@@ -5403,14 +3602,14 @@
   )
   (symbol
     (lib_id "Device:C")
-    (at 266.7 76.2 90)
+    (at 68.58 119.38 90)
     (unit 1)
     (in_bom yes)
     (on_board yes)
     (dnp no)
     (uuid "a28277c7-67ef-52b4-87bd-9e581b02ad0c")
     (property "Reference" "C410"
-      (at 266.7 72.17 90)
+      (at 68.58 115.35 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -5418,7 +3617,7 @@
       )
     )
     (property "Value" "470p C0G"
-      (at 266.7 80.23 90)
+      (at 68.58 123.41 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -5426,7 +3625,7 @@
       )
     )
     (property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-      (at 266.7 76.2 0)
+      (at 68.58 119.38 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -5434,7 +3633,7 @@
       )
     )
     (property "Datasheet" ""
-      (at 266.7 76.2 0)
+      (at 68.58 119.38 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -5457,7 +3656,7 @@
     )
   )
   (label "AMP_INR"
-    (at 262.89 76.2 180)
+    (at 64.77 119.38 180)
     (fields_autoplaced)
     (effects
       (font
@@ -5469,7 +3668,7 @@
   )
   (global_label "GND"
     (shape bidirectional)
-    (at 270.51 76.2 0)
+    (at 72.39 119.38 0)
     (fields_autoplaced)
     (effects
       (font
@@ -5479,7 +3678,7 @@
     )
     (uuid "8130afba-c8ad-5b26-bea9-b87686daee27")
     (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 270.51 76.2 0)
+      (at 72.39 119.38 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -5489,14 +3688,14 @@
   )
   (symbol
     (lib_id "Device:R")
-    (at 294.64 76.2 90)
+    (at 96.52 119.38 90)
     (unit 1)
     (in_bom yes)
     (on_board yes)
     (dnp no)
     (uuid "e9823d2a-5dd5-5ca9-9292-00cd481b1f5d")
     (property "Reference" "R412"
-      (at 294.64 73.18 90)
+      (at 96.52 116.36 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -5504,7 +3703,7 @@
       )
     )
     (property "Value" "100k"
-      (at 294.64 79.22 90)
+      (at 96.52 122.4 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -5512,7 +3711,7 @@
       )
     )
     (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-      (at 294.64 76.2 0)
+      (at 96.52 119.38 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -5520,7 +3719,7 @@
       )
     )
     (property "Datasheet" ""
-      (at 294.64 76.2 0)
+      (at 96.52 119.38 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -5543,7 +3742,7 @@
     )
   )
   (label "AMP_INR"
-    (at 290.83 76.2 180)
+    (at 92.71 119.38 180)
     (fields_autoplaced)
     (effects
       (font
@@ -5555,7 +3754,7 @@
   )
   (global_label "GND"
     (shape bidirectional)
-    (at 298.45 76.2 0)
+    (at 100.33 119.38 0)
     (fields_autoplaced)
     (effects
       (font
@@ -5565,7 +3764,7 @@
     )
     (uuid "b5827d59-8bea-5853-9071-84ddde8c9b07")
     (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 298.45 76.2 0)
+      (at 100.33 119.38 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -5575,14 +3774,14 @@
   )
   (symbol
     (lib_id "Device:R")
-    (at 322.58 76.2 90)
+    (at 127 119.38 90)
     (unit 1)
     (in_bom yes)
     (on_board yes)
     (dnp no)
     (uuid "4cb0fdb5-51f2-5140-85d1-8797ab3ad8d4")
     (property "Reference" "R413"
-      (at 322.58 73.18 90)
+      (at 127 116.36 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -5590,7 +3789,7 @@
       )
     )
     (property "Value" "2.00k 0.1%"
-      (at 322.58 79.22 90)
+      (at 127 122.4 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -5598,7 +3797,7 @@
       )
     )
     (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-      (at 322.58 76.2 0)
+      (at 127 119.38 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -5606,7 +3805,7 @@
       )
     )
     (property "Datasheet" ""
-      (at 322.58 76.2 0)
+      (at 127 119.38 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -5628,8 +3827,9 @@
       )
     )
   )
-  (label "OUT_R"
-    (at 318.77 76.2 180)
+  (global_label "OUT_R"
+    (shape bidirectional)
+    (at 123.19 119.38 180)
     (fields_autoplaced)
     (effects
       (font
@@ -5638,9 +3838,17 @@
       (justify right)
     )
     (uuid "68db243d-375c-5e8d-b8a0-0c2634164c10")
+    (property "Intersheetrefs" "${INTERSHEET_REFS}"
+      (at 123.19 119.38 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ) hide
+      )
+    )
   )
   (label "FB_R"
-    (at 326.39 76.2 0)
+    (at 130.81 119.38 0)
     (fields_autoplaced)
     (effects
       (font
@@ -5652,14 +3860,14 @@
   )
   (symbol
     (lib_id "Device:C")
-    (at 347.98 76.2 90)
+    (at 154.94 119.38 90)
     (unit 1)
     (in_bom yes)
     (on_board yes)
     (dnp no)
     (uuid "7376b1d6-2431-5cef-ae3a-ff9d58f90448")
     (property "Reference" "C411"
-      (at 347.98 72.17 90)
+      (at 154.94 115.35 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -5667,7 +3875,7 @@
       )
     )
     (property "Value" "22p C0G"
-      (at 347.98 80.23 90)
+      (at 154.94 123.41 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -5675,7 +3883,7 @@
       )
     )
     (property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-      (at 347.98 76.2 0)
+      (at 154.94 119.38 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -5683,7 +3891,7 @@
       )
     )
     (property "Datasheet" ""
-      (at 347.98 76.2 0)
+      (at 154.94 119.38 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -5705,8 +3913,9 @@
       )
     )
   )
-  (label "OUT_R"
-    (at 344.17 76.2 180)
+  (global_label "OUT_R"
+    (shape bidirectional)
+    (at 151.13 119.38 180)
     (fields_autoplaced)
     (effects
       (font
@@ -5715,9 +3924,17 @@
       (justify right)
     )
     (uuid "0a91b357-13c3-5e2e-bef9-57fc163854e7")
+    (property "Intersheetrefs" "${INTERSHEET_REFS}"
+      (at 151.13 119.38 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ) hide
+      )
+    )
   )
   (label "FB_R"
-    (at 351.79 76.2 0)
+    (at 158.75 119.38 0)
     (fields_autoplaced)
     (effects
       (font
@@ -5729,14 +3946,14 @@
   )
   (symbol
     (lib_id "Device:R")
-    (at 373.38 76.2 90)
+    (at 180.34 119.38 90)
     (unit 1)
     (in_bom yes)
     (on_board yes)
     (dnp no)
     (uuid "5927a276-1d93-59f8-9378-e83248904a8d")
     (property "Reference" "R414"
-      (at 373.38 73.18 90)
+      (at 180.34 116.36 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -5744,7 +3961,7 @@
       )
     )
     (property "Value" "4.02k 0.1%"
-      (at 373.38 79.22 90)
+      (at 180.34 122.4 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -5752,7 +3969,7 @@
       )
     )
     (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-      (at 373.38 76.2 0)
+      (at 180.34 119.38 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -5760,7 +3977,7 @@
       )
     )
     (property "Datasheet" ""
-      (at 373.38 76.2 0)
+      (at 180.34 119.38 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -5783,7 +4000,7 @@
     )
   )
   (label "FB_R"
-    (at 369.57 76.2 180)
+    (at 176.53 119.38 180)
     (fields_autoplaced)
     (effects
       (font
@@ -5795,7 +4012,7 @@
   )
   (global_label "GND"
     (shape bidirectional)
-    (at 377.19 76.2 0)
+    (at 184.15 119.38 0)
     (fields_autoplaced)
     (effects
       (font
@@ -5805,7 +4022,7 @@
     )
     (uuid "5e24cbff-00f7-5e4d-aca1-7926741be6f6")
     (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 377.19 76.2 0)
+      (at 184.15 119.38 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -5815,14 +4032,14 @@
   )
   (symbol
     (lib_id "Device:R")
-    (at 398.78 76.2 90)
+    (at 205.74 119.38 90)
     (unit 1)
     (in_bom yes)
     (on_board yes)
     (dnp no)
     (uuid "e9e6ce68-56a4-5c52-85d9-19b09dea7a9c")
     (property "Reference" "R415"
-      (at 398.78 73.18 90)
+      (at 205.74 116.36 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -5830,7 +4047,7 @@
       )
     )
     (property "Value" "576R 0.1%"
-      (at 398.78 79.22 90)
+      (at 205.74 122.4 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -5838,7 +4055,7 @@
       )
     )
     (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-      (at 398.78 76.2 0)
+      (at 205.74 119.38 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -5846,7 +4063,7 @@
       )
     )
     (property "Datasheet" ""
-      (at 398.78 76.2 0)
+      (at 205.74 119.38 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -5869,7 +4086,7 @@
     )
   )
   (label "FB_R"
-    (at 394.97 76.2 180)
+    (at 201.93 119.38 180)
     (fields_autoplaced)
     (effects
       (font
@@ -5880,7 +4097,7 @@
     (uuid "12883d3b-ea4a-56a3-8546-19fa227bd0b3")
   )
   (label "GAIN_R"
-    (at 402.59 76.2 0)
+    (at 209.55 119.38 0)
     (fields_autoplaced)
     (effects
       (font
@@ -5892,14 +4109,14 @@
   )
   (symbol
     (lib_id "Device:R")
-    (at 424.18 76.2 90)
+    (at 233.68 119.38 90)
     (unit 1)
     (in_bom yes)
     (on_board yes)
     (dnp no)
     (uuid "3e7553b2-b8aa-5a29-9ada-a3fa587c6541")
     (property "Reference" "R416"
-      (at 424.18 73.18 90)
+      (at 233.68 116.36 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -5907,7 +4124,7 @@
       )
     )
     (property "Value" "47R"
-      (at 424.18 79.22 90)
+      (at 233.68 122.4 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -5915,7 +4132,7 @@
       )
     )
     (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-      (at 424.18 76.2 0)
+      (at 233.68 119.38 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -5923,7 +4140,7 @@
       )
     )
     (property "Datasheet" ""
-      (at 424.18 76.2 0)
+      (at 233.68 119.38 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -5946,7 +4163,7 @@
     )
   )
   (label "OA_R"
-    (at 420.37 76.2 180)
+    (at 229.87 119.38 180)
     (fields_autoplaced)
     (effects
       (font
@@ -5957,7 +4174,7 @@
     (uuid "9955e0b0-2f32-5bc5-a196-581c5d2ecdef")
   )
   (label "BIN_R1"
-    (at 427.99 76.2 0)
+    (at 237.49 119.38 0)
     (fields_autoplaced)
     (effects
       (font
@@ -5969,14 +4186,14 @@
   )
   (symbol
     (lib_id "Amplifier_Audio:LME49600")
-    (at 457.2 88.9 0)
+    (at 264.16 132.08 0)
     (unit 1)
     (in_bom yes)
     (on_board yes)
     (dnp no)
     (uuid "6baf3ebf-84d1-50c6-9b75-67e7b448c2d7")
     (property "Reference" "U404"
-      (at 457.2 71.28 0)
+      (at 264.16 114.46 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -5984,7 +4201,7 @@
       )
     )
     (property "Value" "LME49600"
-      (at 457.2 106.52 0)
+      (at 264.16 149.7 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -5992,7 +4209,7 @@
       )
     )
     (property "Footprint" "Package_TO_SOT_SMD:TO-263-5_TabPin3"
-      (at 457.2 88.9 0)
+      (at 264.16 132.08 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -6000,7 +4217,7 @@
       )
     )
     (property "Datasheet" ""
-      (at 457.2 88.9 0)
+      (at 264.16 132.08 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -6008,7 +4225,7 @@
       )
     )
     (property "MPN" "LME49600TS/NOPB"
-      (at 457.2 88.9 0)
+      (at 264.16 132.08 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -6040,11 +4257,11 @@
     )
   )
   (no_connect
-    (at 457.2 96.52)
+    (at 264.16 139.7)
     (uuid "ec1a6045-33e2-585c-873e-5a8c4d8a0c45")
   )
   (label "BIN_R1"
-    (at 449.58 88.9 180)
+    (at 256.54 132.08 180)
     (fields_autoplaced)
     (effects
       (font
@@ -6056,7 +4273,7 @@
   )
   (global_label "-16V"
     (shape bidirectional)
-    (at 454.66 96.52 270)
+    (at 261.62 139.7 270)
     (fields_autoplaced)
     (effects
       (font
@@ -6066,7 +4283,7 @@
     )
     (uuid "c3b1ea91-8065-5ae9-ab86-205b8ee2dfa8")
     (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 454.66 96.52 0)
+      (at 261.62 139.7 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -6075,7 +4292,7 @@
     )
   )
   (label "BO_R1"
-    (at 464.82 88.9 0)
+    (at 271.78 132.08 0)
     (fields_autoplaced)
     (effects
       (font
@@ -6087,7 +4304,7 @@
   )
   (global_label "+16V"
     (shape bidirectional)
-    (at 454.66 81.28 90)
+    (at 261.62 124.46 90)
     (fields_autoplaced)
     (effects
       (font
@@ -6097,7 +4314,7 @@
     )
     (uuid "df83169b-e9bd-5910-ab46-9361b982a081")
     (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 454.66 81.28 0)
+      (at 261.62 124.46 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -6107,14 +4324,14 @@
   )
   (symbol
     (lib_id "Device:R")
-    (at 487.68 76.2 90)
+    (at 294.64 119.38 90)
     (unit 1)
     (in_bom yes)
     (on_board yes)
     (dnp no)
     (uuid "b9b0e669-b645-5e97-b5bf-32ed354461ee")
     (property "Reference" "R417"
-      (at 487.68 73.18 90)
+      (at 294.64 116.36 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -6122,7 +4339,7 @@
       )
     )
     (property "Value" "2.2R 1W"
-      (at 487.68 79.22 90)
+      (at 294.64 122.4 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -6130,7 +4347,7 @@
       )
     )
     (property "Footprint" "Resistor_SMD:R_2512_6332Metric"
-      (at 487.68 76.2 0)
+      (at 294.64 119.38 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -6138,7 +4355,7 @@
       )
     )
     (property "Datasheet" ""
-      (at 487.68 76.2 0)
+      (at 294.64 119.38 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -6161,7 +4378,7 @@
     )
   )
   (label "BO_R1"
-    (at 483.87 76.2 180)
+    (at 290.83 119.38 180)
     (fields_autoplaced)
     (effects
       (font
@@ -6171,8 +4388,9 @@
     )
     (uuid "5cef101b-2950-5efb-aadf-e2bd1321eabc")
   )
-  (label "OUT_R"
-    (at 491.49 76.2 0)
+  (global_label "OUT_R"
+    (shape bidirectional)
+    (at 298.45 119.38 0)
     (fields_autoplaced)
     (effects
       (font
@@ -6181,17 +4399,25 @@
       (justify left)
     )
     (uuid "7723f8fa-4f44-5e1a-b7d9-8b7f38386511")
+    (property "Intersheetrefs" "${INTERSHEET_REFS}"
+      (at 298.45 119.38 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ) hide
+      )
+    )
   )
   (symbol
     (lib_id "Device:C")
-    (at 515.62 76.2 90)
+    (at 325.12 119.38 90)
     (unit 1)
     (in_bom yes)
     (on_board yes)
     (dnp no)
     (uuid "105835d2-7763-5750-8b8f-e5c30ed6005c")
     (property "Reference" "C412"
-      (at 515.62 72.17 90)
+      (at 325.12 115.35 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -6199,7 +4425,7 @@
       )
     )
     (property "Value" "10u 25V"
-      (at 515.62 80.23 90)
+      (at 325.12 123.41 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -6207,7 +4433,7 @@
       )
     )
     (property "Footprint" "Capacitor_SMD:C_1210_3225Metric"
-      (at 515.62 76.2 0)
+      (at 325.12 119.38 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -6215,7 +4441,7 @@
       )
     )
     (property "Datasheet" ""
-      (at 515.62 76.2 0)
+      (at 325.12 119.38 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -6239,7 +4465,7 @@
   )
   (global_label "+16V"
     (shape bidirectional)
-    (at 511.81 76.2 180)
+    (at 321.31 119.38 180)
     (fields_autoplaced)
     (effects
       (font
@@ -6249,7 +4475,7 @@
     )
     (uuid "a7c05e6c-503a-5d6e-855c-97768c64c318")
     (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 511.81 76.2 0)
+      (at 321.31 119.38 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -6259,7 +4485,7 @@
   )
   (global_label "GND"
     (shape bidirectional)
-    (at 519.43 76.2 0)
+    (at 328.93 119.38 0)
     (fields_autoplaced)
     (effects
       (font
@@ -6269,7 +4495,7 @@
     )
     (uuid "0437d059-a45d-569f-b8ae-02c30f32622f")
     (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 519.43 76.2 0)
+      (at 328.93 119.38 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -6279,14 +4505,14 @@
   )
   (symbol
     (lib_id "Device:C")
-    (at 543.56 76.2 90)
+    (at 353.06 119.38 90)
     (unit 1)
     (in_bom yes)
     (on_board yes)
     (dnp no)
     (uuid "a232e7cb-4ff2-5257-b91f-bcb4397ccc9c")
     (property "Reference" "C413"
-      (at 543.56 72.17 90)
+      (at 353.06 115.35 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -6294,7 +4520,7 @@
       )
     )
     (property "Value" "10u 25V"
-      (at 543.56 80.23 90)
+      (at 353.06 123.41 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -6302,7 +4528,7 @@
       )
     )
     (property "Footprint" "Capacitor_SMD:C_1210_3225Metric"
-      (at 543.56 76.2 0)
+      (at 353.06 119.38 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -6310,7 +4536,7 @@
       )
     )
     (property "Datasheet" ""
-      (at 543.56 76.2 0)
+      (at 353.06 119.38 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -6334,7 +4560,7 @@
   )
   (global_label "GND"
     (shape bidirectional)
-    (at 539.75 76.2 180)
+    (at 349.25 119.38 180)
     (fields_autoplaced)
     (effects
       (font
@@ -6344,7 +4570,7 @@
     )
     (uuid "c203c930-95ac-5589-acf7-acf2ae4615b1")
     (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 539.75 76.2 0)
+      (at 349.25 119.38 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -6354,7 +4580,7 @@
   )
   (global_label "-16V"
     (shape bidirectional)
-    (at 547.37 76.2 0)
+    (at 356.87 119.38 0)
     (fields_autoplaced)
     (effects
       (font
@@ -6364,7 +4590,7 @@
     )
     (uuid "a34b3432-e6af-5318-be79-01981ae06ba5")
     (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 547.37 76.2 0)
+      (at 356.87 119.38 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -6374,14 +4600,14 @@
   )
   (symbol
     (lib_id "Device:R")
-    (at 33.02 119.38 90)
+    (at 381 119.38 90)
     (unit 1)
     (in_bom yes)
     (on_board yes)
     (dnp no)
     (uuid "3f2c2342-e656-5ae7-86c1-cb3c58fe3f75")
     (property "Reference" "R418"
-      (at 33.02 116.36 90)
+      (at 381 116.36 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -6389,7 +4615,7 @@
       )
     )
     (property "Value" "47R"
-      (at 33.02 122.4 90)
+      (at 381 122.4 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -6397,7 +4623,7 @@
       )
     )
     (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-      (at 33.02 119.38 0)
+      (at 381 119.38 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -6405,7 +4631,7 @@
       )
     )
     (property "Datasheet" ""
-      (at 33.02 119.38 0)
+      (at 381 119.38 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -6428,7 +4654,7 @@
     )
   )
   (label "OA_R"
-    (at 29.21 119.38 180)
+    (at 377.19 119.38 180)
     (fields_autoplaced)
     (effects
       (font
@@ -6439,7 +4665,7 @@
     (uuid "e674c6de-e2fa-5e95-b601-abcdb8c8bae9")
   )
   (label "BIN_R2"
-    (at 36.83 119.38 0)
+    (at 384.81 119.38 0)
     (fields_autoplaced)
     (effects
       (font
@@ -6451,14 +4677,14 @@
   )
   (symbol
     (lib_id "Amplifier_Audio:LME49600")
-    (at 63.5 132.08 0)
+    (at 38.1 175.26 0)
     (unit 1)
     (in_bom yes)
     (on_board yes)
     (dnp no)
     (uuid "d83b1702-34ce-5da7-af2f-b4f31d434262")
     (property "Reference" "U405"
-      (at 63.5 114.46 0)
+      (at 38.1 157.64 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -6466,7 +4692,7 @@
       )
     )
     (property "Value" "LME49600"
-      (at 63.5 149.7 0)
+      (at 38.1 192.88 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -6474,7 +4700,7 @@
       )
     )
     (property "Footprint" "Package_TO_SOT_SMD:TO-263-5_TabPin3"
-      (at 63.5 132.08 0)
+      (at 38.1 175.26 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -6482,7 +4708,7 @@
       )
     )
     (property "Datasheet" ""
-      (at 63.5 132.08 0)
+      (at 38.1 175.26 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -6490,7 +4716,7 @@
       )
     )
     (property "MPN" "LME49600TS/NOPB"
-      (at 63.5 132.08 0)
+      (at 38.1 175.26 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -6522,11 +4748,11 @@
     )
   )
   (no_connect
-    (at 63.5 139.7)
+    (at 38.1 182.88)
     (uuid "78316a20-cf46-5708-8b86-7066a563b6bd")
   )
   (label "BIN_R2"
-    (at 55.88 132.08 180)
+    (at 30.48 175.26 180)
     (fields_autoplaced)
     (effects
       (font
@@ -6538,7 +4764,7 @@
   )
   (global_label "-16V"
     (shape bidirectional)
-    (at 60.96 139.7 270)
+    (at 35.56 182.88 270)
     (fields_autoplaced)
     (effects
       (font
@@ -6548,7 +4774,7 @@
     )
     (uuid "d2da733f-1433-5485-90e9-4546526c6d11")
     (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 60.96 139.7 0)
+      (at 35.56 182.88 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -6557,7 +4783,7 @@
     )
   )
   (label "BO_R2"
-    (at 71.12 132.08 0)
+    (at 45.72 175.26 0)
     (fields_autoplaced)
     (effects
       (font
@@ -6569,7 +4795,7 @@
   )
   (global_label "+16V"
     (shape bidirectional)
-    (at 60.96 124.46 90)
+    (at 35.56 167.64 90)
     (fields_autoplaced)
     (effects
       (font
@@ -6579,7 +4805,7 @@
     )
     (uuid "f60fc82a-b5f0-57aa-9e10-d950ab9f54b7")
     (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 60.96 124.46 0)
+      (at 35.56 167.64 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -6589,14 +4815,14 @@
   )
   (symbol
     (lib_id "Device:R")
-    (at 93.98 119.38 90)
+    (at 68.58 162.56 90)
     (unit 1)
     (in_bom yes)
     (on_board yes)
     (dnp no)
     (uuid "d71e9096-6fe6-5534-870d-c2e76c6d914a")
     (property "Reference" "R419"
-      (at 93.98 116.36 90)
+      (at 68.58 159.54 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -6604,7 +4830,7 @@
       )
     )
     (property "Value" "2.2R 1W"
-      (at 93.98 122.4 90)
+      (at 68.58 165.58 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -6612,7 +4838,7 @@
       )
     )
     (property "Footprint" "Resistor_SMD:R_2512_6332Metric"
-      (at 93.98 119.38 0)
+      (at 68.58 162.56 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -6620,7 +4846,7 @@
       )
     )
     (property "Datasheet" ""
-      (at 93.98 119.38 0)
+      (at 68.58 162.56 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -6643,7 +4869,7 @@
     )
   )
   (label "BO_R2"
-    (at 90.17 119.38 180)
+    (at 64.77 162.56 180)
     (fields_autoplaced)
     (effects
       (font
@@ -6653,8 +4879,9 @@
     )
     (uuid "03316972-0bf1-583a-ae24-66f55a552780")
   )
-  (label "OUT_R"
-    (at 97.79 119.38 0)
+  (global_label "OUT_R"
+    (shape bidirectional)
+    (at 72.39 162.56 0)
     (fields_autoplaced)
     (effects
       (font
@@ -6663,17 +4890,25 @@
       (justify left)
     )
     (uuid "f5cb8c95-4207-5109-baee-99affa9d0951")
+    (property "Intersheetrefs" "${INTERSHEET_REFS}"
+      (at 72.39 162.56 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ) hide
+      )
+    )
   )
   (symbol
     (lib_id "Device:C")
-    (at 124.46 119.38 90)
+    (at 99.06 162.56 90)
     (unit 1)
     (in_bom yes)
     (on_board yes)
     (dnp no)
     (uuid "c09d82d9-452a-5968-9fc9-098024c94be8")
     (property "Reference" "C414"
-      (at 124.46 115.35 90)
+      (at 99.06 158.53 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -6681,7 +4916,7 @@
       )
     )
     (property "Value" "10u 25V"
-      (at 124.46 123.41 90)
+      (at 99.06 166.59 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -6689,7 +4924,7 @@
       )
     )
     (property "Footprint" "Capacitor_SMD:C_1210_3225Metric"
-      (at 124.46 119.38 0)
+      (at 99.06 162.56 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -6697,7 +4932,7 @@
       )
     )
     (property "Datasheet" ""
-      (at 124.46 119.38 0)
+      (at 99.06 162.56 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -6721,7 +4956,7 @@
   )
   (global_label "+16V"
     (shape bidirectional)
-    (at 120.65 119.38 180)
+    (at 95.25 162.56 180)
     (fields_autoplaced)
     (effects
       (font
@@ -6731,7 +4966,7 @@
     )
     (uuid "b7a74e3e-97cd-587f-b423-2b1cb8b06886")
     (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 120.65 119.38 0)
+      (at 95.25 162.56 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -6741,7 +4976,7 @@
   )
   (global_label "GND"
     (shape bidirectional)
-    (at 128.27 119.38 0)
+    (at 102.87 162.56 0)
     (fields_autoplaced)
     (effects
       (font
@@ -6751,7 +4986,7 @@
     )
     (uuid "a8692714-5fac-51b2-81e7-7a1aced74a39")
     (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 128.27 119.38 0)
+      (at 102.87 162.56 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -6761,14 +4996,14 @@
   )
   (symbol
     (lib_id "Device:C")
-    (at 149.86 119.38 90)
+    (at 127 162.56 90)
     (unit 1)
     (in_bom yes)
     (on_board yes)
     (dnp no)
     (uuid "3d8ffbf3-fd8c-5d10-867d-ce8392c78072")
     (property "Reference" "C415"
-      (at 149.86 115.35 90)
+      (at 127 158.53 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -6776,7 +5011,7 @@
       )
     )
     (property "Value" "10u 25V"
-      (at 149.86 123.41 90)
+      (at 127 166.59 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -6784,7 +5019,7 @@
       )
     )
     (property "Footprint" "Capacitor_SMD:C_1210_3225Metric"
-      (at 149.86 119.38 0)
+      (at 127 162.56 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -6792,7 +5027,7 @@
       )
     )
     (property "Datasheet" ""
-      (at 149.86 119.38 0)
+      (at 127 162.56 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -6816,7 +5051,7 @@
   )
   (global_label "GND"
     (shape bidirectional)
-    (at 146.05 119.38 180)
+    (at 123.19 162.56 180)
     (fields_autoplaced)
     (effects
       (font
@@ -6826,7 +5061,7 @@
     )
     (uuid "79ae7f8f-ada7-592c-abb2-e6ac6b626b8d")
     (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 146.05 119.38 0)
+      (at 123.19 162.56 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -6836,7 +5071,7 @@
   )
   (global_label "-16V"
     (shape bidirectional)
-    (at 153.67 119.38 0)
+    (at 130.81 162.56 0)
     (fields_autoplaced)
     (effects
       (font
@@ -6846,7 +5081,7 @@
     )
     (uuid "d50bcf97-5e82-5186-a636-1f2e9fb163bd")
     (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 153.67 119.38 0)
+      (at 130.81 162.56 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -6856,14 +5091,14 @@
   )
   (symbol
     (lib_id "Device:R")
-    (at 177.8 119.38 90)
+    (at 157.48 162.56 90)
     (unit 1)
     (in_bom yes)
     (on_board yes)
     (dnp no)
     (uuid "15aeee43-ada9-50a1-8412-1765fdd2eb3a")
     (property "Reference" "R420"
-      (at 177.8 116.36 90)
+      (at 157.48 159.54 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -6871,7 +5106,7 @@
       )
     )
     (property "Value" "10R"
-      (at 177.8 122.4 90)
+      (at 157.48 165.58 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -6879,7 +5114,7 @@
       )
     )
     (property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-      (at 177.8 119.38 0)
+      (at 157.48 162.56 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -6887,7 +5122,7 @@
       )
     )
     (property "Datasheet" ""
-      (at 177.8 119.38 0)
+      (at 157.48 162.56 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -6909,8 +5144,9 @@
       )
     )
   )
-  (label "OUT_R"
-    (at 173.99 119.38 180)
+  (global_label "OUT_R"
+    (shape bidirectional)
+    (at 153.67 162.56 180)
     (fields_autoplaced)
     (effects
       (font
@@ -6919,9 +5155,17 @@
       (justify right)
     )
     (uuid "0f2c5f62-a169-5935-8f06-c3f5298a5046")
+    (property "Intersheetrefs" "${INTERSHEET_REFS}"
+      (at 153.67 162.56 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ) hide
+      )
+    )
   )
   (label "ZB_R"
-    (at 181.61 119.38 0)
+    (at 161.29 162.56 0)
     (fields_autoplaced)
     (effects
       (font
@@ -6933,14 +5177,14 @@
   )
   (symbol
     (lib_id "Device:C")
-    (at 203.2 119.38 90)
+    (at 182.88 162.56 90)
     (unit 1)
     (in_bom yes)
     (on_board yes)
     (dnp no)
     (uuid "261584b0-8576-5a3c-a7ef-2a810be1c05f")
     (property "Reference" "C416"
-      (at 203.2 115.35 90)
+      (at 182.88 158.53 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -6948,7 +5192,7 @@
       )
     )
     (property "Value" "100n"
-      (at 203.2 123.41 90)
+      (at 182.88 166.59 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -6956,7 +5200,7 @@
       )
     )
     (property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-      (at 203.2 119.38 0)
+      (at 182.88 162.56 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -6964,7 +5208,7 @@
       )
     )
     (property "Datasheet" ""
-      (at 203.2 119.38 0)
+      (at 182.88 162.56 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -6987,7 +5231,7 @@
     )
   )
   (label "ZB_R"
-    (at 199.39 119.38 180)
+    (at 179.07 162.56 180)
     (fields_autoplaced)
     (effects
       (font
@@ -6999,7 +5243,7 @@
   )
   (global_label "GND"
     (shape bidirectional)
-    (at 207.01 119.38 0)
+    (at 186.69 162.56 0)
     (fields_autoplaced)
     (effects
       (font
@@ -7009,7 +5253,7 @@
     )
     (uuid "6527a4be-0da9-57dd-8f3a-5827ccb6061e")
     (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 207.01 119.38 0)
+      (at 186.69 162.56 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -7019,14 +5263,14 @@
   )
   (symbol
     (lib_id "Device:C_Polarized")
-    (at 231.14 119.38 90)
+    (at 210.82 162.56 90)
     (unit 1)
     (in_bom yes)
     (on_board yes)
     (dnp no)
     (uuid "86c35a08-d874-516f-9640-694c68c1c826")
     (property "Reference" "C417"
-      (at 231.14 115.09 90)
+      (at 210.82 158.27 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -7034,7 +5278,7 @@
       )
     )
     (property "Value" "220u 25V"
-      (at 231.14 123.67 90)
+      (at 210.82 166.85 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -7042,7 +5286,7 @@
       )
     )
     (property "Footprint" "Capacitor_SMD:CP_Elec_10x10"
-      (at 231.14 119.38 0)
+      (at 210.82 162.56 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -7050,7 +5294,7 @@
       )
     )
     (property "Datasheet" ""
-      (at 231.14 119.38 0)
+      (at 210.82 162.56 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -7074,7 +5318,7 @@
   )
   (global_label "+16V"
     (shape bidirectional)
-    (at 227.33 119.38 180)
+    (at 207.01 162.56 180)
     (fields_autoplaced)
     (effects
       (font
@@ -7084,7 +5328,7 @@
     )
     (uuid "c845fa36-32f9-52d4-a625-a5db596c9b52")
     (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 227.33 119.38 0)
+      (at 207.01 162.56 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -7094,7 +5338,7 @@
   )
   (global_label "GND"
     (shape bidirectional)
-    (at 234.95 119.38 0)
+    (at 214.63 162.56 0)
     (fields_autoplaced)
     (effects
       (font
@@ -7104,7 +5348,7 @@
     )
     (uuid "c3aa75ba-cbd6-5bd7-8861-6d2549c90c04")
     (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 234.95 119.38 0)
+      (at 214.63 162.56 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -7114,14 +5358,14 @@
   )
   (symbol
     (lib_id "Device:C_Polarized")
-    (at 259.08 119.38 90)
+    (at 238.76 162.56 90)
     (unit 1)
     (in_bom yes)
     (on_board yes)
     (dnp no)
     (uuid "ec224b22-58f7-5707-be42-fc3f2bdb31b3")
     (property "Reference" "C418"
-      (at 259.08 115.09 90)
+      (at 238.76 158.27 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -7129,7 +5373,7 @@
       )
     )
     (property "Value" "220u 25V"
-      (at 259.08 123.67 90)
+      (at 238.76 166.85 90)
       (effects
         (font
           (size 1.27 1.27)
@@ -7137,7 +5381,7 @@
       )
     )
     (property "Footprint" "Capacitor_SMD:CP_Elec_10x10"
-      (at 259.08 119.38 0)
+      (at 238.76 162.56 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -7145,7 +5389,7 @@
       )
     )
     (property "Datasheet" ""
-      (at 259.08 119.38 0)
+      (at 238.76 162.56 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -7169,7 +5413,7 @@
   )
   (global_label "GND"
     (shape bidirectional)
-    (at 255.27 119.38 180)
+    (at 234.95 162.56 180)
     (fields_autoplaced)
     (effects
       (font
@@ -7179,7 +5423,7 @@
     )
     (uuid "32b98a5a-58f1-5d6d-99d6-c7f2e1ac81ed")
     (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 255.27 119.38 0)
+      (at 234.95 162.56 0)
       (effects
         (font
           (size 1.27 1.27)
@@ -7189,7 +5433,7 @@
   )
   (global_label "-16V"
     (shape bidirectional)
-    (at 262.89 119.38 0)
+    (at 242.57 162.56 0)
     (fields_autoplaced)
     (effects
       (font
@@ -7199,2618 +5443,16 @@
     )
     (uuid "42f15f53-522f-5208-bc68-5f6744c5f654")
     (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 262.89 119.38 0)
+      (at 242.57 162.56 0)
       (effects
         (font
           (size 1.27 1.27)
         ) hide
       )
     )
-  )
-  (symbol
-    (lib_id "Relay:G6K-2")
-    (at 292.1 134.62 0)
-    (unit 1)
-    (in_bom yes)
-    (on_board yes)
-    (dnp no)
-    (uuid "6e0b74ef-10d3-5999-bff2-acafb2dcbe6b")
-    (property "Reference" "K401"
-      (at 292.1 116 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Value" "G6K-2F-Y 3VDC"
-      (at 292.1 152.74 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Footprint" "Relay_SMD:Relay_DPDT_Omron_G6K-2F-Y"
-      (at 292.1 134.62 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (property "Datasheet" ""
-      (at 292.1 134.62 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (property "MPN" "G6K-2F-Y DC3"
-      (at 292.1 134.62 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (pin "1"
-      (uuid "22b107b5-7b3e-5d92-9305-458e16a632cb")
-    )
-    (pin "2"
-      (uuid "716de619-6af2-581f-acaa-6fd7dacf3202")
-    )
-    (pin "3"
-      (uuid "0d404df1-d26e-51de-879c-760e0ec1d210")
-    )
-    (pin "4"
-      (uuid "c3190a4b-faed-5394-adde-850e1ce5ff1a")
-    )
-    (pin "5"
-      (uuid "9f4b01f4-f080-5ce4-8a71-cb455c172939")
-    )
-    (pin "6"
-      (uuid "00889768-7a57-5128-8eaf-5435d5a7ca59")
-    )
-    (pin "7"
-      (uuid "e7bd04c3-13c0-58b5-a501-417ee721be1b")
-    )
-    (pin "8"
-      (uuid "3c1923c7-3f3b-538f-9101-b211a2682351")
-    )
-    (instances
-      (project "aio"
-        (path "/6b900c54-f875-59c0-b2c3-d2bfb1f8e068/86ac2cd8-f42d-55a7-ba55-01c8b833d345"
-          (reference "K401")
-          (unit 1)
-        )
-      )
-    )
-  )
-  (global_label "+3V3D"
-    (shape bidirectional)
-    (at 281.94 127 90)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify left)
-    )
-    (uuid "e5a4e03e-c7c6-596a-9086-a1d82157cceb")
-    (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 281.94 127 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-  )
-  (no_connect
-    (at 289.56 127)
-    (uuid "07dee617-3cdd-5fa5-ac40-98c7af443113")
-  )
-  (label "OUT_L"
-    (at 292.1 142.24 270)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify right)
-    )
-    (uuid "53d5a469-9182-581d-82c2-a80c8c83fda2")
-  )
-  (label "HPJ_L"
-    (at 294.64 127 90)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify left)
-    )
-    (uuid "0a9da454-1451-5920-87a4-b8092a1747ea")
-  )
-  (label "HPJ_R"
-    (at 304.8 127 90)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify left)
-    )
-    (uuid "5586c13a-4c45-50db-a498-be7aac94ed6e")
-  )
-  (label "OUT_R"
-    (at 302.26 142.24 270)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify right)
-    )
-    (uuid "cb10c34b-c868-5803-8af7-19a446264907")
-  )
-  (no_connect
-    (at 299.72 127)
-    (uuid "e8e0b94c-6aa6-5da8-846c-9cb90f4fe02d")
-  )
-  (label "RLY_DRV"
-    (at 281.94 142.24 270)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify right)
-    )
-    (uuid "01ee1ac3-9f4e-54e1-acb6-48aa445962ca")
-  )
-  (symbol
-    (lib_id "Diode:1N4148W")
-    (at 327.66 119.38 0)
-    (unit 1)
-    (in_bom yes)
-    (on_board yes)
-    (dnp no)
-    (uuid "70952e81-a11a-5e03-84d8-0ca903e6d5e6")
-    (property "Reference" "D401"
-      (at 327.66 116.11 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Value" "1N4148W"
-      (at 327.66 122.65 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Footprint" "Diode_SMD:D_SOD-123"
-      (at 327.66 119.38 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (property "Datasheet" ""
-      (at 327.66 119.38 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (pin "1"
-      (uuid "75fee5d1-8548-54fb-8246-b8109180d059")
-    )
-    (pin "2"
-      (uuid "8a6c73ff-c194-534f-93b0-45f4a3991d55")
-    )
-    (instances
-      (project "aio"
-        (path "/6b900c54-f875-59c0-b2c3-d2bfb1f8e068/86ac2cd8-f42d-55a7-ba55-01c8b833d345"
-          (reference "D401")
-          (unit 1)
-        )
-      )
-    )
-  )
-  (global_label "+3V3D"
-    (shape bidirectional)
-    (at 323.85 119.38 180)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify right)
-    )
-    (uuid "7a9ad329-0d06-5061-bca9-57b080e34051")
-    (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 323.85 119.38 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-  )
-  (label "RLY_DRV"
-    (at 331.47 119.38 0)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify left)
-    )
-    (uuid "ddbc110b-653a-57b2-964b-465f9fd712dd")
-  )
-  (symbol
-    (lib_id "Transistor_FET:2N7002")
-    (at 358.14 132.08 0)
-    (unit 1)
-    (in_bom yes)
-    (on_board yes)
-    (dnp no)
-    (uuid "dcee2622-c804-5419-9bf5-8e172d9330bc")
-    (property "Reference" "Q401"
-      (at 357.82 116.5 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Value" "2N7002"
-      (at 357.82 146.16 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-      (at 358.14 132.08 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (property "Datasheet" ""
-      (at 358.14 132.08 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (property "MPN" "2N7002"
-      (at 358.14 132.08 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (pin "1"
-      (uuid "8a3ebc4b-7002-54b3-873a-6623902868ce")
-    )
-    (pin "2"
-      (uuid "eff3a361-c0cf-52da-b56a-e245afd87797")
-    )
-    (pin "3"
-      (uuid "c5d7622a-8520-5f84-958f-ef913a180d8f")
-    )
-    (instances
-      (project "aio"
-        (path "/6b900c54-f875-59c0-b2c3-d2bfb1f8e068/86ac2cd8-f42d-55a7-ba55-01c8b833d345"
-          (reference "Q401")
-          (unit 1)
-        )
-      )
-    )
-  )
-  (label "RLY_G"
-    (at 353.06 132.08 180)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify right)
-    )
-    (uuid "1660b9c5-d9cb-543b-93e9-e301fee55886")
-  )
-  (global_label "GND"
-    (shape bidirectional)
-    (at 360.68 137.16 270)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify right)
-    )
-    (uuid "c1b56c82-a866-527f-b7ad-3040e6d2cb57")
-    (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 360.68 137.16 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-  )
-  (label "RLY_DRV"
-    (at 360.68 127 90)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify left)
-    )
-    (uuid "3607a7f2-19e9-5a79-a40f-8a5b6ee8f42b")
-  )
-  (symbol
-    (lib_id "Device:R")
-    (at 375.92 119.38 90)
-    (unit 1)
-    (in_bom yes)
-    (on_board yes)
-    (dnp no)
-    (uuid "18ef0694-0893-55d4-9724-ea44035e2553")
-    (property "Reference" "R421"
-      (at 375.92 116.36 90)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Value" "1k"
-      (at 375.92 122.4 90)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-      (at 375.92 119.38 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (property "Datasheet" ""
-      (at 375.92 119.38 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (pin "1"
-      (uuid "f721ada7-ef78-5b2e-b4d1-fd9a755b4e8a")
-    )
-    (pin "2"
-      (uuid "2353146f-d194-5cf0-bda0-2f81a0237a8e")
-    )
-    (instances
-      (project "aio"
-        (path "/6b900c54-f875-59c0-b2c3-d2bfb1f8e068/86ac2cd8-f42d-55a7-ba55-01c8b833d345"
-          (reference "R421")
-          (unit 1)
-        )
-      )
-    )
-  )
-  (label "RDRV"
-    (at 372.11 119.38 180)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify right)
-    )
-    (uuid "713a79d0-4618-59d6-b34b-4ecd9ef0c492")
-  )
-  (label "RLY_G"
-    (at 379.73 119.38 0)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify left)
-    )
-    (uuid "5ba60cf1-dee4-57db-970b-05ca61a1d7b3")
-  )
-  (symbol
-    (lib_id "Device:R")
-    (at 406.4 119.38 90)
-    (unit 1)
-    (in_bom yes)
-    (on_board yes)
-    (dnp no)
-    (uuid "75d49b3c-f9a4-5265-8d6a-6571fc6f72c6")
-    (property "Reference" "R422"
-      (at 406.4 116.36 90)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Value" "220k"
-      (at 406.4 122.4 90)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-      (at 406.4 119.38 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (property "Datasheet" ""
-      (at 406.4 119.38 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (pin "1"
-      (uuid "4f2302e0-3bba-5b94-a4f3-a100f28fd248")
-    )
-    (pin "2"
-      (uuid "0e1fde22-715e-55cb-b74c-aec8b110ee29")
-    )
-    (instances
-      (project "aio"
-        (path "/6b900c54-f875-59c0-b2c3-d2bfb1f8e068/86ac2cd8-f42d-55a7-ba55-01c8b833d345"
-          (reference "R422")
-          (unit 1)
-        )
-      )
-    )
-  )
-  (global_label "+3V3D"
-    (shape bidirectional)
-    (at 402.59 119.38 180)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify right)
-    )
-    (uuid "e2363f97-0937-5770-828f-4839e056853a")
-    (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 402.59 119.38 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-  )
-  (label "RDRV"
-    (at 410.21 119.38 0)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify left)
-    )
-    (uuid "12291307-040c-5ee5-9dec-9fda554eed20")
-  )
-  (symbol
-    (lib_id "Device:C")
-    (at 429.26 119.38 90)
-    (unit 1)
-    (in_bom yes)
-    (on_board yes)
-    (dnp no)
-    (uuid "5949e2d9-ae27-5146-a261-0a9d11ba0f9c")
-    (property "Reference" "C419"
-      (at 429.26 115.35 90)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Value" "10u"
-      (at 429.26 123.41 90)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-      (at 429.26 119.38 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (property "Datasheet" ""
-      (at 429.26 119.38 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (pin "1"
-      (uuid "f4b9e683-3dd4-5a0c-8bc0-9c40f8991d67")
-    )
-    (pin "2"
-      (uuid "058be66a-f81f-53a4-8d89-ef8a52f69b61")
-    )
-    (instances
-      (project "aio"
-        (path "/6b900c54-f875-59c0-b2c3-d2bfb1f8e068/86ac2cd8-f42d-55a7-ba55-01c8b833d345"
-          (reference "C419")
-          (unit 1)
-        )
-      )
-    )
-  )
-  (label "RDRV"
-    (at 425.45 119.38 180)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify right)
-    )
-    (uuid "e76889cb-495b-5c96-b818-d62aa3623267")
-  )
-  (global_label "GND"
-    (shape bidirectional)
-    (at 433.07 119.38 0)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify left)
-    )
-    (uuid "d193e509-24df-53e3-87ea-ab27be2c17cb")
-    (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 433.07 119.38 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-  )
-  (symbol
-    (lib_id "Device:D_Schottky")
-    (at 459.74 119.38 0)
-    (unit 1)
-    (in_bom yes)
-    (on_board yes)
-    (dnp no)
-    (uuid "455c73b4-d886-5134-bfc6-99e1b477346d")
-    (property "Reference" "D402"
-      (at 459.74 116.11 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Value" "BAT54"
-      (at 459.74 122.65 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Footprint" "Diode_SMD:D_SOD-123"
-      (at 459.74 119.38 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (property "Datasheet" ""
-      (at 459.74 119.38 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (property "MPN" "BAT54W"
-      (at 459.74 119.38 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (pin "1"
-      (uuid "d72d34fd-abdf-55d7-9728-555cc510d097")
-    )
-    (pin "2"
-      (uuid "a2258a7a-997d-5707-9d1d-a78d342db3b1")
-    )
-    (instances
-      (project "aio"
-        (path "/6b900c54-f875-59c0-b2c3-d2bfb1f8e068/86ac2cd8-f42d-55a7-ba55-01c8b833d345"
-          (reference "D402")
-          (unit 1)
-        )
-      )
-    )
-  )
-  (global_label "HP_EN"
-    (shape bidirectional)
-    (at 455.93 119.38 180)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify right)
-    )
-    (uuid "9962719c-9366-5a39-8abe-137d4396139b")
-    (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 455.93 119.38 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-  )
-  (label "RDRV"
-    (at 463.55 119.38 0)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify left)
-    )
-    (uuid "20669d15-471b-5d5e-843e-3b60f5ebd8f7")
-  )
-  (symbol
-    (lib_id "Comparator:LM393")
-    (at 492.76 121.92 0)
-    (unit 1)
-    (in_bom yes)
-    (on_board yes)
-    (dnp no)
-    (uuid "a552fa54-f57d-5d86-bc96-319bc0c07855")
-    (property "Reference" "U406"
-      (at 492.76 114.84 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Value" "LM393"
-      (at 492.76 129 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
-      (at 492.76 121.92 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (property "Datasheet" ""
-      (at 492.76 121.92 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (property "MPN" "LM393DR"
-      (at 492.76 121.92 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (pin "1"
-      (uuid "98318ce3-43d9-58b0-b004-fe53371b456c")
-    )
-    (pin "2"
-      (uuid "7244b1dc-c7d3-5a49-868b-18fd1148f59f")
-    )
-    (pin "3"
-      (uuid "895bbb09-a202-5963-ac93-0fd699dbec74")
-    )
-    (instances
-      (project "aio"
-        (path "/6b900c54-f875-59c0-b2c3-d2bfb1f8e068/86ac2cd8-f42d-55a7-ba55-01c8b833d345"
-          (reference "U406")
-          (unit 1)
-        )
-      )
-    )
-  )
-  (label "RDRV"
-    (at 500.38 121.92 0)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify left)
-    )
-    (uuid "81d43154-0aba-546e-8e0a-31b82a9bd264")
-  )
-  (label "VREF_1V65"
-    (at 485.14 124.46 180)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify right)
-    )
-    (uuid "76a68d17-d0fd-54da-a3b0-58375466857d")
-  )
-  (label "MON_P18"
-    (at 485.14 119.38 180)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify right)
-    )
-    (uuid "97b682e8-e0d1-5d3a-9ec3-c6af3bdfe5ff")
-  )
-  (symbol
-    (lib_id "Comparator:LM393")
-    (at 530.86 121.92 0)
-    (unit 2)
-    (in_bom yes)
-    (on_board yes)
-    (dnp no)
-    (uuid "b80c55ce-3b1a-5573-ae3f-9e97d1312ce5")
-    (property "Reference" "U406"
-      (at 530.86 114.84 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Value" "LM393"
-      (at 530.86 129 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
-      (at 530.86 121.92 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (property "Datasheet" ""
-      (at 530.86 121.92 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (property "MPN" "LM393DR"
-      (at 530.86 121.92 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (pin "5"
-      (uuid "53a2441b-ec18-5e12-bc48-c2ec39797aa8")
-    )
-    (pin "6"
-      (uuid "f7b180ac-eca7-54cd-9519-fede6d082130")
-    )
-    (pin "7"
-      (uuid "55651557-1a5b-5af6-82a0-1e2d4d6945be")
-    )
-    (instances
-      (project "aio"
-        (path "/6b900c54-f875-59c0-b2c3-d2bfb1f8e068/86ac2cd8-f42d-55a7-ba55-01c8b833d345"
-          (reference "U406")
-          (unit 2)
-        )
-      )
-    )
-  )
-  (label "VREF_1V65"
-    (at 523.24 119.38 180)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify right)
-    )
-    (uuid "de19cf67-bd30-5e91-ab02-2a81b7eea3c1")
-  )
-  (label "MON_N16"
-    (at 523.24 124.46 180)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify right)
-    )
-    (uuid "eb3970c7-df62-5b84-a2f2-34318c81120e")
-  )
-  (label "RDRV"
-    (at 538.48 121.92 0)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify left)
-    )
-    (uuid "8296fd36-bdff-5959-8204-bc70d1b77319")
-  )
-  (symbol
-    (lib_id "Comparator:LM393")
-    (at 553.72 134.62 0)
-    (unit 3)
-    (in_bom yes)
-    (on_board yes)
-    (dnp no)
-    (uuid "e95d9eee-679f-5489-9968-277b6aba879b")
-    (property "Reference" "U406"
-      (at 551.18 116 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Value" "LM393"
-      (at 551.18 151.24 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
-      (at 553.72 134.62 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (property "Datasheet" ""
-      (at 553.72 134.62 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (property "MPN" "LM393DR"
-      (at 553.72 134.62 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (pin "4"
-      (uuid "01e0b0b2-73e4-53b0-8672-081e39c6f8fd")
-    )
-    (pin "8"
-      (uuid "fdf71e1c-6d5d-5efe-a5a1-dcca1f6fbb3d")
-    )
-    (instances
-      (project "aio"
-        (path "/6b900c54-f875-59c0-b2c3-d2bfb1f8e068/86ac2cd8-f42d-55a7-ba55-01c8b833d345"
-          (reference "U406")
-          (unit 3)
-        )
-      )
-    )
-  )
-  (global_label "GND"
-    (shape bidirectional)
-    (at 551.18 142.24 270)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify right)
-    )
-    (uuid "bce5627a-143a-524a-8221-d7e89d268c01")
-    (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 551.18 142.24 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-  )
-  (global_label "+3V3D"
-    (shape bidirectional)
-    (at 551.18 127 90)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify left)
-    )
-    (uuid "dd2dd95c-5998-5160-8fe4-01a3f08ea0a7")
-    (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 551.18 127 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-  )
-  (symbol
-    (lib_id "Device:C")
-    (at 35.56 165.1 90)
-    (unit 1)
-    (in_bom yes)
-    (on_board yes)
-    (dnp no)
-    (uuid "99f80826-a5d8-5beb-84c1-64ccf4baa0c3")
-    (property "Reference" "C420"
-      (at 35.56 161.07 90)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Value" "100n"
-      (at 35.56 169.13 90)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-      (at 35.56 165.1 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (property "Datasheet" ""
-      (at 35.56 165.1 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (pin "1"
-      (uuid "be878a17-3bbc-5a1c-882a-e96a3ad2bd9a")
-    )
-    (pin "2"
-      (uuid "cf63d275-a1bc-56dd-b70c-545c5e6e2d10")
-    )
-    (instances
-      (project "aio"
-        (path "/6b900c54-f875-59c0-b2c3-d2bfb1f8e068/86ac2cd8-f42d-55a7-ba55-01c8b833d345"
-          (reference "C420")
-          (unit 1)
-        )
-      )
-    )
-  )
-  (global_label "+3V3D"
-    (shape bidirectional)
-    (at 31.75 165.1 180)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify right)
-    )
-    (uuid "955a71d4-c385-557b-811a-4afe7353fc2c")
-    (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 31.75 165.1 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-  )
-  (global_label "GND"
-    (shape bidirectional)
-    (at 39.37 165.1 0)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify left)
-    )
-    (uuid "d422ea2f-9177-56e8-a2c5-aa8acb070dba")
-    (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 39.37 165.1 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-  )
-  (symbol
-    (lib_id "Device:R")
-    (at 66.04 162.56 90)
-    (unit 1)
-    (in_bom yes)
-    (on_board yes)
-    (dnp no)
-    (uuid "6b57fbe2-a3c0-5a55-911c-8b210bd7a8ab")
-    (property "Reference" "R423"
-      (at 66.04 159.54 90)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Value" "100k"
-      (at 66.04 165.58 90)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-      (at 66.04 162.56 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (property "Datasheet" ""
-      (at 66.04 162.56 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (pin "1"
-      (uuid "e197b53b-ac17-5391-84b6-e2396cb448cc")
-    )
-    (pin "2"
-      (uuid "2a0d9261-fbf4-518f-81fe-6b50a6300acf")
-    )
-    (instances
-      (project "aio"
-        (path "/6b900c54-f875-59c0-b2c3-d2bfb1f8e068/86ac2cd8-f42d-55a7-ba55-01c8b833d345"
-          (reference "R423")
-          (unit 1)
-        )
-      )
-    )
-  )
-  (global_label "+18V4"
-    (shape bidirectional)
-    (at 62.23 162.56 180)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify right)
-    )
-    (uuid "536f7104-0319-5366-b255-6ede0ed5cced")
-    (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 62.23 162.56 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-  )
-  (label "MON_P18"
-    (at 69.85 162.56 0)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify left)
-    )
-    (uuid "53d4af14-4df2-5275-9975-3065b997961d")
-  )
-  (symbol
-    (lib_id "Device:R")
-    (at 96.52 162.56 90)
-    (unit 1)
-    (in_bom yes)
-    (on_board yes)
-    (dnp no)
-    (uuid "0a83675f-78e7-5f0d-960c-6c71f03f81f9")
-    (property "Reference" "R424"
-      (at 96.52 159.54 90)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Value" "10.7k"
-      (at 96.52 165.58 90)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-      (at 96.52 162.56 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (property "Datasheet" ""
-      (at 96.52 162.56 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (pin "1"
-      (uuid "56021cb6-e079-5b7a-b8ff-577e6c4323e2")
-    )
-    (pin "2"
-      (uuid "87503e0c-6900-5a5a-9285-d9e796e78946")
-    )
-    (instances
-      (project "aio"
-        (path "/6b900c54-f875-59c0-b2c3-d2bfb1f8e068/86ac2cd8-f42d-55a7-ba55-01c8b833d345"
-          (reference "R424")
-          (unit 1)
-        )
-      )
-    )
-  )
-  (label "MON_P18"
-    (at 92.71 162.56 180)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify right)
-    )
-    (uuid "16ef5a02-0804-5ade-a909-d77f8841710b")
-  )
-  (global_label "GND"
-    (shape bidirectional)
-    (at 100.33 162.56 0)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify left)
-    )
-    (uuid "d8049695-6c7d-54a8-a044-4fc957f384bf")
-    (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 100.33 162.56 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-  )
-  (symbol
-    (lib_id "Device:R")
-    (at 124.46 162.56 90)
-    (unit 1)
-    (in_bom yes)
-    (on_board yes)
-    (dnp no)
-    (uuid "b2787d4c-e9a5-5507-8bb1-de645710ef65")
-    (property "Reference" "R425"
-      (at 124.46 159.54 90)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Value" "100k"
-      (at 124.46 165.58 90)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-      (at 124.46 162.56 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (property "Datasheet" ""
-      (at 124.46 162.56 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (pin "1"
-      (uuid "a390346f-a513-5745-a22b-e6a08281218e")
-    )
-    (pin "2"
-      (uuid "86ebc635-22c7-59be-8997-f39cdb937ba1")
-    )
-    (instances
-      (project "aio"
-        (path "/6b900c54-f875-59c0-b2c3-d2bfb1f8e068/86ac2cd8-f42d-55a7-ba55-01c8b833d345"
-          (reference "R425")
-          (unit 1)
-        )
-      )
-    )
-  )
-  (global_label "-16V"
-    (shape bidirectional)
-    (at 120.65 162.56 180)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify right)
-    )
-    (uuid "fef8d339-78fd-54a6-8409-d59448cc58d0")
-    (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 120.65 162.56 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-  )
-  (label "MON_N16"
-    (at 128.27 162.56 0)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify left)
-    )
-    (uuid "2b8b5f0e-2a8f-5dc8-b260-f94a82b6c6f5")
-  )
-  (symbol
-    (lib_id "Device:R")
-    (at 154.94 162.56 90)
-    (unit 1)
-    (in_bom yes)
-    (on_board yes)
-    (dnp no)
-    (uuid "19ab45c8-b586-57e7-8e1b-2e207598751f")
-    (property "Reference" "R426"
-      (at 154.94 159.54 90)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Value" "16.9k"
-      (at 154.94 165.58 90)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-      (at 154.94 162.56 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (property "Datasheet" ""
-      (at 154.94 162.56 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (pin "1"
-      (uuid "27dba7ff-56f8-5630-ac8d-9a423baff349")
-    )
-    (pin "2"
-      (uuid "052775e7-2142-56a4-962d-71f2e5e90a84")
-    )
-    (instances
-      (project "aio"
-        (path "/6b900c54-f875-59c0-b2c3-d2bfb1f8e068/86ac2cd8-f42d-55a7-ba55-01c8b833d345"
-          (reference "R426")
-          (unit 1)
-        )
-      )
-    )
-  )
-  (global_label "+3V3D"
-    (shape bidirectional)
-    (at 151.13 162.56 180)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify right)
-    )
-    (uuid "6c67d3fc-ee4a-5be2-bc01-d4df0eb480e7")
-    (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 151.13 162.56 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-  )
-  (label "MON_N16"
-    (at 158.75 162.56 0)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify left)
-    )
-    (uuid "d4841c01-747b-5efd-9b43-7e27ad18c3a1")
-  )
-  (symbol
-    (lib_id "Device:R")
-    (at 187.96 162.56 90)
-    (unit 1)
-    (in_bom yes)
-    (on_board yes)
-    (dnp no)
-    (uuid "f0414edf-e3ae-5403-b1c6-3aaafe9c9552")
-    (property "Reference" "R427"
-      (at 187.96 159.54 90)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Value" "10k"
-      (at 187.96 165.58 90)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-      (at 187.96 162.56 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (property "Datasheet" ""
-      (at 187.96 162.56 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (pin "1"
-      (uuid "b90f4620-e1dd-5923-b47b-99536e98938c")
-    )
-    (pin "2"
-      (uuid "c6a1ccb8-2a40-5e73-b2a7-518730b3058a")
-    )
-    (instances
-      (project "aio"
-        (path "/6b900c54-f875-59c0-b2c3-d2bfb1f8e068/86ac2cd8-f42d-55a7-ba55-01c8b833d345"
-          (reference "R427")
-          (unit 1)
-        )
-      )
-    )
-  )
-  (global_label "+3V3D"
-    (shape bidirectional)
-    (at 184.15 162.56 180)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify right)
-    )
-    (uuid "ded021b3-9e72-52a2-82a8-99096c8c02ab")
-    (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 184.15 162.56 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-  )
-  (label "VREF_1V65"
-    (at 191.77 162.56 0)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify left)
-    )
-    (uuid "7be5e645-defc-5b28-a322-2917c0cd7466")
-  )
-  (symbol
-    (lib_id "Device:R")
-    (at 220.98 162.56 90)
-    (unit 1)
-    (in_bom yes)
-    (on_board yes)
-    (dnp no)
-    (uuid "663d2dea-d1f5-5e8b-9227-c0983ee7a818")
-    (property "Reference" "R428"
-      (at 220.98 159.54 90)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Value" "10k"
-      (at 220.98 165.58 90)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-      (at 220.98 162.56 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (property "Datasheet" ""
-      (at 220.98 162.56 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (pin "1"
-      (uuid "7574ae64-6da1-5274-993e-28e1c5e183e3")
-    )
-    (pin "2"
-      (uuid "081cfe99-7f9b-5ad7-b61f-3d3650a53ffe")
-    )
-    (instances
-      (project "aio"
-        (path "/6b900c54-f875-59c0-b2c3-d2bfb1f8e068/86ac2cd8-f42d-55a7-ba55-01c8b833d345"
-          (reference "R428")
-          (unit 1)
-        )
-      )
-    )
-  )
-  (label "VREF_1V65"
-    (at 217.17 162.56 180)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify right)
-    )
-    (uuid "cc083c32-6a8a-5611-b813-aff468256fbe")
-  )
-  (global_label "GND"
-    (shape bidirectional)
-    (at 224.79 162.56 0)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify left)
-    )
-    (uuid "753de213-f700-584d-a259-caa9944d4aff")
-    (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 224.79 162.56 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-  )
-  (symbol
-    (lib_id "Device:C")
-    (at 251.46 165.1 90)
-    (unit 1)
-    (in_bom yes)
-    (on_board yes)
-    (dnp no)
-    (uuid "5240dbd0-b042-545c-8ebf-3f52ce439cea")
-    (property "Reference" "C421"
-      (at 251.46 161.07 90)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Value" "100n"
-      (at 251.46 169.13 90)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-      (at 251.46 165.1 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (property "Datasheet" ""
-      (at 251.46 165.1 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (pin "1"
-      (uuid "90da99d6-2edb-5ecc-b6cc-9fbdfd5e235d")
-    )
-    (pin "2"
-      (uuid "a5ef496d-6258-54c8-9b6d-7d60f952bbeb")
-    )
-    (instances
-      (project "aio"
-        (path "/6b900c54-f875-59c0-b2c3-d2bfb1f8e068/86ac2cd8-f42d-55a7-ba55-01c8b833d345"
-          (reference "C421")
-          (unit 1)
-        )
-      )
-    )
-  )
-  (label "VREF_1V65"
-    (at 247.65 165.1 180)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify right)
-    )
-    (uuid "9368d77c-6d8b-5d8a-82b7-dc61e5998a46")
-  )
-  (global_label "GND"
-    (shape bidirectional)
-    (at 255.27 165.1 0)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify left)
-    )
-    (uuid "a939dde9-0399-553b-88dd-b8a9d6bbc452")
-    (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 255.27 165.1 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-  )
-  (symbol
-    (lib_id "Device:R")
-    (at 279.4 162.56 90)
-    (unit 1)
-    (in_bom yes)
-    (on_board yes)
-    (dnp no)
-    (uuid "1f8efc51-253a-5ab8-af83-715acd152801")
-    (property "Reference" "R429"
-      (at 279.4 159.54 90)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Value" "47k"
-      (at 279.4 165.58 90)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-      (at 279.4 162.56 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (property "Datasheet" ""
-      (at 279.4 162.56 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (pin "1"
-      (uuid "2b6569ab-1e43-575e-8acc-84fd67389ed2")
-    )
-    (pin "2"
-      (uuid "039c0a41-e408-59a3-af44-fb6ad3c67c3a")
-    )
-    (instances
-      (project "aio"
-        (path "/6b900c54-f875-59c0-b2c3-d2bfb1f8e068/86ac2cd8-f42d-55a7-ba55-01c8b833d345"
-          (reference "R429")
-          (unit 1)
-        )
-      )
-    )
-  )
-  (label "OUT_L"
-    (at 275.59 162.56 180)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify right)
-    )
-    (uuid "1ab91458-3cc1-500e-9287-7c33686e6ee0")
-  )
-  (label "DCSUM"
-    (at 283.21 162.56 0)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify left)
-    )
-    (uuid "831fb765-6338-5faf-b25f-d5de986dffb2")
-  )
-  (symbol
-    (lib_id "Device:R")
-    (at 307.34 162.56 90)
-    (unit 1)
-    (in_bom yes)
-    (on_board yes)
-    (dnp no)
-    (uuid "2803e7e8-9d34-58c6-8fc2-8de0353cef74")
-    (property "Reference" "R430"
-      (at 307.34 159.54 90)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Value" "47k"
-      (at 307.34 165.58 90)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-      (at 307.34 162.56 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (property "Datasheet" ""
-      (at 307.34 162.56 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (pin "1"
-      (uuid "55209eb9-53d5-5322-bec0-748f38316eca")
-    )
-    (pin "2"
-      (uuid "4177c5a7-f9db-525e-8672-f7220d96f656")
-    )
-    (instances
-      (project "aio"
-        (path "/6b900c54-f875-59c0-b2c3-d2bfb1f8e068/86ac2cd8-f42d-55a7-ba55-01c8b833d345"
-          (reference "R430")
-          (unit 1)
-        )
-      )
-    )
-  )
-  (label "OUT_R"
-    (at 303.53 162.56 180)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify right)
-    )
-    (uuid "2ee30cee-705f-5474-adfd-3aefa6da885c")
-  )
-  (label "DCSUM"
-    (at 311.15 162.56 0)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify left)
-    )
-    (uuid "94ede8a8-8131-514a-a0b6-746c40cf8e39")
-  )
-  (symbol
-    (lib_id "Device:C_Polarized")
-    (at 332.74 165.1 90)
-    (unit 1)
-    (in_bom yes)
-    (on_board yes)
-    (dnp no)
-    (uuid "33a55c13-34ab-58d6-a954-afb4775302cd")
-    (property "Reference" "C422"
-      (at 332.74 160.81 90)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Value" "47u 25V"
-      (at 332.74 169.39 90)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Footprint" "Capacitor_SMD:CP_Elec_8x10"
-      (at 332.74 165.1 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (property "Datasheet" ""
-      (at 332.74 165.1 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (pin "1"
-      (uuid "4d26ff67-bf90-5e5d-8d9f-82907e58e61f")
-    )
-    (pin "2"
-      (uuid "66863463-b6c5-537a-8626-9474fef66cd6")
-    )
-    (instances
-      (project "aio"
-        (path "/6b900c54-f875-59c0-b2c3-d2bfb1f8e068/86ac2cd8-f42d-55a7-ba55-01c8b833d345"
-          (reference "C422")
-          (unit 1)
-        )
-      )
-    )
-  )
-  (label "DCSUM"
-    (at 328.93 165.1 180)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify right)
-    )
-    (uuid "1d79b064-782e-5d45-86de-e08446f5384b")
-  )
-  (label "DCMID"
-    (at 336.55 165.1 0)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify left)
-    )
-    (uuid "83c27df9-effe-5029-bc3c-3847a979fc9c")
-  )
-  (symbol
-    (lib_id "Device:C_Polarized")
-    (at 360.68 165.1 90)
-    (unit 1)
-    (in_bom yes)
-    (on_board yes)
-    (dnp no)
-    (uuid "a1b65608-6fc1-5749-88e6-34d413a95103")
-    (property "Reference" "C423"
-      (at 360.68 160.81 90)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Value" "47u 25V"
-      (at 360.68 169.39 90)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Footprint" "Capacitor_SMD:CP_Elec_8x10"
-      (at 360.68 165.1 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (property "Datasheet" ""
-      (at 360.68 165.1 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (pin "1"
-      (uuid "f8cb799e-1e66-5175-9c9b-510c0cede528")
-    )
-    (pin "2"
-      (uuid "6f7a37d2-cf64-58e1-b0f3-286696c660e3")
-    )
-    (instances
-      (project "aio"
-        (path "/6b900c54-f875-59c0-b2c3-d2bfb1f8e068/86ac2cd8-f42d-55a7-ba55-01c8b833d345"
-          (reference "C423")
-          (unit 1)
-        )
-      )
-    )
-  )
-  (global_label "GND"
-    (shape bidirectional)
-    (at 356.87 165.1 180)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify right)
-    )
-    (uuid "1bad0354-be1e-5390-bd88-0c326b30b435")
-    (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 356.87 165.1 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-  )
-  (label "DCMID"
-    (at 364.49 165.1 0)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify left)
-    )
-    (uuid "bd5b0e3e-b703-5d0a-8811-e929cf62e1b3")
-  )
-  (symbol
-    (lib_id "Device:R")
-    (at 386.08 162.56 90)
-    (unit 1)
-    (in_bom yes)
-    (on_board yes)
-    (dnp no)
-    (uuid "9135bf4f-3966-5d6e-bd08-35b22daa3c83")
-    (property "Reference" "R431"
-      (at 386.08 159.54 90)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Value" "10k"
-      (at 386.08 165.58 90)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-      (at 386.08 162.56 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (property "Datasheet" ""
-      (at 386.08 162.56 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (pin "1"
-      (uuid "457b7918-1129-5f97-9b07-c17606c236ee")
-    )
-    (pin "2"
-      (uuid "0076a82e-dfd2-53c5-ba84-780bb521c6a6")
-    )
-    (instances
-      (project "aio"
-        (path "/6b900c54-f875-59c0-b2c3-d2bfb1f8e068/86ac2cd8-f42d-55a7-ba55-01c8b833d345"
-          (reference "R431")
-          (unit 1)
-        )
-      )
-    )
-  )
-  (label "DCSUM"
-    (at 382.27 162.56 180)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify right)
-    )
-    (uuid "f4678af7-c44f-545a-9ecd-65dce8de4374")
-  )
-  (label "DCB"
-    (at 389.89 162.56 0)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify left)
-    )
-    (uuid "0889c64d-321f-5ac2-bc94-d078bf9625b7")
-  )
-  (symbol
-    (lib_id "Transistor_BJT:BC847")
-    (at 411.48 172.72 0)
-    (unit 1)
-    (in_bom yes)
-    (on_board yes)
-    (dnp no)
-    (uuid "f007349f-b087-593a-bb3b-e49c8ace8b7c")
-    (property "Reference" "Q402"
-      (at 410.98 160.14 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Value" "BC847"
-      (at 410.98 186.8 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-      (at 411.48 172.72 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (property "Datasheet" ""
-      (at 411.48 172.72 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (property "MPN" "BC847B"
-      (at 411.48 172.72 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (pin "1"
-      (uuid "47bdb1c9-f227-51dd-8ee3-abdd8d7c4ae3")
-    )
-    (pin "2"
-      (uuid "827bc9bb-4cb3-5d63-a5c8-7726099e592c")
-    )
-    (pin "3"
-      (uuid "bce9c5a1-d2b9-53ca-b5c8-5fe239e01d64")
-    )
-    (instances
-      (project "aio"
-        (path "/6b900c54-f875-59c0-b2c3-d2bfb1f8e068/86ac2cd8-f42d-55a7-ba55-01c8b833d345"
-          (reference "Q402")
-          (unit 1)
-        )
-      )
-    )
-  )
-  (label "DCB"
-    (at 406.4 172.72 180)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify right)
-    )
-    (uuid "9128ef53-5091-54a6-9046-fed01d18e01b")
-  )
-  (global_label "GND"
-    (shape bidirectional)
-    (at 414.02 177.8 270)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify right)
-    )
-    (uuid "21b36d2f-e8c1-5056-a8d7-892005780396")
-    (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 414.02 177.8 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-  )
-  (label "RDRV"
-    (at 414.02 167.64 90)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify left)
-    )
-    (uuid "65c2df89-1ab7-542e-85c1-09e86e4a4fe8")
-  )
-  (symbol
-    (lib_id "Device:R")
-    (at 431.8 162.56 90)
-    (unit 1)
-    (in_bom yes)
-    (on_board yes)
-    (dnp no)
-    (uuid "86549244-f5ed-53ce-ab50-dc38c7745ba0")
-    (property "Reference" "R432"
-      (at 431.8 159.54 90)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Value" "10k"
-      (at 431.8 165.58 90)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-      (at 431.8 162.56 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (property "Datasheet" ""
-      (at 431.8 162.56 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (pin "1"
-      (uuid "a045fe69-0040-5036-9d11-52ed2662e0b8")
-    )
-    (pin "2"
-      (uuid "f800e2c0-0e8b-553b-8bac-8b586dcf2a66")
-    )
-    (instances
-      (project "aio"
-        (path "/6b900c54-f875-59c0-b2c3-d2bfb1f8e068/86ac2cd8-f42d-55a7-ba55-01c8b833d345"
-          (reference "R432")
-          (unit 1)
-        )
-      )
-    )
-  )
-  (label "DCSUM"
-    (at 427.99 162.56 180)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify right)
-    )
-    (uuid "a86bf998-aa0c-5508-af08-5e29d2a60ca4")
-  )
-  (label "DCE"
-    (at 435.61 162.56 0)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify left)
-    )
-    (uuid "d57cc891-0903-5f53-a602-ac7ec3968800")
-  )
-  (symbol
-    (lib_id "Transistor_BJT:BC847")
-    (at 457.2 172.72 0)
-    (unit 1)
-    (in_bom yes)
-    (on_board yes)
-    (dnp no)
-    (uuid "4049fdcb-f06e-5d9d-b37a-96ca4a06b77f")
-    (property "Reference" "Q403"
-      (at 456.7 160.14 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Value" "BC847"
-      (at 456.7 184.3 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-      (at 457.2 172.72 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (property "Datasheet" ""
-      (at 457.2 172.72 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (property "MPN" "BC847B"
-      (at 457.2 172.72 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (pin "1"
-      (uuid "149331fb-0943-5a4d-9376-e8dc35185993")
-    )
-    (pin "2"
-      (uuid "3db7d357-6a21-5233-9cc2-4659f91d5ba9")
-    )
-    (pin "3"
-      (uuid "9109386e-3c27-5cb1-9420-af47640d9aa5")
-    )
-    (instances
-      (project "aio"
-        (path "/6b900c54-f875-59c0-b2c3-d2bfb1f8e068/86ac2cd8-f42d-55a7-ba55-01c8b833d345"
-          (reference "Q403")
-          (unit 1)
-        )
-      )
-    )
-  )
-  (global_label "GND"
-    (shape bidirectional)
-    (at 452.12 172.72 180)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify right)
-    )
-    (uuid "f3f0edfb-18cf-5e31-9652-0689bcc71490")
-    (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 452.12 172.72 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-  )
-  (label "DCE"
-    (at 459.74 177.8 270)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify right)
-    )
-    (uuid "550ae7b7-c0ef-568d-bcd1-f8c5a2aa03d2")
-  )
-  (label "RDRV"
-    (at 459.74 167.64 90)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify left)
-    )
-    (uuid "8dd6b73f-b70b-555a-9c3e-0ce63ff36e8f")
-  )
-  (symbol
-    (lib_id "Connector_Audio:AudioJack3")
-    (at 474.98 165.1 0)
-    (unit 1)
-    (in_bom yes)
-    (on_board yes)
-    (dnp no)
-    (uuid "6870ad52-b588-5b7f-8ef6-8d86694e1b1d")
-    (property "Reference" "J401"
-      (at 474.35 159.29 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Value" "6.35mm"
-      (at 474.35 172.18 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Footprint" "Connector_Audio:Jack_6.35mm_Neutrik_NMJ6HCD2_Horizontal"
-      (at 474.98 165.1 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (property "Datasheet" ""
-      (at 474.98 165.1 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (property "MPN" "NMJ6HCD2"
-      (at 474.98 165.1 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (pin "R"
-      (uuid "39539299-3cf7-594d-86ad-8fb0e5704d8b")
-    )
-    (pin "S"
-      (uuid "30c2c1fc-d1ff-5fda-823d-50f423f68f9c")
-    )
-    (pin "T"
-      (uuid "9c8af119-6294-568a-8a95-fee4d337f717")
-    )
-    (instances
-      (project "aio"
-        (path "/6b900c54-f875-59c0-b2c3-d2bfb1f8e068/86ac2cd8-f42d-55a7-ba55-01c8b833d345"
-          (reference "J401")
-          (unit 1)
-        )
-      )
-    )
-  )
-  (label "HPJ_R"
-    (at 480.06 165.1 0)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify left)
-    )
-    (uuid "1e1130f1-f579-5431-9fab-c8d5458f0fbf")
-  )
-  (global_label "GND"
-    (shape bidirectional)
-    (at 480.06 162.56 0)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify left)
-    )
-    (uuid "bd855f00-f1d3-5811-81ba-ccd07ab0afa3")
-    (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 480.06 162.56 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-  )
-  (label "HPJ_L"
-    (at 480.06 167.64 0)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify left)
-    )
-    (uuid "ab6d2b07-7d00-58c7-8f69-98d602a8ded0")
-  )
-  (symbol
-    (lib_id "Connector_Audio:AudioJack3")
-    (at 497.84 165.1 0)
-    (unit 1)
-    (in_bom yes)
-    (on_board yes)
-    (dnp no)
-    (uuid "53b4155c-34e4-5ef3-86cf-13217d3647fb")
-    (property "Reference" "J402"
-      (at 497.21 159.29 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Value" "3.5mm"
-      (at 497.21 172.18 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        )
-      )
-    )
-    (property "Footprint" "Connector_Audio:Jack_3.5mm_CUI_SJ1-3533NG_Horizontal"
-      (at 497.84 165.1 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (property "Datasheet" ""
-      (at 497.84 165.1 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (property "MPN" "SJ1-3533NG"
-      (at 497.84 165.1 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-    (pin "R"
-      (uuid "c3811089-d152-59b3-b60d-20482c3f8c79")
-    )
-    (pin "S"
-      (uuid "dd0ad20c-de37-5067-a46d-fdca4c52447d")
-    )
-    (pin "T"
-      (uuid "0738f216-f525-5f7c-82b7-f7cc5efe3a9d")
-    )
-    (instances
-      (project "aio"
-        (path "/6b900c54-f875-59c0-b2c3-d2bfb1f8e068/86ac2cd8-f42d-55a7-ba55-01c8b833d345"
-          (reference "J402")
-          (unit 1)
-        )
-      )
-    )
-  )
-  (label "HPJ_R"
-    (at 502.92 165.1 0)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify left)
-    )
-    (uuid "da98a2c3-06b3-5f89-91c2-645358f4ddc8")
-  )
-  (global_label "GND"
-    (shape bidirectional)
-    (at 502.92 162.56 0)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify left)
-    )
-    (uuid "f7b4baa7-ebe5-5a7d-acb9-37a142cd107b")
-    (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 502.92 162.56 0)
-      (effects
-        (font
-          (size 1.27 1.27)
-        ) hide
-      )
-    )
-  )
-  (label "HPJ_L"
-    (at 502.92 167.64 0)
-    (fields_autoplaced)
-    (effects
-      (font
-        (size 1.27 1.27)
-      )
-      (justify left)
-    )
-    (uuid "4512e461-840f-554a-b1f6-657e814260c8")
   )
   (text "HEADPHONE AMP NOTES\n- Per channel: OPA1612 + 2x LME49600 inside the loop, 2.2R ballast each, feedback from OUT_x.\n- Gain: 1 + 2.00k / (4.02k || 576R) = 4.97 (SW401 closed, High) or 1.50 (open, Low).\n- 2 W into 32R = 8 Vrms, 354 mA peak (177 mA per LME49600, rated 250 mA).\n- Relay K401 (NO contacts) connects jacks only when RDRV is high:\n  ~2-3 s after power-up (220k / 10u on RDRV), released at once if +18V4 sags (U406A), -16V collapses (U406B),\n  either output has DC beyond about +-0.6 V (Q402/Q403), or XMOS pulls HP_EN low (BAT54 D402).\n- LME49600 BW pin open = low-power mode (~7.3 mA Iq). Keep each TO-263 tab on >= 4 cm2 copper."
-    (at 20 380 0)
+    (at 20 257 0)
     (effects
       (font
         (size 1.524 1.524)

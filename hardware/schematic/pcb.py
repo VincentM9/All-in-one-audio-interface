@@ -2,8 +2,8 @@
 """Build the starting PCB and a bundled footprint library from design.py.
 
 Writes, next to the schematic in hardware/schematic/kicad/:
-  aio.kicad_pcb   every part with its footprint and pad nets (unrouted),
-                  grouped by sheet, inside a board outline
+  aio.kicad_pcb   every part on its footprint and nets, placed by function
+                  on a 200 x 130 mm board (see place.py), unrouted
   aio.pretty/     copies of every footprint used, so the project is
                   self-contained (Altium's Import Wizard can turn this
                   folder into a PcbLib)
@@ -22,11 +22,10 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import design  # noqa: E402
 from kigen import uid  # noqa: E402
+import place  # noqa: E402
 
 FPDIR = os.environ.get('KICAD_FOOTPRINT_DIR', '/usr/share/kicad/footprints')
 OUT = design.OUT
-GAP = 2.0          # mm between parts
-ROW_W = 160.0      # mm, width of each sheet's block
 
 
 def mm(v):
@@ -58,9 +57,7 @@ def main():
     os.makedirs(lib_out)
     root = uid('root')
     skipped = []
-    x0, y_block = 0.0, 0.0
     for s in design.d.sheets:
-        x, y, rowh = 0.0, y_block, 0.0
         for p in s.parts:
             if not p.fp:
                 skipped.append(p.ref)
@@ -76,25 +73,14 @@ def main():
                 if n:
                     pad.SetNet(net(n))
             board.Add(f)
-            bb = f.GetBoundingBox(False, False)
-            w, h = pcbnew.ToMM(bb.GetWidth()), pcbnew.ToMM(bb.GetHeight())
-            if x + w > ROW_W and x > 0:
-                x, y, rowh = 0.0, y + rowh + GAP, 0.0
-            # move so the bounding box's top-left lands on (x, y)
-            dx = mm(x0 + x) - bb.GetX()
-            dy = mm(y) - bb.GetY()
-            f.Move(pcbnew.VECTOR2I(dx, dy))
-            x += w + GAP
-            rowh = max(rowh, h)
-        y_block = y + rowh + 10.0
-    # board outline around everything
-    bb = board.ComputeBoundingBox(True)
-    m = mm(5)
-    rect = pcbnew.PCB_SHAPE(board, pcbnew.SHAPE_T_RECT)
-    rect.SetLayer(pcbnew.Edge_Cuts)
-    rect.SetStart(pcbnew.VECTOR2I(bb.GetX() - m, bb.GetY() - m))
-    rect.SetEnd(pcbnew.VECTOR2I(bb.GetRight() + m, bb.GetBottom() + m))
-    board.Add(rect)
+    overflow = place.Placer(board, design.d).run()
+    place.outline(board)
+    place.region_labels(board, design.d.sheets)
+    bad = place.overlaps(board)
+    if bad:
+        raise SystemExit(f'courtyard overlaps: {bad[:10]}')
+    if overflow:
+        print('placed outside their region (region full):', ' '.join(overflow))
     path = os.path.join(OUT, 'aio.kicad_pcb')
     # let KiCad write a complete .kicad_pro (importers such as Altium's read
     # it), then list the schematic sheets in it the way eeschema does

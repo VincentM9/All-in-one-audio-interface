@@ -37,35 +37,66 @@ idealised models, so its THD figures don't mean anything.
 
 `hardware/schematic/kicad/` is a complete KiCad project:
 
-- `aio.kicad_pro` / `aio.kicad_sch`: a root sheet plus five sheets (power,
-  USB/XMOS/clocks, DAC, headphone amp, mic/ADC), 357 parts. A PDF is in
-  `hardware/schematic/aio-schematic.pdf`.
-- `aio.kicad_pcb`: a starting board with every footprint placed (grouped by
-  sheet, unrouted) and every pad on its net.
+- `aio.kicad_pro` / `aio.kicad_sch`: a top sheet plus 14 A3 sheets, one per
+  function (input + SEPIC, Cuk, phantom supply, LDOs, digital supplies,
+  USB-C/PD, XMOS, clocks, DAC, I/V stage, headphone amp, protection, mic
+  input, ADC), 357 parts. A PDF is in `hardware/schematic/aio-schematic.pdf`.
+- `aio.kicad_pcb`: a **first-pass placement** on a 200 × 130 mm board,
+  unrouted, every pad on its net (see "Layout" below).
 - `aio.pretty/`: copies of all 45 footprints the design uses.
 
 **Opening it in Altium Designer (24 or newer):**
 
 1. File → Import Wizard → KiCad Design Files, and select
-   `hardware/schematic/kicad/aio.kicad_pro`. Altium imports the schematic
-   sheets *and* `aio.kicad_pcb`, so you get a PcbDoc with all footprints
-   and their connections. Each sheet becomes a `.SchDoc`.
-2. In the imported PcbDoc, run Design → Make PCB Library, and add the
-   resulting `.PcbLib` to the project. Schematic updates (Design → Update
-   PCB Document) can then find every footprint.
+   `hardware/schematic/kicad/aio.kicad_pro`. Altium imports the sheets and
+   `aio.kicad_pcb` (a PcbDoc with all footprints and connections).
+2. **Remove `aio.SchDoc` (the top sheet) from the Altium project**, and set
+   Project → Project Options → Options → Net Identifier Scope to **Global**.
+   The top sheet only holds sheet symbols, and Altium's importer doesn't link
+   them to the imported sheets ("Missing child-sheet" errors). Every
+   connection between sheets is a global label or power net, so a flat
+   project with global scope is electrically identical: each net name in
+   this design is unique, so nothing merges that shouldn't.
+3. Tools → Annotation → Number Schematic Sheets (clears "Cross References
+   are incomplete due to lack of sheet number(s)").
+4. In the imported PcbDoc, run Design → Make PCB Library and add the PcbLib
+   to the project, so Update PCB Document can find every footprint.
 
-If you imported only the schematic and got an ECO full of "Footprint Not
-Found" and "Unknown Pin" errors, that's the missing footprint library: do
-step 1 again with the full project, or import the `aio.pretty` folder as a
-footprint library and add it to the project.
+**Layout (first-pass placement, `hardware/schematic/place.py`):**
 
-**If Altium reports "Missing child-sheet …" on `aio.SchDoc`:** the five
-sheet documents (`power`, `usb`, `dac`, `hpamp`, `mic`) didn't get added to
-the project. Right-click the project → Add Existing to Project, and select
-the five `.SchDoc` files the wizard wrote next to `aio.SchDoc`. If they
-aren't there, run the Import Wizard again and select all six `.kicad_sch`
-files. Then recompile. "Cross References are incomplete due to lack of sheet
-number(s)" clears with Tools → Annotation → Number Schematic Sheets.
+```
+ rear   DC jack                         USB-C
+       ┌──────────────┬────────┬───────┬──────────────────┐
+       │ SEPIC │ Cuk  │digital │USB/PD │ XMOS + clocks    │
+       │ +50 V boost  │supplies│       ├──────────────────┤
+       │──────────────┴────┬───┴───────┤ DAC              │
+       │ LDOs (buffer)     │ I/V stage ├──────────────────┤
+       ├──────────────┬────┴─┬─────────┴──────────────────┤
+       │ mic input,   │ ADC  │ headphone amp, protection  │
+       │ phantom feed │      │                            │
+ front └──────────────┴──────┴────────────────────────────┘
+   XLR  gain  +48V  LEDs     volume  gain   3.5mm  6.35mm
+```
+
+- Board 200 × 130 mm, intended as 4 layers (Sig / GND / PWR / Sig). The
+  corners are kept clear for M3 mounting holes; add those in Altium.
+- Panel parts sit on the edges, facing out. Check each one's orientation
+  and overhang against your enclosure in the 3D view.
+- Inside each region the ICs are spread out, then each passive is placed
+  next to the pin it connects to. Decoupling caps are a median of 3.7 mm
+  from their supply pin (90% within 7.7 mm). Pull in the stragglers by hand.
+- U203 (XMOS) has no footprint yet, so its spot in the XMOS region is empty
+  until you add the official part.
+- Region outlines and names are on the Comments layer, so you can see the
+  floorplan while you refine it.
+
+**Before routing:** tighten the switching loops (FET, diode, input/output
+caps of each LT3757 as close together as possible). Put the LME49600 tabs
+and the LDO thermal pads on large copper areas with thermal vias. Keep the
+switchers' ground return away from the analog section. Route power, ground
+and the audio paths by hand. Don't autoroute the whole board. If you use
+the autorouter at all, use it only for the digital nets, after the rest is
+done.
 
 **U203 (XMOS XU316) has no footprint on purpose:** its pin numbers are
 placeholders. Replace it with XMOS's official library part, which brings the

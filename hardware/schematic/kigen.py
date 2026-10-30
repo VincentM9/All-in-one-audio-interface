@@ -245,6 +245,12 @@ class Design:
 
     def sheet(self, *a, **kw):
         s = Sheet(*a, **kw)
+        # sheets in the same section (same prefix number, e.g. 1xx = power)
+        # share one designator sequence, so splitting a section keeps refs
+        for other in self.sheets:
+            if other.num == s.num:
+                s.counters = other.counters
+                break
         self.sheets.append(s)
         return s
 
@@ -260,6 +266,11 @@ class Design:
 
     def write(self, outdir):
         os.makedirs(outdir, exist_ok=True)
+        # drop sheet files left over from an earlier sheet structure
+        keep = {s.name + '.kicad_sch' for s in self.sheets} | {PROJECT + '.kicad_sch'}
+        for f in os.listdir(outdir):
+            if f.endswith('.kicad_sch') and f not in keep:
+                os.remove(os.path.join(outdir, f))
         netsheets = {}
         for s in self.sheets:
             for p in s.parts:
@@ -456,7 +467,7 @@ class Design:
         lib = 'power:PWR_FLAG'
         if lib not in libsyms:
             libsyms[lib] = load_symbol(lib)
-        ref = f'#FLG{s.num}{s.flags.index(net) + 1:02d}'
+        ref = f'#FLG{self.sheets.index(s) + 1:02d}{s.flags.index(net) + 1:02d}'
         hide = ['effects', ['font', ['size', 1.27, 1.27]], Sym('hide')]
         return [['symbol', ['lib_id', lib], ['at', ox, oy, 0], ['unit', 1],
                  ['in_bom', Sym('yes')], ['on_board', Sym('yes')], ['dnp', Sym('no')],
@@ -488,7 +499,7 @@ class Design:
             if x > 300:
                 x, y = 30.48, y + 40.64
         if getattr(self, 'root_notes', ''):
-            items.append(['text', self.root_notes, ['at', 30, 130, 0],
+            items.append(['text', self.root_notes, ['at', 30.48, y + 40.64, 0],
                           ['effects', ['font', ['size', 1.524, 1.524]], ['justify', Sym('left'), Sym('top')]],
                           ['uuid', uid('root', 'notes')]])
         doc = ['kicad_sch', ['version', 20230121], ['generator', Sym('eeschema')],

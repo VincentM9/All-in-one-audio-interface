@@ -41,9 +41,8 @@ idealised models, so its THD figures don't mean anything.
   function (input + SEPIC, Cuk, phantom supply, LDOs, digital supplies,
   USB-C/PD, XMOS, clocks, DAC, I/V stage, headphone amp, protection, mic
   input, ADC), 357 parts. A PDF is in `hardware/schematic/aio-schematic.pdf`.
-- `aio.kicad_pcb`: a **parts-staging board**. Every footprint is on its net,
-  grouped into one labelled cluster per sheet, inside an outline that just
-  encloses them. It is not a placement or a board size; see "Layout" below.
+- `aio.kicad_pcb`: a **first-pass placement** on a 200 × 130 mm board,
+  unrouted, every pad on its net (see "Layout" below).
 - `aio.pretty/`: copies of all 45 footprints the design uses.
 
 **Opening it in Altium Designer (24 or newer):**
@@ -63,14 +62,41 @@ idealised models, so its THD figures don't mean anything.
 4. In the imported PcbDoc, run Design → Make PCB Library and add the PcbLib
    to the project, so Update PCB Document can find every footprint.
 
-**Layout:** don't autoroute the staging board. It mixes the switching
-converters with the audio stages and routes power through signal-width
-tracks. Place by hand: switchers in one corner away from the analog section,
-each IC's decoupling right at its pins, LME49600 tabs and LDO pads on large
-copper areas, a solid ground plane on layer 2 of a 4-layer stack (Sig / GND
-/ PWR / Sig), headphone and XLR jacks at the board edge. Then set the real
-board outline, and route power, ground and the audio paths by hand before
-using the autorouter, if at all, for the digital nets.
+**Layout (first-pass placement, `hardware/schematic/place.py`):**
+
+```
+ rear   DC jack                         USB-C
+       ┌──────────────┬────────┬───────┬──────────────────┐
+       │ SEPIC │ Cuk  │digital │USB/PD │ XMOS + clocks    │
+       │ +50 V boost  │supplies│       ├──────────────────┤
+       │──────────────┴────┬───┴───────┤ DAC              │
+       │ LDOs (buffer)     │ I/V stage ├──────────────────┤
+       ├──────────────┬────┴─┬─────────┴──────────────────┤
+       │ mic input,   │ ADC  │ headphone amp, protection  │
+       │ phantom feed │      │                            │
+ front └──────────────┴──────┴────────────────────────────┘
+   XLR  gain  +48V  LEDs     volume  gain   3.5mm  6.35mm
+```
+
+- Board 200 × 130 mm, intended as 4 layers (Sig / GND / PWR / Sig). The
+  corners are kept clear for M3 mounting holes; add those in Altium.
+- Panel parts sit on the edges, facing out. Check each one's orientation
+  and overhang against your enclosure in the 3D view.
+- Inside each region the ICs are spread out, then each passive is placed
+  next to the pin it connects to. Decoupling caps are a median of 3.7 mm
+  from their supply pin (90% within 7.7 mm). Pull in the stragglers by hand.
+- U203 (XMOS) has no footprint yet, so its spot in the XMOS region is empty
+  until you add the official part.
+- Region outlines and names are on the Comments layer, so you can see the
+  floorplan while you refine it.
+
+**Before routing:** tighten the switching loops (FET, diode, input/output
+caps of each LT3757 as close together as possible). Put the LME49600 tabs
+and the LDO thermal pads on large copper areas with thermal vias. Keep the
+switchers' ground return away from the analog section. Route power, ground
+and the audio paths by hand. Don't autoroute the whole board. If you use
+the autorouter at all, use it only for the digital nets, after the rest is
+done.
 
 **U203 (XMOS XU316) has no footprint on purpose:** its pin numbers are
 placeholders. Replace it with XMOS's official library part, which brings the

@@ -14,11 +14,11 @@ exists.
 
 Input and volume:
 ```
- IN_L ──C1 4.7µ──┬── RV1 top
-                 │   RV1 bottom ── GND
-                 │   RV1 wiper ──R1 100Ω──┬──────────── U1A +IN (pin 3)
-                                          ├── C2 470p ── GND
-                                          └── R2 100k ── GND
+ IN_L ──C1 10µ NP──┬── RV1 top
+                   │   RV1 bottom ── GND
+                   │   RV1 wiper ──R1 100Ω──┬──────────── U1A +IN (pin 3)
+                                            ├── C2 470p ── GND
+                                            └── R2 100k ── GND
 ```
 
 Amplifier and output:
@@ -84,30 +84,74 @@ Decoupling:
 - At U1: 100 nF on each rail.
 - At the power connector: 220 µF on each rail.
 
-## Parts list
+## Parts list (JLCPCB / LCSC)
 
-| Ref | Qty | Value | Part / package |
-|---|---|---|---|
-| U1 | 1 | OPA1612AIDR | dual op-amp, SOIC-8 |
-| U2–U5 | 4 | LME49600TS/NOPB | buffer, TO-263-5 |
-| R1, R11 | 2 | 100 Ω | 0603 |
-| R2, R12 | 2 | 100 kΩ | 0603 |
-| R3, R13 | 2 | 2.00 kΩ 0.1 % | 0603 (feedback) |
-| R4, R14 | 2 | 499 Ω 0.1 % | 0603 (gain) |
-| R5, R6, R15, R16 | 4 | 47 Ω | 0603 |
-| R7, R8, R17, R18 | 4 | 2.2 Ω 1 W | 2512 |
-| R9, R19 | 2 | 10 Ω | 0805 |
-| C1, C11 | 2 | 4.7 µF 63 V | film (WIMA MKS4 or similar) |
-| C2, C12 | 2 | 470 pF C0G | 0603 |
-| C3, C13 | 2 | 22 pF C0G | 0603 |
-| C4, C14 | 2 | 100 nF | 0603 |
-| decoupling | 10 | 100 nF | 0603 (8 at buffers, 2 at U1) |
-| decoupling | 8 | 10 µF 25 V | 1210 X7R |
-| bulk | 2 | 220 µF 25 V | electrolytic |
-| RV1 | 1 | 10 kΩ log, dual | ALPS RK097 or RK27 |
-| J1 | 1 | 3.5 mm stereo jack | line input |
-| J2 | 1 | 6.35 mm or 3.5 mm stereo jack | headphone output |
-| J3 | 1 | 3-pin header / terminal | +16 V, GND, −16 V |
+Every part is chosen to be orderable from LCSC, which is JLCPCB's parts
+library, so JLCPCB can assemble the board. PCBWay can also source all of
+them.
+
+- **LCSC numbers in the table** were checked on LCSC's listings. Stock
+  changes daily, so re-check before ordering.
+- **"Basic" passives** are JLCPCB's preloaded parts, with no setup fee. Pick
+  the exact part numbers in JLCPCB's parts search (filter: Basic) or at
+  [basicp.art](https://basicp.art/).
+- **"Extended"** parts cost about $3 setup per unique part per order.
+  Expect roughly 6–8 extended types on this board.
+
+| Ref | Qty | Value | Package | LCSC | JLCPCB class |
+|---|---|---|---|---|---|
+| U1 | 1 | OPA1612AIDR (dual op-amp) | SOIC-8 | [C94590](https://www.lcsc.com/product-detail/C94590.html) | Extended |
+| U2–U5 | 4 | LME49600TS/NOPB (buffer) | TO-263-5 | [C191539](https://www.lcsc.com/product-detail/Audio-Power-OpAmps_Texas-Instruments-LME49600TS-NOPB_C191539.html) | Extended |
+| R1, R11 | 2 | 100 Ω 1 % | 0603 | Basic, pick in JLCPCB search | Basic |
+| R2, R12 | 2 | 100 kΩ 1 % | 0603 | Basic | Basic |
+| R3, R13 | 2 | 2 kΩ 1 % | 0603 | Basic | Basic |
+| R4, R14 | 2 | 499 Ω 1 % (or 510 Ω) | 0603 | whichever is Basic | Basic |
+| R5, R6, R15, R16 | 4 | 47 Ω 1 % | 0603 | Basic | Basic |
+| R7, R8, R17, R18 | 4 | 2.2 Ω 1 % 1 W | 2512 | e.g. [C147074](https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_Ever-Ohms-Tech_C147074.html), any 2.2 Ω 1 W 2512 | Extended |
+| R9, R19 | 2 | 10 Ω 1 % | 0805 | Basic | Basic |
+| C1, C11 | 2 | 10 µF 25 V **bipolar (NP)** electrolytic | SMD can | search "10uF 25V bipolar" | Extended |
+| C2, C12 | 2 | 470 pF C0G | 0603 | Basic | Basic |
+| C3, C13 | 2 | 22 pF C0G | 0603 | Basic | Basic |
+| C4, C14 + decoupling | 12 | 100 nF X7R 50 V | 0603 | Basic | Basic |
+| decoupling | 8 | 10 µF 25 V X7R | 1206 or 1210 | Basic | Basic |
+| bulk | 2 | 220 µF 25 V electrolytic | SMD can | Basic | Basic |
+| RV1 | 1 | 10 kΩ log (A10K) dual pot | THT | see note | Extended / hand-solder |
+| J1 | 1 | 3.5 mm stereo jack (line in) | THT | [C668607](https://www.lcsc.com/product-detail/Audio-Connectors_SHOU-HAN_C668607.html) (PJ-313) or [C16684](https://jlcpcb.com/partdetail/BOOMELE_Boom_Precision_Elec-PJ307C/C16684) (PJ-307C) | Extended |
+| J2 | 1 | 6.35 mm stereo jack (headphones) | THT | [C309284](https://jlcpcb.com/partdetail/HOOYA-PJ612/C309284) (PJ-612) | Extended |
+| J3 | 1 | 3-pin screw terminal, 5.08 mm | THT | any 3P 5.08 mm terminal | Basic / Extended |
+
+**Changes from the first version of this spec:**
+- **0.1 % resistors → 1 %.** In this amp, the gain resistors only set the
+  gain. 1 % parts keep the left/right gain within about 0.2 dB, which you
+  won't hear. 1 % parts are JLCPCB basic parts. 0.1 % parts are not.
+- **Input film cap → 10 µF bipolar electrolytic.** Large film caps are
+  through-hole and hard to find on LCSC. A bipolar (non-polarised)
+  electrolytic is a normal SMD part. With 10 µF into the 10 kΩ pot, it
+  passes everything down to about 1.6 Hz, so it adds no audible
+  distortion. Don't use a 10 µF X7R ceramic here: those add measurable
+  distortion in the signal path.
+- **R4/R14 can be 510 Ω** if 499 Ω isn't a Basic part. The gain becomes
+  4.9 instead of 5.0, about 0.2 dB less, and you still get 2 W at about
+  1.65 Vrms in.
+
+**Notes:**
+- **LME49600 stock:** LCSC showed only about 170 units at roughly $5.26
+  each. That's plenty for a few boards (4 per board), but check before
+  ordering. Digi-Key and Mouser carry many more if LCSC runs out, and
+  PCBWay can source from them.
+- **Volume pot:** I couldn't confirm a dual 10 kΩ **log** (A taper) pot on
+  LCSC. The ALPS RK097 dual listings there may be linear (B taper), and a
+  linear pot makes a poor volume control. Two options:
+  1. Search LCSC for "A10K dual potentiometer" and confirm the taper says
+     A or log on the datasheet.
+  2. Use a 6-pin header on the board, and wire an off-board panel pot to
+     it. This is easier to fit to an enclosure later anyway.
+- **Through-hole parts** (jacks, pot, terminal) cost extra for JLCPCB to
+  assemble. The cheapest route is to let JLCPCB place the SMD parts and
+  solder the 4–5 through-hole parts yourself.
+- **OPA1612 alternatives** in the same footprint, also on LCSC:
+  - OPA1656IDR ([C1849431](https://www.lcsc.com/product-detail/Audio-Power-OpAmps_Texas-Instruments-OPA1656IDR_C1849431.html)), for lower DC offset.
+  - The NE5532 family, for low cost.
 
 ## Layout notes
 
